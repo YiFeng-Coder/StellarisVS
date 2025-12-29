@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef Name="StellarisResearchProjectBase" Abstract="True">
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <tags>
+      <li>ShipRelated</li>
+    </tags>
+    <tab>StellarisResearchTab</tab>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_ShipConsole</defName>
+    <label>舰船控制台</label>
+    <description>舰船的控制中心。需要驾驶员驾驶。能够操控舰船起飞与降落，武器的开火，舰船移动等。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_ShipEngine</defName>
+    <label>化学燃料推进器</label>
+    <description>给舰船提供充足动力的化学燃料推进器。对燃料的利用效率较低，但至少能够将舰船送上太空。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_PlanetScanner</defName>
+    <label>天体扫描仪</label>
+    <description>能够通过特定手段远距离扫描舰船所处行星或恒星的扫描器。\n可以从扫描数据中分析出天体的各种信息，例如温度，亮度，宜居性，蕴含资源等。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_SpaceMining</defName>
+    <label>太空采矿</label>
+    <description>自动化的太空采矿设备能够在已经探明的天体上进行开采作业，并且自动发射运输仓运回产物。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>StellarisResearch_PlanetScanner</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_LifeSupport</defName>
+    <label>大型维生装置</label>
+    <description>通过装置内小型生态系统循环而不断释放出氧气，吸收二氧化碳的维生装置。同时也能负责水循环等维持生命的必要循环。\n相较于氧气泵而言更高效。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>4.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_NuclearFissionReactor</defName>
+    <label>裂变反应堆</label>
+    <description>基于核裂变原理的核反应堆。能够产出可观的热量并转化为电力。可以通过调节中子通量率来调节热量产生速率，进而改变发电量。但也会改变燃料仓的消耗速率。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_TemperatureStabilizer</defName>
+    <label>舰船温度调控器</label>
+    <description>一种高科技装置，将室内温度稳定在特定目标值。依靠电加热。冷却时通过舰船将能量导向外界。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_SafeSuperBattery</defName>
+    <label>电容阵列</label>
+    <description>一种采用了先进绝缘技术的高容量电池。它能够储存大量电力，转换效率极高，并且经过特殊处理，即不会发生短路。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ShipBasics</li>
+    </prerequisites>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_NuclearFusionReactor</defName>
+    <label>聚变反应堆</label>
+    <description>氘核和氚核在一定条件下（如超高温、高压）可以聚变为氦核，在发生聚变反应的同时，会释放出巨大能量。核聚变反应所产生的能量比核裂变反应所产生的能量更大。恒星内部连续进行着氢聚变成氦的过程，它的光和热就是由这种不断的核聚变反应产生的。\n\n我们要做的，就是利用聚变反应产生的巨大能量，让它为我们所用。</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>StellarisResearch_NuclearFissionReactor</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>5.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+    <techprintCount>1</techprintCount>
+    <techprintCommonality>0</techprintCommonality>
+    <techprintMarketValue>10000</techprintMarketValue>
+    <heldByFactionCategoryTags>
+      <li>Empire</li>
+    </heldByFactionCategoryTags>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_OrbitalRailgun</defName>
+    <label>轨道炮</label>
+    <description>轨道炮（Rail Gun）， 也被称作电磁感应炮、电磁投射炮或电磁加速炮，是电磁炮最常见的式样，是在有电位差的两条轨道间放置可导电式炮弹，当两轨接入电源时，产生的电磁场将炮弹加速射出的一种高能武器。轨道炮速度快，比普通枪弹的速度快2—3倍。带有巨大动能的弹丸通过直接撞击目标将其摧毁，威力极大。同时极高的飞行速度可以减少炮弹的飞行时间，使炮弹不易受到干扰，保证了炮弹的精度。轨道炮的炮弹体积小，重量轻。炮弹几乎不使用推进剂，减少了装药量，所以炮弹的体积只是传统120毫米口径火炮炮弹的八分之一，重量是其十分之一，这样可显著提高武器系统的携弹量，减少后勤负担。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>StellarisResearch_SafeSuperBattery</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_Sheild</defName>
+    <label>偏射能量盾</label>
+    <description>能量偏射屏障可在过载前化解一定敌方火力，主要缺点是能耗高。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>StellarisResearch_SafeSuperBattery</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>6.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

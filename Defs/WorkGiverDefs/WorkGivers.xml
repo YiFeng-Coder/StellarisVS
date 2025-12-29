@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>StellarisPlanetScannerWorkGiver</defName>
+    <label>在天体扫描仪扫描</label>
+    <giverClass>Stellaris.WorkGiver_OperatePlanetScanner</giverClass>
+    <workType>Research</workType>
+    <priorityInType>50</priorityInType>
+    <verb>扫描</verb>
+    <gerund>扫描</gerund>
+    <scannerDef>StellarisPlanetScanner</scannerDef>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+</Defs>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 轨道炮弹 (Projectile)     -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>StellarisRailgunShell</defName>
+    <label>railgun slug</label>
+    <thingClass>Stellaris.Projectile_Railgun</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <color>(100, 200, 255)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>800</damageAmountBase>
+      <speed>120</speed>
+      <explosionRadius>5.9</explosionRadius>
+      <flyOverhead>false</flyOverhead>
+    </projectile>
+  </ThingDef>
+  <!--炮塔Parent-->
+  <ThingDef ParentName="BuildingBase" Name="StellarisShipCombatTurret" Abstract="True">
+    <thingClass>Stellaris.Building_OrbitalRailgun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawHighlight>true</drawHighlight>
+    <drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretHeavy_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5, 1.5)</drawSize>
+      <drawOffset>(0,0,-0.1)</drawOffset>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(1.5,0.35,1.4)</volume>
+        <offset>(0,0,-0.05)</offset>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>380</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>15000</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretTopDrawSize>2.7</turretTopDrawSize>
+      <turretTopOffset>(0, 0.05)</turretTopOffset>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+    <uiIconScale>0.95</uiIconScale>
+    <comps>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+  </ThingDef>
+  <!-- 轨道炮建筑本体-->
+  <ThingDef ParentName="StellarisShipCombatTurret">
+    <defName>StellarisOrbitalRailgun</defName>
+    <label>轨道炮</label>
+    <description>从轨道发射一枚巨型炮弹，从地图边缘入射，摧毁其路径上的所有目标。</description>
+    <thingClass>Stellaris.Building_OrbitalRailgun</thingClass>
+    <graphicData>
+      <texPath>Building/Combat/StellarisOrbitalRailgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.6,2.6)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <statBases>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <costList>
+      <Steel>1000</Steel>
+      <ComponentSpacer>5</ComponentSpacer>
+      <Uranium>100</Uranium>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompShipPowerPlant</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <designationCategory>Ship</designationCategory>
+    <building>
+      <turretGunDef>StellarisOrbitalRailGunTurret</turretGunDef>
+      <turretBurstCooldownTime>48</turretBurstCooldownTime>
+    </building>
+    <researchPrerequisites>
+      <li>StellarisResearch_OrbitalRailgun</li>
+    </researchPrerequisites>
+    <uiIconPath>Building/Combat/StellarisOrbitalRailGunUIIcon</uiIconPath>
+  </ThingDef>
+  <!-- 轨道炮炮塔-->
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>StellarisOrbitalRailGunTurret</defName>
+    <label>轨道炮</label>
+    <description>一种设计为可安装在炮塔上的自装载大口径火炮。</description>
+    <graphicData>
+      <texPath>Building/Combat/StellarisOrbitalRailGunTurrent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.38</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.9</AccuracyMedium>
+      <AccuracyLong>0.99</AccuracyLong>
+      <RangedWeapon_Cooldown>48</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>40</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>StellarisRailgunShell</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <minRange>0.1</minRange>
+        <range>0.1</range>
+        <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <consumeFuelPerShot>0</consumeFuelPerShot>
+        <forcedMissRadius>0.1</forcedMissRadius>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+  <!-- 护盾生成器 (Shield)       -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ShieldGen</defName>
+    <label>护盾发生器</label>
+    <description>创建一个防护圆顶，可以阻挡来袭的射弹，但允许传出的火力。</description>
+    <thingClass>Stellaris.Building_StellarisShield</thingClass>
+    <graphicData>
+      <texPath>Building/Combat/Shield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3.2,3.2)</drawSize>
+    </graphicData>
+    <size>(3,3)</size>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompShipPowerPlant</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>50</Plasteel>
+    </costList>
+    <designationCategory>Ship</designationCategory>
+    <placeWorkers>
+      <li>PlaceWorker_ShowExplosionRadius</li>
+      <!-- 借用原版显示半径的工具 -->
+    </placeWorkers>
+    <!-- 这个半径主要用于UI显示，实际逻辑在C#类中 -->
+    <specialDisplayRadius>10</specialDisplayRadius>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <drawerType>RealtimeOnly</drawerType>
+    <researchPrerequisites>
+      <li>StellarisResearch_Sheild</li>
+    </researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <designationCategory>Ship</designationCategory>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+  </ThingDef>
+</Defs>

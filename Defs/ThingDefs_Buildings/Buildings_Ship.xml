@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--========================= Doors =============================-->
+  <ThingDef ParentName="DoorBase">
+    <defName>StellarisVacuumBarrier</defName>
+    <label>真空屏障</label>
+    <description>将气体分隔的屏障。可以阻止房间内气体逸散到真空中。</description>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <costStuffCount>25</costStuffCount>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Styleable" />
+      <li Class="Stellaris.CompProperties_ShipPart">
+        <hermetic>false</hermetic>
+        <roof>false</roof>
+      </li>
+    </comps>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>ShipBasics</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <isAirtight>true</isAirtight>
+    </building>
+    <designationCategory>Ship</designationCategory>
+  </ThingDef>
+  <!--========================= Walls =============================-->
+  <ThingDef ParentName="BuildingBase" Name="Wall">
+    <defName>StellarisShipWall</defName>
+    <label>船体</label>
+    <description>气密性极高的墙壁。内部铺设了各种各样的线缆，管道。可以阻止房间内气体逸散到真空中。</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <noRightClickDraftAttack>true</noRightClickDraftAttack>
+    <replaceTags>
+      <li>Wall</li>
+    </replaceTags>
+    <graphicData>
+      <texPath>Building/Linked/ShipBeam_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Building/Linked/ShipBeam_Atlas</uiIconPath>
+    <uiIconPathsStuff>
+      <li>
+        <appearance>Planks</appearance>
+        <iconPath>Things/Building/Linked/WallPlanks_MenuIcon</iconPath>
+      </li>
+      <li>
+        <appearance>Bricks</appearance>
+        <iconPath>Things/Building/Linked/WallBricks_MenuIcon</iconPath>
+      </li>
+    </uiIconPathsStuff>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>135</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <MeditationFocusStrength>0.22</MeditationFocusStrength>
+    </statBases>
+    <costStuffCount>15</costStuffCount>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <useStuffTerrainAffordance>true</useStuffTerrainAffordance>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <!-- Best affordance needed for stone -->
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>Structure</designationCategory>
+    <uiOrder>2000</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <building>
+      <paintable>true</paintable>
+      <isInert>true</isInert>
+      <isWall>true</isWall>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+      <relatedBuildCommands>
+        <li>Door</li>
+        <li>Autodoor</li>
+        <li>OrnateDoor</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">SecurityDoor</li>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">VacBarrier</li>
+        <li>Cooler</li>
+        <li>Vent</li>
+      </relatedBuildCommands>
+      <isAirtight>true</isAirtight>
+    </building>
+    <comps>
+      <li Class="CompProperties_MeditationFocus">
+        <statDef>MeditationFocusStrength</statDef>
+        <focusTypes>
+          <li>Minimal</li>
+        </focusTypes>
+      </li>
+      <li Class="Stellaris.CompProperties_ShipPart">
+        <hermetic>false</hermetic>
+        <roof>false</roof>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTransmitter</compClass>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <damageMultipliers>
+      <li>
+        <damageDef>Bomb</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+      <li>
+        <damageDef>Thump</damageDef>
+        <multiplier>2</multiplier>
+      </li>
+    </damageMultipliers>
+    <designationHotKey>Misc3</designationHotKey>
+    <designationCategory>Ship</designationCategory>
+    <researchPrerequisites>
+      <li>ShipBasics</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>8</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+  <!--========================= 舰桥 =============================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisShipConsole</defName>
+    <label>舰桥</label>
+    <description>舰船的控制中心。需要驾驶员驾驶。能够操控舰船起飞与降落，武器的开火，舰船移动等。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Building/Ship/StellarisShipConsole</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0,0,3,1.8)</rect>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(3,0.5,2)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>2200</WorkToBuild>
+      <Flammability>0.6</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompShipPowerPlant</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Stellaris.CompProperties_ShipControl" />
+      <li Class="Stellaris.CompProperties_ShipPart">
+        <hermetic>false</hermetic>
+        <roof>false</roof>
+      </li>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <designationHotKey>Misc3</designationHotKey>
+    <researchPrerequisites>
+      <li>StellarisResearch_ShipConsole</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <tickerType>Normal</tickerType>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+  <!--========================= 推进器 =============================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisShipEngine</defName>
+    <label>化学燃料推进器</label>
+    <description>给舰船提供充足动力的化学燃料推进器。对燃料的利用效率较低，但至少能够将舰船送上太空。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Building/Ship/StellarisShipEngine</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.2,3.2)</drawSize>
+      <shadowData>
+        <volume>(3.1, 1.0, 3.3)</volume>
+      </shadowData>
+    </graphicData>
+    <researchPrerequisites>
+      <li>StellarisResearch_ShipEngine</li>
+    </researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <WorkToBuild>50000</WorkToBuild>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2,2)</size>
+    <designationCategory>Ship</designationCategory>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompShipPowerPlant</compClass>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="Stellaris.CompProperties_ShipThruster">
+        <thrustPower>100</thrustPower>
+        <fuelCostPerThrustPower>1</fuelCostPerThrustPower>
+      </li>
+      <li Class="Stellaris.CompProperties_ShipPart">
+        <hermetic>false</hermetic>
+        <roof>false</roof>
+      </li>
+    </comps>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <costList>
+      <Steel>260</Steel>
+      <Plasteel>140</Plasteel>
+      <Uranium>70</Uranium>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationHotKey>Misc5</designationHotKey>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <tradeTags>
+      <li>StellarisShip</li>
+    </tradeTags>
+  </ThingDef>
+  <!--========================= 船体甲板 =============================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisShipHullTile</defName>
+    <label>船体甲板</label>
+    <description>铺设在舰船结构上下的甲板，防止气体逸散在真空中的同时为船体提供结构支撑。</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Building/Ship/StellarisShipHullTile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <seeThroughFog>true</seeThroughFog>
+    <uiIconPath>Building/Ship/StellarisShipHullTile</uiIconPath>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <shipPart>true</shipPart>
+      <blueprintGraphicData>
+        <texPath>Building/Ship/StellarisShipHullTile</texPath>
+      </blueprintGraphicData>
+    </building>
+    <coversFloor>false</coversFloor>
+    <altitudeLayer>LowPlant</altitudeLayer>
+    <passability>Standable</passability>
+    <drawStyleCategory>Foundations</drawStyleCategory>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>900</WorkToBuild>
+      <Flammability>0.0</Flammability>
+      <Beauty>1</Beauty>
+    </statBases>
+    <costList>
+      <Steel>3</Steel>
+      <Plasteel>1</Plasteel>
+    </costList>
+    <comps>
+      <li Class="Stellaris.CompProperties_ShipPart">
+        <hermetic>true</hermetic>
+        <roof>true</roof>
+      </li>
+    </comps>
+    <rotatable>false</rotatable>
+    <selectable>false</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc1</designationHotKey>
+    <researchPrerequisites>
+      <li>ShipBasics</li>
+    </researchPrerequisites>
+    <fillPercent>0.0</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+  </ThingDef>
+  <!--========================= 天体扫描仪 =============================-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisPlanetScanner</defName>
+    <label>天体扫描仪</label>
+    <description>能够通过特定手段远距离扫描舰船所处行星或恒星的扫描器。\n可以从扫描数据中分析出天体的各种信息，例如温度，亮度，宜居性，蕴含资源等。</description>
+    <graphicData>
+      <texPath>Building/Ship/StellarisPlanetScanner</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(1.4, 0.4, 1.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Flickable" />
+      <li Class="Stellaris.CompProperties_PlanetScanner">
+        <scanWorkAmount>1000</scanWorkAmount>
+        <baseScanSpeed>1</baseScanSpeed>
+        <scanIntervalTicks>60</scanIntervalTicks>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <fillPercent>0.40</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Ship</designationCategory>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <interactionCellIcon>DiningChair</interactionCellIcon>
+    <interactionCellIconReverse>true</interactionCellIconReverse>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3, 1)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>StellarisResearch_PlanetScanner</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- 太空采矿站基座 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisSpaceMiningPad</defName>
+    <label> 太空采矿站基座 </label>
+    <description>用于建造和发射无人采矿机的基座设施。受发射功率限制，只能在星际空间内飞船上发射。</description>
+    <graphicData>
+      <texPath>Building/Ship/SpaceMiningPad</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4, 4)</drawSize>
+      <shadowData>
+        <volume>(1.4, 0.4, 1.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <fillPercent>0.40</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Ship</designationCategory>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(4, 4)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>StellarisResearch_SpaceMining</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <thingClass>Stellaris.SpaceMiningPad</thingClass>
+  </ThingDef>
+  <!-- 无人采矿机 -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisAutonomousMiner</defName>
+    <label>无人采矿机</label>
+    <description>自动化的太空采矿设备，发射后会自动开采矿物并返回运输仓。</description>
+    <graphicData>
+      <texPath>Building/Ship/AutonomousMiner</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5, 3.5)</drawSize>
+      <shadowData>
+        <volume>(1.4, 0.4, 1.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <fillPercent>0.40</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Ship</designationCategory>
+    <rotatable>false</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(4, 4)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>StellarisResearch_SpaceMining</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <thingClass>Stellaris.AutonomousMiner</thingClass>
+    <placeWorkers>
+      <li>Stellaris.PlaceWorker_AutonomousMiner</li>
+    </placeWorkers>
+  </ThingDef>
+  <!--维生装置-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisLifeSupportDevice</defName>
+    <label>维生装置</label>
+    <description>通过装置内小型生态系统循环而不断释放出氧气，吸收二氧化碳的维生装置。同时也能负责水循环等维持生命的必要循环。\n相较于氧气泵而言更高效。</description>
+    <graphicData>
+      <texPath>Building/Ship/StellarisLifeSupportDevice</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(1.4, 0.4, 1.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <costList>
+      <Steel>200</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>10000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <fillPercent>0.40</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <designationCategory>Ship</designationCategory>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3, 3)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <researchPrerequisites>
+      <li>StellarisResearch_LifeSupport</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_LowPowerUnlessVacuum">
+        <lowPowerConsumptionFactor>0.1</lowPowerConsumptionFactor>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="Stellaris.CompProperties_OxygenAllRoomPusher">
+        <requiresPower>true</requiresPower>
+        <airPerSecondPerHundredCells>1.5</airPerSecondPerHundredCells>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>OxygenPump_Ambient</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
+      </li>
+    </comps>
+    <tickerType>Rare</tickerType>
+  </ThingDef>
+  <!--裂变反应堆-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisNuclearFissionReactor</defName>
+    <label>核裂变反应堆</label>
+    <description>基于核裂变原理的核反应堆。能够产出可观的热量并转化为电力。可以通过调节中子通量率来调节热量产生速率，进而改变发电量。但也会改变燃料仓的消耗速率。</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Building/Ship/NuclearFissionReactor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <shadowData>
+        <volume>(1.93,1,1.69)</volume>
+        <offset>(-0.03,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.9</fillPercent>
+    <pathCost>50</pathCost>
+    <rotatable>false</rotatable>
+    <blockWind>true</blockWind>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(4,4)</size>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+    </building>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompPowerDynamicPlant</compClass>
+        <basePowerConsumption>-10000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+        <soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>10.0</fuelConsumptionRate>
+        <fuelCapacity>1500.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>StellarisResourceUraniumFuelCapsule</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(80,112,180,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>20</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="Stellaris.CompProperties_ReactorSlider" />
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <designationHotKey>Misc4</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>StellarisResearch_NuclearFissionReactor</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+  <!--油桶-->
+  <ThingDef ParentName="StellarisFuelTankBase">
+    <defName>StellarisLargeChemfuelTank</defName>
+    <label>化学燃油存储箱</label>
+    <description>用于存储化学燃料推进器所需要的化学燃料的电控存储箱。</description>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/LargeChemfuelTank/LargeChemfuelTank</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>70</Mass>
+      <Flammability>1</Flammability>
+      <Beauty>-10</Beauty>
+      <WorkToBuild>3000</WorkToBuild>
+    </statBases>
+    <size>(3, 3)</size>
+    <costList>
+      <Steel>200</Steel>
+    </costList>
+    <researchPrerequisites>
+      <li>StandardGravtech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelCapacity>1000</fuelCapacity>
+        <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+        <initialConfigurableTargetFuelLevel>1000</initialConfigurableTargetFuelLevel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelLabel>Chemfuel</fuelLabel>
+        <fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <autoRefuelPercent>1</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+        <canEjectFuel>true</canEjectFuel>
+        <drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>Stellaris.CompShipPowerPlant</compClass>
+        <basePowerConsumption>10</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <uiOrder>2155</uiOrder>
+  </ThingDef>
+  <ThingDef Name="StellarisFuelTankBase" ParentName="GravshipComponentBase" Abstract="True">
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <designationCategory>Ship</designationCategory>
+    <tickerType>Normal</tickerType>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <minifiedDef IsNull="True" />
+    <thingCategories IsNull="True" />
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>0</explosiveRadius>
+        <explosiveExpandPerFuel>0.06</explosiveExpandPerFuel>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>1</preExplosionSpawnChance>
+        <wickTicks>70~150</wickTicks>
+      </li>
+    </comps>
+    <uiOrder>2150</uiOrder>
+  </ThingDef>
+  <!--温度调控器-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisTemperatureStabilizer</defName>
+    <label>温度调控器</label>
+    <description>一种高科技装置，将室内温度稳定在特定目标值。依靠电加热。冷却时通过舰船将能量导向外界。</description>
+    <thingClass>Stellaris.Building_TemperatureStabilizer</thingClass>
+    <graphicData>
+      <texPath>Building/Ship/StellarisTemperatureStabilizer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>40</pathCost>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <Mass>10</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <!-- 电力组件 -->
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>20</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <!-- 温控组件：提供设置温度的 UI -->
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>16</energyPerSecond>
+        <!-- 这个值在上面的自定义类中实际上被重写了，但保留它以防万一 -->
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>StellarisResearch_TemperatureStabilizer</li>
+    </researchPrerequisites>
+    <designationCategory>Ship</designationCategory>
+  </ThingDef>
+  <!--电容-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>StellarisSafeSuperBattery</defName>
+    <label>电容阵列</label>
+    <description>一种采用了先进绝缘技术的高容量电池。它能够储存大量电力，转换效率极高，并且经过特殊处理，即不会发生短路。</description>
+    <thingClass>Building_Battery</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Building/Ship/StellarisBattery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>100</Steel>
+      <ComponentSpacer>20</ComponentSpacer>
+      <Plasteel>200</Plasteel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>30000</storedEnergyMax>
+        <efficiency>0.98</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="Stellaris.CompProperties_SafeBatteryProtector" />
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <researchPrerequisites>
+      <li>StellarisResearch_SafeSuperBattery</li>
+      <!-- 你可以改为自己的研究项目 -->
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

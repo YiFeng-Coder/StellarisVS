@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef ParentName="LavaBase">
+    <defName>StellarisMeltTerrain</defName>
+    <label>高温熔融物</label>
+    <texturePath>Terrain/Surfaces/DeepLava</texturePath>
+    <customShader>ShallowLava</customShader>
+    <customShaderParameters>
+      <_NoiseTex>/Other/Perlin</_NoiseTex>
+      <_MaskTex>/Terrain/Surfaces/DeepLavaMask</_MaskTex>
+      <_LavaBrightness>0.2</_LavaBrightness>
+      <_BrightSpotSpeed>0.02</_BrightSpotSpeed>
+      <_BrightSpotScale>1.5</_BrightSpotScale>
+    </customShaderParameters>
+    <pollutedTexturePath>Terrain/Surfaces/PollutedDeepLava</pollutedTexturePath>
+    <passability>Impassable</passability>
+    <gravshipReplacementTerrain>VolcanicRock</gravshipReplacementTerrain>
+    <affordances>
+      <li>Bridgeable</li>
+    </affordances>
+    <pathCost>300</pathCost>
+  </TerrainDef>
+</Defs>

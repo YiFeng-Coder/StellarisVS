@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef Name="StellarisShipFloorBase" Abstract="True">
+    <layerable>true</layerable>
+    <renderPrecedence>70</renderPrecedence>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Substructure</li>
+    </affordances>
+    <tags>
+      <li>StellarisShip</li>
+      <li>Substructure</li>
+    </tags>
+    <edgeType>Hard</edgeType>
+    <fertility>0</fertility>
+    <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearBurn</pollutionShaderType>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionFloorSmooth</pollutionOverlayTexturePath>
+    <pollutionColor>(1, 1, 1, 0.8)</pollutionColor>
+    <pollutionOverlayScale>(0.75, 0.75)</pollutionOverlayScale>
+    <canEverTerraform>false</canEverTerraform>
+    <preventCraters>true</preventCraters>
+    <isFoundation>true</isFoundation>
+  </TerrainDef>
+  <TerrainDef ParentName="StellarisShipFloorBase">
+    <defName>StellarisShipFakeFloorInsideShip</defName>
+    <label>ship</label>
+    <texturePath>Terrain/Surfaces/TileHull</texturePath>
+    <statBases>
+      <Cleanliness>0.2</Cleanliness>
+      <Beauty>0</Beauty>
+    </statBases>
+  </TerrainDef>
+</Defs>

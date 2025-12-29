@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenarioDef Name="StellarisPlanetTravel" ParentName="ScenarioBase">
+    <defName>StellarisPlanetTravel</defName>
+    <label>StellarisPlanetTravel</label>
+    <description>星际旅行中...</description>
+    <scenario>
+      <summary>星际旅行中...</summary>
+      <surfaceLayer>
+        <def>StellarisLavaLayerFixed</def>
+        <tag>Surface</tag>
+        <layer>StellarisLavaPlanetSurface</layer>
+        <settingsDef>StellarisLavaPlanetLayerSetting</settingsDef>
+        <hide>true</hide>
+        <connections>
+          <Orbit MayRequire="Ludeon.RimWorld.Odyssey">
+            <zoomMode>ZoomOut</zoomMode>
+          </Orbit>
+        </connections>
+      </surfaceLayer>
+      <parts>
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>1</pawnChoiceCount>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

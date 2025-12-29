@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenPartDef>
+    <defName>StellarisLavaLayerFixed</defName>
+    <label>surface layer type</label>
+    <scenPartClass>ScenPart_PlanetLayerFixed</scenPartClass>
+    <category>Fixed</category>
+    <summaryPriority>100</summaryPriority>
+    <canBeRandomlyAdded>false</canBeRandomlyAdded>
+    <canBePlayerAddedRemoved>false</canBePlayerAddedRemoved>
+  </ScenPartDef>
+</Defs>

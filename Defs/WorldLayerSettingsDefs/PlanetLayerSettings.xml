@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--Space-->
+  <PlanetLayerSettingsDef>
+    <defName>StellarisSpaceLayerSetting</defName>
+    <label>星际空间</label>
+    <settings>
+      <radius>20</radius>
+      <subdivisions>10</subdivisions>
+      <extraCameraAltitude>3000</extraCameraAltitude>
+      <backgroundWorldCameraOffset>2000</backgroundWorldCameraOffset>
+      <backgroundWorldCameraParallaxDistancePer100Cells>25</backgroundWorldCameraParallaxDistancePer100Cells>
+      <useSurfaceViewAngle>true</useSurfaceViewAngle>
+    </settings>
+  </PlanetLayerSettingsDef>
+  <!--Planet-->
+  <PlanetLayerSettingsDef>
+    <defName>StellarisLavaPlanetLayerSetting</defName>
+    <label>熔融行星</label>
+    <settings>
+      <radius>100</radius>
+      <subdivisions>5</subdivisions>
+      <origin>(0,0,0)</origin>
+    </settings>
+  </PlanetLayerSettingsDef>
+</Defs>

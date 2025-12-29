@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef Name="StellarisSpaceMapGenerator">
+    <defName>StellarisSpace</defName>
+    <label>space</label>
+    <ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+    <disableCallAid>true</disableCallAid>
+    <renderWorld>true</renderWorld>
+    <disableMapClippers>true</disableMapClippers>
+    <defaultUnderGridTerrain>Space</defaultUnderGridTerrain>
+    <genSteps>
+      <li>Space</li>
+      <li>ScenParts</li>
+      <li>FogSpace</li>
+    </genSteps>
+    <pocketMapProperties>
+      <biome>Orbit</biome>
+      <temperature>-270</temperature>
+      <canLaunchGravship>true</canLaunchGravship>
+    </pocketMapProperties>
+  </MapGeneratorDef>
+</Defs>

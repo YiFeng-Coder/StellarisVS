@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--Space-->
+  <PlanetLayerDef Name="SpaceLayer" Abstract="True">
+    <layerType>Stellaris.SpaceLayer</layerType>
+    <elevationString>3000km</elevationString>
+    <defaultBiome>Space</defaultBiome>
+    <defaultMapWorldObject>Space</defaultMapWorldObject>
+    <alwaysRaycastable>false</alwaysRaycastable>
+    <obstructsExpandingIcons>false</obstructsExpandingIcons>
+    <onlyAllowWhitelistedIncidents>true</onlyAllowWhitelistedIncidents>
+    <onlyAllowWhitelistedGameConditions>true</onlyAllowWhitelistedGameConditions>
+    <onlyAllowWhitelistedArrivals>true</onlyAllowWhitelistedArrivals>
+    <onlyAllowWhitelistedArrivalModes>true</onlyAllowWhitelistedArrivalModes>
+    <viewGizmoTexPath>UI/Commands/ViewOrbit</viewGizmoTexPath>
+    <canFormCaravans>false</canFormCaravans>
+    <isSpace>true</isSpace>
+    <ignoreNoBuildArea>true</ignoreNoBuildArea>
+    <settlementsPer100kTiles>1000~1000</settlementsPer100kTiles>
+    <viewAngleSettlementsFactorCurve>
+      <points>
+        <li>(0, 1)</li>
+        <li>(0.3, 1)</li>
+        <li>(0.5, 0.75)</li>
+        <li>(1, 0.5)</li>
+      </points>
+    </viewAngleSettlementsFactorCurve>
+    <settlementWorldObjectDef>SpaceSettlement</settlementWorldObjectDef>
+    <destroyedSettlementWorldObjectDef>DestroyedSpaceSettlement</destroyedSettlementWorldObjectDef>
+    <raidPointsFactor>0.85</raidPointsFactor>
+    <lineWidthFactor>7.5</lineWidthFactor>
+    <gerundLabel>in</gerundLabel>
+    <worldGenSteps>
+      <li>Tiles</li>
+    </worldGenSteps>
+    <worldDrawLayers>
+      <li>WorldDrawLayer_ClosestTile</li>
+    </worldDrawLayers>
+    <worldTabs>
+      <li>WITab_Orbit</li>
+      <li>WITab_Planet</li>
+    </worldTabs>
+  </PlanetLayerDef>
+  <PlanetLayerDef ParentName="SpaceLayer">
+    <defName>StellarisSpaceLayer</defName>
+    <label>星际空间</label>
+    <viewGizmoTooltip>星际空间</viewGizmoTooltip>
+    <elevationString>3000km</elevationString>
+    <defaultBiome>Orbit</defaultBiome>
+    <rangeDistanceFactor>80</rangeDistanceFactor>
+  </PlanetLayerDef>
+  <!--Planets-->
+  <PlanetLayerDef>
+    <defName>StellarisLavaPlanetSurface</defName>
+    <label>熔融行星</label>
+    <viewGizmoTooltip>观察熔融行星表面位置。</viewGizmoTooltip>
+    <viewGizmoTexPath>UI/Commands/ViewPlanet</viewGizmoTexPath>
+    <layerType>SurfaceLayer</layerType>
+    <tileType>SurfaceTile</tileType>
+    <elevationString>{0}m</elevationString>
+    <gerundLabel>在</gerundLabel>
+    <backgroundBiome>StellarisLavaFieldBackGround</backgroundBiome>
+    <worldGenSteps>
+      <li>StellarisWorldGenStepLavaPlanet</li>
+      <li>Mutators</li>
+      <!--<li>Factions</li>-->
+      <li>Features</li>
+    </worldGenSteps>
+    <worldDrawLayers>
+      <li>WorldDrawLayer_CurrentMapTile</li>
+      <li>WorldDrawLayer_SelectedTile</li>
+      <li>WorldDrawLayer_SettleTile</li>
+      <li>WorldDrawLayer_MouseTile</li>
+      <li>WorldDrawLayer_ClosestTile</li>
+      <li>Stellaris.WorldDrawLayer_LavaPlanetUngeneratedPlanetParts</li>
+      <li>WorldDrawLayer_WorldObjects_Expandable</li>
+      <li>WorldDrawLayer_WorldObjects_NonExpandable</li>
+      <li>WorldDrawLayer_DebugNoise</li>
+      <li>WorldDrawLayer_Landmarks</li>
+      <li>WorldDrawLayer_Glow</li>
+      <li>WorldDrawLayer_Hills</li>
+      <li>WorldDrawLayer_Terrain</li>
+    </worldDrawLayers>
+    <worldTabs>
+      <li>WITab_Terrain</li>
+      <li>WITab_Planet</li>
+    </worldTabs>
+  </PlanetLayerDef>
+</Defs>

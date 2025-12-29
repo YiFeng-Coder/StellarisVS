@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--LavaPlanet-->
+  <BiomeDef>
+    <defName>StellarisLavaPlanetBiome</defName>
+    <label>熔融荒原</label>
+    <description>充满高温熔融物的生命禁区。熔融物中含有丰富的稀有矿物，但取不取得到，可就看你本事了。</description>
+    <workerClass>BiomeWorker_LavaField</workerClass>
+    <settleWarning>熔融荒原温度普遍达到上百甚至上千度。以及不时的地壳运动。\n\n你确定你的飞船冷却系统能够保证殖民者的存活？</settleWarning>
+    <allowFarmingCamps>false</allowFarmingCamps>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <settlementSelectionWeight>0</settlementSelectionWeight>
+    <movementDifficulty>10</movementDifficulty>
+    <texture>Biome/LavaPlanetBiome</texture>
+    <forageability>0</forageability>
+    <geyserCountFactor>0</geyserCountFactor>
+    <maxFishPopulation>0</maxFishPopulation>
+    <soundsAmbient>
+      <li>Ambient_NightInsects_Standard</li>
+    </soundsAmbient>
+    <diseases>
+      <li>
+        <diseaseInc>Disease_OrganDecay</diseaseInc>
+        <commonality>1</commonality>
+      </li>
+    </diseases>
+    <baseWeatherCommonalities>
+      <StellarisNoOxygen>1</StellarisNoOxygen>
+    </baseWeatherCommonalities>
+    <noAmbientWind>true</noAmbientWind>
+    <allowRoads>false</allowRoads>
+    <allowRivers>false</allowRivers>
+    <hasVirtualPlants>false</hasVirtualPlants>
+    <inVacuum>true</inVacuum>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <terrainsByFertility>
+      <li>
+        <terrain>StellarisMeltTerrain</terrain>
+        <min>-999</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
+    <allowFarmingCamps>false</allowFarmingCamps>
+    <isExtremeBiome>true</isExtremeBiome>
+  </BiomeDef>
+</Defs>

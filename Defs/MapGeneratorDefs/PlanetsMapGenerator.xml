@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+  General order:
+  - 10-100:   Underlying grids (Elevation/Fertility/Caves)
+  - 200-300:  Natural terrain gen
+  - 400-500:  Critical large structures (quest locations, settlements, etc.)
+  - 600:      Reserve Gravship area
+  - 700-800:  Non-critical large structures (ruins, etc.) - these must take into account UsedRects
+  - 850:      Player start spot
+  - 900-1200: Non-critical gen (geysers, plants, animals, etc)
+  - 1500:     Fog
+  - 1600+:    Important buildings/features that need to be unfogged
+  - 1700:     Place gravship marker
+  -->
+  <MapGeneratorDef Name="StellarisPlanetMapBase" Abstract="True">
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>MutatorCriticalStructures</li>
+      <li>MutatorNonCriticalStructures</li>
+      <li>FindPlayerStartSpot</li>
+      <li>ScenParts</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>MutatorFinal</li>
+      <li>Animals</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+  <MapGeneratorDef ParentName="StellarisPlanetMapBase" Name="StellarisCommonPlanetGenerator">
+    <defName>StellarisCommonPlanetGenerator</defName>
+  </MapGeneratorDef>
+  <MapGeneratorDef ParentName="StellarisPlanetMapBase" Name="StellarisLavaPlanetGenerator">
+    <defName>StellarisLavaPlanetGenerator</defName>
+  </MapGeneratorDef>
+</Defs>

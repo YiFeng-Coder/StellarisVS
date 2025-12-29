@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<ShipActive>Ship Active</ShipActive>
+<ShipActiveDesc>The ship systems are powered and operational.</ShipActiveDesc>
+<ActivateShip>Activate Ship</ActivateShip>
+<ActivateShipDesc>Power up the ship systems for launch preparation.</ActivateShipDesc>
+<LaunchShip>Launch to Space</LaunchShip>
+<LaunchShipDesc>Begin space travel and transfer to orbital map.</LaunchShipDesc>
+<RecalcShipBounds>Recalculate Ship Bounds</RecalcShipBounds>
+<RecalcShipBoundsDesc>Rescan the area to detect all connected ship components.</RecalcShipBoundsDesc>
+<ShipNeedsPower>Ship requires power to activate.</ShipNeedsPower>
+<ShipStructuralIssues>Ship structure is not fully enclosed.</ShipStructuralIssues>
+<ShipNeedsEngines>Ship requires at least one functional engine.</ShipNeedsEngines>
+<ConfirmLaunch>Are you sure you want to launch to space? All colonists and items within the ship will be transferred.</ConfirmLaunch>
+<ShipLaunchedSuccess>Ship successfully launched to space!</ShipLaunchedSuccess>
+<LaunchFailed>Ship launch failed due to technical issues.</LaunchFailed>
+<EngineStatus>Engine Status</EngineStatus>
+<Operational>Operational</Operational>
+<Disabled>Disabled</Disabled>
+<ThrustPower>Thrust Power</ThrustPower>
+<PlayerShip>Player's Starship</PlayerShip>
+<ViewShip>View Ship</ViewShip>
+<ReturnToPlanet>Return to Planet</ReturnToPlanet>
+<ShipStatus>Ship Status</ShipStatus>
+
+</LanguageData>

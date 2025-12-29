@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RoofDef>
+    <defName>StellarisShipRoof</defName>
+    <label>船舱顶部</label>
+    <isThickRoof>false</isThickRoof>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <soundPunchThrough>PunchThroughRoofMetal</soundPunchThrough>
+    <canCollapse>false</canCollapse>
+    <isNatural>false</isNatural>
+  </RoofDef>
+</Defs>

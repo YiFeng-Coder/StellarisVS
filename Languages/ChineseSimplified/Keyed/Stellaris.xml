@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StellarisLaunchShipLabel>启动舰船</StellarisLaunchShipLabel>
+  <StellarisLaunchShipDesc>将舰船发射到太空</StellarisLaunchShipDesc>
+  <StellarisPowerOff>未接通电源。\n</StellarisPowerOff>
+  <StellarisNoDriver>缺少驾驶员。\n</StellarisNoDriver>
+  <StellarisNoEnoughThrustPower>推力不足，请建造更多推进器。</StellarisNoEnoughThrustPower>
+  <StellarisNoEnoughFuel>燃料不足！ </StellarisNoEnoughFuel>
+  <StellarisLaunchMinerLabel>发射采矿机</StellarisLaunchMinerLabel>
+  <StellarisLaunchMinerDesc>将无人采矿机发射到太空进行自动采矿</StellarisLaunchMinerDesc>
+  <StellarisNoMinerInstalled>采矿机未安装。\n</StellarisNoMinerInstalled>
+  <StellarisMustBeOnShipLaunch>必须在太空内发射。\n</StellarisMustBeOnShipLaunch>
+  <StellarisUnsurveyedPlanet>未调查的天体。\n</StellarisUnsurveyedPlanet>
+  <StellarisMinerPodArrival>采矿运输仓已抵达</StellarisMinerPodArrival>
+  <StellarisGalaxyMapLabel>星系地图</StellarisGalaxyMapLabel>
+  <StellarisGalaxyMapDesc>浏览星系大地图。</StellarisGalaxyMapDesc>
+  <StellarisReactorSliderLabel>调节中子通量</StellarisReactorSliderLabel>
+  <StellarisReactorSliderDesc>调节反应堆的中子通量以改变发电量。\n中子通量调整率和发电量的关系是线性的，但燃料消耗速率与发电量的关系是非线性的，二者数据经拟合处理后得到的拟合函数接近y = x^1.5。\n其中，x代表中子通量调整率，y代表燃料消耗速率。</StellarisReactorSliderDesc>
+  <StellarisReactorCurrentRate>当前中子通量调整率：</StellarisReactorCurrentRate>
+  <StellarisPlanetScanComplete>当前所处天体调查完毕！</StellarisPlanetScanComplete>
+  <StellarisMustPlaceOnSpaceMiningPad>必须放置在太空采矿站基座上。</StellarisMustPlaceOnSpaceMiningPad>
+  <StellarisShipIsNotComplete>舰船不完整，需要至少一个控制器和推进器</StellarisShipIsNotComplete>
+  <StellarisInvalidShipRegion>未找到有效的舰船区域</StellarisInvalidShipRegion>
+  <StellarisInvalidShipRegion>未找到有效的舰船区域</StellarisInvalidShipRegion>
+  <StellarisShipLaunchSuccessfully>舰船成功发射到太空，包含 {0} 个部件</StellarisShipLaunchSuccessfully>
+  <StellarisGalaxyClusterMapTitle>星系地图  左键拖动浏览 右键查看恒星系</StellarisGalaxyClusterMapTitle>
+  <StellarisUnexploredSystem>未探索的恒星系</StellarisUnexploredSystem>
+  <StellarisStar>恒星：{0}</StellarisStar>
+  <StellarisType>类型：{0}</StellarisType>
+  <StellarisPlanetCount>行星数量：{0}</StellarisPlanetCount>
+  <StellarisOpenSystemWindow>打开恒星系视图</StellarisOpenSystemWindow>
+  <StellarisStarInfo>恒星信息、</StellarisStarInfo>
+  <StellarisName>名称：{0}</StellarisName>
+  <StellarisStarMass>质量：{0}个标准恒星质量</StellarisStarMass>
+  <StellarisTemprature>温度：{0}开尔文</StellarisTemprature>
+  <StellarisLuminosity>亮度：{0}太阳光度</StellarisLuminosity>
+  <StellarisOrbitRadius>轨道半径：{0}</StellarisOrbitRadius>
+  <StellarisPlanetMass>质量：{0}个标准行星质量</StellarisPlanetMass>
+  <StellarisHabitable>是否宜居：{0}</StellarisHabitable>
+  <StellarisResource>蕴藏资源：{0}</StellarisResource>
+  <StellarisPilotShip>驾驶舰船</StellarisPilotShip>
+  <StellarisLandShipLabel>着陆到指定地点</StellarisLandShipLabel>
+  <StellarisLandShipDesc>操控舰船着陆到指定地点，由此处入轨着陆消耗燃料相比升空更少。</StellarisLandShipDesc>
+  <StellarisLaunch>发射</StellarisLaunch>
+  <StellarisMoveShipRegion>移动着陆区</StellarisMoveShipRegion>
+  <StellarisPlaceShip>着陆</StellarisPlaceShip>
+  <GeneratingNewPlanet>前往新行星</GeneratingNewPlanet>
+  <StellarisCannotWrapToPlanetPlayerAt>你不能前往你现在所在的星球。</StellarisCannotWrapToPlanetPlayerAt>
+  <StellarisConfirmWrapToNewPlanet>确定前往选定的星球？这将需要你具有行星际航行能力。</StellarisConfirmWrapToNewPlanet>
+  <StellarisCannotLandOnInvalidTile>着陆点无法定居，请选择一个可以定居的着陆点。</StellarisCannotLandOnInvalidTile>
+  <StellarisShieldRadiusLowerLabel>降低护盾范围：</StellarisShieldRadiusLowerLabel>
+  <StellarisShieldRadiusLowerDesc>降低护盾的覆盖范围。</StellarisShieldRadiusLowerDesc>
+  <StellarisShieldRadiusRaiseLabel>提高护盾范围：</StellarisShieldRadiusRaiseLabel>
+  <StellarisShieldRadiusRaiseDesc>提高护盾的覆盖范围。</StellarisShieldRadiusRaiseDesc>
+  <StellarisColddown>冷却：{0}</StellarisColddown>
+  <StellarisChooseAttackTargetLabel>选择攻击目标</StellarisChooseAttackTargetLabel>
+  <StellarisChooseAttackTargetDesc>高速实弹打击。中途撞击建筑即爆炸。</StellarisChooseAttackTargetDesc>
+</LanguageData>
