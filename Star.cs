@@ -5,6 +5,9 @@ namespace Stellaris
 {
     public class Star : IExposable
     {
+        public Star()
+        { 
+        }
         public string name;
         public StarType type;
         public float mass;

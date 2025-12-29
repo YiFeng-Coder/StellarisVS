@@ -192,7 +192,7 @@ namespace Stellaris
         private List<Thing> GenerateMinedResources()
         {
             var resources = new List<Thing>();
-            foreach(UniverseObjectAutonomousMiner miner in universeObjectAutonomousMiners)
+            foreach(UniverseObjectAutonomousMiner miner in ExplorationManager.planetPlayerAt.universeObjects.Where(x => x is UniverseObjectAutonomousMiner))
             {
                 resources.AddRange(miner.planet.resources.ConvertAll<Thing>(x => ThingMaker.MakeThing(x)));
             }

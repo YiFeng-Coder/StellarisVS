@@ -7,6 +7,7 @@ namespace Stellaris
 {
     public class StarSystem : IExposable
     {
+        public StarSystem() { }
         public string name;
         public Vector2 position;
         public Star star;
@@ -35,6 +36,28 @@ namespace Stellaris
                 planets = PlanetGenerator.GeneratePlanets(star);
             }
             
+        }
+        public Planet TryRamdonPlanet()
+        {
+            if (!planets.Empty())
+            {
+                return planets.RandomElement();
+            }
+            Log.Error("StarSystem: " + name + " has no planet.");
+            return null;
+        }
+        public Planet TryRamdonPlanetExceptInitialPlanet()
+        {
+            if (!planets.Empty())
+            {
+                Planet result;
+                if (planets.TryRandomElement(x => x != GalaxyCluster.initialPlanet, out result))
+                {
+                    return result;
+                }
+            }
+            Log.Error("StarSystem: " + name + " has no planet except initial planet.");
+            return null;
         }
     }
 }

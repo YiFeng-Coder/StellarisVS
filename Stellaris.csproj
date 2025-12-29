@@ -104,6 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutonomousMiner.cs" />
+    <Compile Include="Building_OrbitalRailgun .cs" />
+    <Compile Include="Building_StellarisShield.cs" />
     <Compile Include="Building_TemperatureStabilizer.cs" />
     <Compile Include="CellHighlighter.cs" />
     <Compile Include="Command_OpenGalaxyMap.cs" />
@@ -125,6 +127,8 @@
     <Compile Include="ExplorationManager.cs" />
     <Compile Include="GenStep_ArchaeologicalSite.cs" />
     <Compile Include="HarmonyPatch.cs" />
+    <Compile Include="PlanetGenerateUtility.cs" />
+    <Compile Include="PlanetTravel\HistoryTransferUtility.cs" />
     <Compile Include="PlanetTravel\HyperspaceCache.cs" />
     <Compile Include="IUniversable.cs" />
     <Compile Include="JobDriver_Console.cs" />
@@ -134,6 +138,8 @@
     <Compile Include="PlanetTravel\PlanetSwitchService.cs" />
     <Compile Include="PlanetTravel\ShipTransporter.cs" />
     <Compile Include="PlanetTravel\StellarisGlobalState.cs" />
+    <Compile Include="PowerUtility.cs" />
+    <Compile Include="Projectile_Railgun.cs" />
     <Compile Include="ShipMapComp.cs" />
     <Compile Include="ShipRegion.cs" />
     <Compile Include="ShipTakeoffViewer .cs" />
@@ -142,6 +148,8 @@
     <Compile Include="SiteUtility.cs" />
     <Compile Include="SpaceLayer.cs" />
     <Compile Include="SpaceMiningPad.cs" />
+    <Compile Include="StellarisMapGenerator.cs" />
+    <Compile Include="StellarisMaterials.cs" />
     <Compile Include="StellarisMod.cs" />
     <Compile Include="GalaxyCluster.cs" />
     <Compile Include="GalaxyComponent.cs" />
@@ -163,6 +171,8 @@
     <Compile Include="Window_StarSystem.cs" />
     <Compile Include="Window_SystemInfo.cs" />
     <Compile Include="WorkGiver_OperatePlanetScanner.cs" />
+    <Compile Include="WorldDrawLayer_LavaPlanetUngeneratedPlanetParts.cs" />
+    <Compile Include="WorldGenSteps\WorldGenStep_LavaPlanet.cs" />
     <Compile Include="WorldShip.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace Stellaris.PlanetTravel
 {
     public static class PlanetSwitchService
     {
-        [DebugAction("Stellaris Tools", "Wrap To Original Planet", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //[DebugAction("Stellaris Tools", "Wrap To Original Planet", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void DebugWrapToOriginPlanet()
         {
             WarpToKnownPlanet("Origin_Planet", WorldShip.playerShip.Map.mapPawns.AllPawns);
@@ -19,14 +19,15 @@ namespace Stellaris.PlanetTravel
         [DebugAction("Stellaris Tools", "Wrap To New Planet", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void DebugWrapToNewPlanet()
         {
-            WarpToNewPlanet(WorldShip.playerShip.Map.mapPawns.AllPawns);
+            WarpToNewPlanet(WorldShip.playerShip.Map.mapPawns.AllPawns,GalaxyCluster.initialSystem.TryRamdonPlanet());
         }
         /// <summary>
         /// 前往一个全新的未知行星
         /// </summary>
-        public static void WarpToNewPlanet(List<Pawn> travelers)
+        public static void WarpToNewPlanet(List<Pawn> travelers , Planet planet)
         {
             StellarisGlobalState.IsSwitchingPlanets = true;
+            StellarisGlobalState.SwitchingPlanetType = planet.type;
             // 1. 保存当前行星的状态
 
             ShipTransporter.CaptureAndSerializeMap(WorldShip.playerShip.Map);
@@ -49,7 +50,7 @@ namespace Stellaris.PlanetTravel
             
             // 5. 强制生成新世界
             // 警告：这将清除当前游戏内存
-            GenerateNewWorldAndLand();
+            GenerateNewWorldAndLand(planet);
         }
 
         /// <summary>
@@ -82,8 +83,11 @@ namespace Stellaris.PlanetTravel
         {
             GameDataSaveLoader.SaveGame(fileName);
         }
-        private static void GenerateNewWorldAndLand()
+        private static void GenerateNewWorldAndLand(Planet planet)
         {
+            ExplorationManager.planetPlayerAt.universeObjects.Remove(WorldShip.playerShip);
+            ExplorationManager.planetPlayerAt = planet;
+            planet.universeObjects.Add(WorldShip.playerShip);
             // 如果读取到的尺寸太小（说明未正确保存），则强制使用标准大地图尺寸
             if (StellarisGlobalState.SavedMapSize.x < 50 || StellarisGlobalState.SavedMapSize.z < 50)
             {
@@ -93,15 +97,22 @@ namespace Stellaris.PlanetTravel
             // --- 阶段 1：数据备份 ---
 
             // 1. 备份并清理剧本 (解决报错二)
-            // 我们不需要"着陆时的初始物资/宠物"，因为我们是带着飞船来的
-            Scenario savedScenario = Find.Scenario;
-            int count = savedScenario.AllParts.Count();
-            
-            for (int i = 0; i < count; i++)
+            // 我们不需要"着陆时的初始物资/宠物"，因为我们是带着飞船来的 
+            //通过切换剧本实现旅行至指定星球。
+
+            if (GalaxyCluster.initialScenario == null)
             {
-                savedScenario.RemovePart(savedScenario.AllParts.First());
+                GalaxyCluster.initialScenario = Current.Game.Scenario;
             }
-            
+            Scenario savedScenario;
+            if (planet != GalaxyCluster.initialPlanet)
+            {
+                savedScenario = ScenarioLister.AllScenarios().Where(x => x.name == "StellarisPlanetTravel").First();
+            }
+            else
+            {
+                savedScenario = GalaxyCluster.initialScenario;
+            }
             StorytellerDef savedStorytellerDef = Find.Storyteller.def;
             DifficultyDef savedDifficulty = Find.Storyteller.difficultyDef;
             Difficulty savedDifficultySettings = Find.Storyteller.difficulty;
@@ -109,7 +120,7 @@ namespace Stellaris.PlanetTravel
             // 2. 保存关键状态
             StellarisGlobalState.SavedGameAbsTick = Find.TickManager.gameStartAbsTick;
             StellarisGlobalState.SavedMapSize = Find.CurrentMap.Size;
-
+            StellarisGlobalState.SavedGameTicksInt = Find.TickManager.TicksGame;
             // 4. 序列化地图物体
             ShipTransporter.CaptureAndSerializeMap(Find.CurrentMap);
 
@@ -122,16 +133,25 @@ namespace Stellaris.PlanetTravel
                 Current.Game.Scenario = savedScenario;
                 Current.Game.storyteller = new Storyteller(savedStorytellerDef, savedDifficulty);
                 Current.Game.storyteller.difficulty = savedDifficultySettings;
-
+                // 在 new Game() 之后立即调用：
+                if (Current.Game != null && Current.Game.tutor != null)
+                {
+                    // 强制关闭教学模式，这是Mod整合包常见的稳定手段
+                    Prefs.AdaptiveTrainingEnabled = false;
+                }
                 // 恢复时间
-                Current.Game.tickManager.gameStartAbsTick = StellarisGlobalState.SavedGameAbsTick;
 
+                Current.Game.tickManager.gameStartAbsTick = StellarisGlobalState.SavedGameAbsTick;
+                //Current.Game.tickManager.DebugSetTicksGame(StellarisGlobalState.SavedGameTicksInt);
                 // 2. 生成世界
-                Current.Game.World = WorldGenerator.GenerateWorld(0.05f, GenText.RandomSeedString(), OverallRainfall.Normal, OverallTemperature.Normal, OverallPopulation.Normal, LandmarkDensity.Normal);
+                Current.Game.World = WorldGenerator.GenerateWorld(0.3f, planet.name, OverallRainfall.Normal, OverallTemperature.Normal, OverallPopulation.Normal, LandmarkDensity.Normal);
                 Current.Game.World.FinalizeInit(false);
 
+                //Current.Game.tickManager.gameStartAbsTick = StellarisGlobalState.SavedGameAbsTick;
+                //Current.Game.tickManager.DebugSetTicksGame(StellarisGlobalState.SavedGameTicksInt);
                 // 创建地图父对象
                 WorldShip worldShip = ShipUtility.MakeWorldShip(Faction.OfPlayer);
+                Find.WorldObjects.Add(worldShip);
                 /*
                 MapParent newSettlement = (MapParent)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
                 newSettlement.Tile = tile;
@@ -146,7 +166,10 @@ namespace Stellaris.PlanetTravel
                     worldShip.ExtraGenStepDefs,
                     null
                 );
-
+                if (!Find.Maps.Contains(newMap))
+                {
+                    Find.Maps.Add(newMap);
+                }
                 // 5. [优化] 快速清理地形
                 // 批量获取需要销毁的物体，避免一边遍历一边销毁导致性能问题
                 // 只销毁阻挡飞船的特定层级（比如植物、废墟），保留地形本身
@@ -232,7 +255,7 @@ namespace Stellaris.PlanetTravel
                 //FloodFillerFog.DebugRefogMap(newMap);
 
                 Log.Message($"[Stellaris] Warp Jump Complete in {(Find.TickManager.TicksGame - StellarisGlobalState.SavedGameAbsTick)} ticks.");
-
+                StellarisGlobalState.IsSwitchingPlanets = false;
             }, "GeneratingNewPlanet", true, null);
         }
 
@@ -244,8 +267,17 @@ namespace Stellaris.PlanetTravel
             LongEventHandler.QueueLongEvent(() =>
             {
                 // 存档加载完毕后的回调
-                List<Pawn> returningColonists = HyperspaceCache.RetrieveTravelers();
-                WorldShip worldShip = ShipUtility.MakeWorldShip(Faction.OfPlayer);
+                WorldShip worldShip;
+                List<WorldObject> objects = Find.WorldObjects.AllWorldObjectsOnLayer(Find.WorldGrid.FirstLayerOfDef(StellarisDefOf.StellarisSpaceLayer)).Where(x => x is WorldShip && x.Faction.IsPlayer).ToList();
+                if (objects.Any())
+                {
+                    worldShip = (WorldShip)objects.First();
+                    WorldShip.playerShip = worldShip;
+                }
+                else
+                {
+                    worldShip = ShipUtility.MakeWorldShip(Faction.OfPlayer);
+                }
                 Map map = MapGenerator.GenerateMap(
                     StellarisGlobalState.SavedMapSize,
                     worldShip,
@@ -253,6 +285,7 @@ namespace Stellaris.PlanetTravel
                     worldShip.ExtraGenStepDefs,
                     null
                 );
+                List<Pawn> returningColonists = HyperspaceCache.RetrieveTravelers(map);
                 ShipTransporter.DeserializeAndReconstruct(map);
                 // 清理缓存
                 StellarisGlobalState.SavedTravelers.Clear();

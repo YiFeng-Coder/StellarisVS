@@ -58,7 +58,6 @@ namespace Stellaris
                 GenDraw.DrawCircleOutline(center, starRadius, SimpleColor.Yellow);
                 Rect systemRect = new Rect(center- new Vector2(STAR_SIZE/2, STAR_SIZE/2), new Vector2(STAR_SIZE, STAR_SIZE));
                 Widgets.DrawAtlas(systemRect, ContentFinder<Texture2D>.Get("UI/Star/RedDwarf"));
-
                 // 恒星光晕效果
                 GUI.color = new Color(starSystem.star.color.r, starSystem.star.color.g, starSystem.star.color.b, 0.3f);
                 DrawUtility.DrawHollowCircle(center, starRadius * 1.5f, GUI.color);
@@ -97,11 +96,15 @@ namespace Stellaris
 
             // 绘制行星
             Color planetColor = GetPlanetColor(planet.type);
-            float planetSize = Mathf.Clamp(planet.mass * 7f, 10f, 40f);
+            float planetSize = Mathf.Clamp(planet.mass * 10f, 20f, 40f);
             DrawUtility.DrawHollowCircle(planetPos, planetSize / 2f, planetColor);
             Rect planetDrawRect = new Rect(planetPos - new Vector2(planetSize / 2f, planetSize / 2f), new Vector2(planetSize, planetSize));
             Widgets.DrawAtlas(planetDrawRect, ContentFinder<Texture2D>.Get("UI/Planet/Terrestrial"));
             planetDrawRect.position += new Vector2(8f, 8f);
+            if (Widgets.ButtonInvisible(planetDrawRect))
+            {
+                Find.WindowStack.Add(new Dialog_Confirm("StellarisConfirmWrapToNewPlanet".Translate(), delegate { ShipUtility.TryWrapToPlanet(planet); }));
+            }
             DrawUniverseObjectsOnPlanet(planetDrawRect,planet);
             // 行星悬停交互   
             Rect planetRect = new Rect(planetPos.x - planetSize / 2, planetPos.y - planetSize / 2, planetSize, planetSize);

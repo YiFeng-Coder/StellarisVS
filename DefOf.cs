@@ -15,7 +15,6 @@ namespace Stellaris
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(StellarisDefOf));
         }
-
         public static MainButtonDef GalaxyMap;
         public static WorldObjectDef UniverseMapParent_Ship;
         public static WorldObjectDef UniverseObject_AutonomousMiner;
@@ -32,11 +31,18 @@ namespace Stellaris
         public static ThingDef StellarisPlanetScanner;
         public static JobDef StellarisPlanetScanJob;
         public static PlanetLayerSettingsDef StellarisSpaceLayerSetting;
+        public static PlanetLayerSettingsDef StellarisLavaPlanetLayerSetting;
         public static PlanetLayerDef StellarisSpaceLayer;
+        public static PlanetLayerDef StellarisLavaPlanetSurface;
         public static MapGeneratorDef StellarisSpace;
         public static ThingDef StellarisShipConsole;
         public static JobDef  StellarisShipConsoleJob;
         public static SitePartDef StellarisArchaeologicalSite;
         public static GenStepDef StellarisGenStepArchaeologicalSite;
+        public static ScenarioDef StellarisPlanetTravel;
+        public static BiomeDef StellarisLavaPlanetBiome;
+        public static MapGeneratorDef StellarisLavaPlanetGenerator;
+        public static MapGeneratorDef StellarisCommonPlanetGenerator;
+        public static ThingDef StellarisRailgunShell;
     }
 }

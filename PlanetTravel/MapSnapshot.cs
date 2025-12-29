@@ -32,18 +32,20 @@ namespace Stellaris.PlanetTravel
                 this.terrainGrid.Add(map.terrainGrid.TerrainAt(c));
                 this.roofGrid.Add(map.roofGrid.RoofAt(c));
             }
-            
+
             // 2. 抓取物体
             // 我们不能保存所有东西（比如 Mote 粒子效果、光照、迷雾等），需要过滤
-            foreach (Thing t in map.listerThings.AllThings)
+            for (int i = map.listerThings.AllThings.Count - 1; i >= 0; i--)
             {
+                Thing t = map.listerThings.AllThings[i];
                 if (ShouldSaveThing(t))
                 {
                     allThings.Add(t);
                 }
             }
-            foreach (Thing t in map.listerBuildings.allBuildingsColonist)
+            for (int i = map.listerBuildings.allBuildingsColonist.Count - 1; i >= 0; i--)
             {
+                Thing t = map.listerBuildings.allBuildingsColonist[i];
                 if (ShouldSaveThing(t) && !allThings.Contains(t))
                 {
                     allThings.Add(t);

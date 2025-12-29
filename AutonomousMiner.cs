@@ -50,6 +50,7 @@ namespace Stellaris
                 (StellarisDefOf.UniverseObject_AutonomousMiner, parentPad.worldShip.starSystem, parentPad.worldShip.planet);
             universeObject = (UniverseObjectAutonomousMiner)universeObjectTEMP;
             SpaceMiningPad.universeObjectAutonomousMiners.Add(universeObject);
+            ExplorationManager.planetPlayerAt.universeObjects.Add(universeObject);
             // 发射后隐藏建筑图形
             Destroy(DestroyMode.Vanish);
         }

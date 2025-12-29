@@ -22,16 +22,18 @@ namespace Stellaris
         public static Planet initialPlanet;
         // IUniversable 需要确保它的实现类可以被 Deep Save
         public List<IUniversable> universeObjects = new List<IUniversable>();
-        
+        public static Scenario initialScenario;
         public void ExposeData()
         {
             Scribe_Collections.Look(ref starSystems, "starSystems", LookMode.Deep);
             Scribe_Collections.Look(ref exploredSystems, "exploredSystems", LookMode.Value, LookMode.Value);
             Scribe_Values.Look(ref initialSystemPosition, "initialSystemPosition");
-            Scribe_Deep.Look(ref initialPlanet, "initialPlanet",LookMode.Reference);
-            Scribe_Deep.Look(ref initialSystem, "initialSystem", LookMode.Reference);
+            Scribe_Deep.Look(ref initialPlanet, "initialPlanet");
+            Scribe_Deep.Look(ref initialSystem, "initialSystem");
+            Scribe_Deep.Look(ref initialScenario, "initialScenario");
             // 如果 IUniversable 是多态的，需要处理多态保存
             Scribe_Collections.Look(ref universeObjects, "universeObjects", LookMode.Deep);
+
         }
 
         public void GenerateInitialCluster()

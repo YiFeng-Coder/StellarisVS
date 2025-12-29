@@ -48,9 +48,10 @@ namespace Stellaris.Transfer
 
                 foreach (Thing thing in thingsInCell)
                 {
-                    if (!thingsToTransfer.Contains(thing) && !thing.def.IsFilth && !(thing is Building_SteamGeyser))
+                    if (!thingsToTransfer.Contains(thing) && !thing.def.IsFilth && !(thing is Building_SteamGeyser) && !(thing is Mote))
                     {
                         thingsToTransfer.Add(thing);
+                        thing.SetFaction(Faction.OfPlayer);
                     }
                 }
             }

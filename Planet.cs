@@ -6,6 +6,10 @@ namespace Stellaris
 {
     public class Planet : IExposable
     {
+        public Planet()
+        { 
+            
+        }
         public string name;
         public PlanetType type;
         public float orbitRadius;

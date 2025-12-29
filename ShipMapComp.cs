@@ -19,7 +19,7 @@ namespace Stellaris
         public List<CompShipControl> consoles = new List<CompShipControl>();
         public List<CompShipThruster> thrusters = new List<CompShipThruster>();
         public List<CompRefuelable> fuelTanks = new List<CompRefuelable>();
-
+        public List<Building_StellarisShield> shields = new List<Building_StellarisShield>();
         public ShipRegion cachedShipRegion;
         public bool isLanding = false;
         /*
@@ -82,7 +82,7 @@ namespace Stellaris
             base.MapComponentUpdate();
 
             // 每一帧尝试绘制
-            if (isLanding && cachedShipRegion != null)
+            if (isLanding && cachedShipRegion != null && Find.CurrentMap == map)
             {
                 CellHighlighter.DrawHelpers(cachedShipRegion.allCells);
             }

@@ -21,11 +21,11 @@ namespace Stellaris
     }
     public class CompOxygenAllRoomPusher : ThingComp
     {
-        private CompProperties_OxygenPusher Props
+        private CompProperties_OxygenAllRoomPusher Props
         {
             get
             {
-                return (CompProperties_OxygenPusher)this.props;
+                return (CompProperties_OxygenAllRoomPusher)this.props;
             }
         }
 
@@ -42,22 +42,24 @@ namespace Stellaris
             }
         }
 
-        public override void CompTickRare()
+        public override void CompTickRare() //什么指定的转换无效？
         {
-            if (this.Props.requiresPower && this.PowerTrader.Off)
+            if (this.Props.requiresPower && this.PowerTrader.Off) //现在听懂了
             {
                 return;
             }
-            List<Room> allRooms = this.parent.Map.regionGrid.AllRooms.ToList();
-            foreach (Room room in allRooms)
+            foreach (Room room in this.parent.Map.regionGrid.AllRooms)
             {
+                if (room == null || room.Fogged)
+                {
+                    continue;
+                }
                 if (!room.UsesOutdoorTemperature)
                 {
                     float num = 100f / (float)room.CellCount * this.Props.airPerSecondPerHundredCells * 4.1666665f;
                     room.Vacuum = room.Vacuum - num;
                 }
             }
-
         }
 
         // Token: 0x0400ABCE RID: 43982

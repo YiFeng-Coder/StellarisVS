@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 
 namespace Stellaris
@@ -19,11 +20,12 @@ namespace Stellaris
             base.PostSpawnSetup(respawningAfterLoad);
             fuel = parent.GetComp<CompRefuelable>();
             powerTrader = parent.GetComp<CompPowerDynamicPlant>();
+            UpdatePowerAndFuel();
         }
 
         public float SliderRate { get => sliderRate; set { sliderRate = value;UpdatePowerAndFuel(); } }
 
-        private float sliderRate = 1.0f;
+        private float sliderRate = 100.0f;
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (var item in base.CompGetGizmosExtra())
@@ -39,7 +41,8 @@ namespace Stellaris
                     Find.WindowStack.Add(new Dialog_Slider(x => "StellarisReactorCurrentRate".Translate() + x + @"%", 0, 300,
                         x => SliderRate = x, (int)SliderRate, 1f
                         ));
-                }
+                },
+                icon = ContentFinder<Texture2D>.Get("UI/Ship/StellarisReactorSlider"),
             };
         }
 

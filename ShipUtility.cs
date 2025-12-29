@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using Stellaris.PlanetTravel;
 using Stellaris.Transfer;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.Noise;
 using Verse.Sound;
 
 namespace Stellaris
@@ -170,11 +172,13 @@ namespace Stellaris
         public static WorldShip MakeWorldShip(Faction shipFaction, ShipRegion shipRegion = null)
         {
             WorldShip worldShip = (WorldShip)WorldObjectMaker.MakeWorldObject(StellarisDefOf.UniverseMapParent_Ship);
-
+            
             if (Find.WorldGrid.FirstLayerOfDef(StellarisDefOf.StellarisSpaceLayer) == null)
             {
                 Log.Error("StellarisSpaceLayer is null");
             }
+            PlanetTile tile;
+            TileFinder.TryFindRandomPlayerTile(out tile, false, (PlanetTile t) => !Find.WorldObjects.AnyWorldObjectAt(t));
             PlanetTile planetTile = Find.WorldGrid.FirstLayerOfDef(StellarisDefOf.StellarisSpaceLayer)[0].tile;
             planetTile.Tile.PrimaryBiome = BiomeDefOf.Orbit;
             planetTile.Tile.temperature = -270f;
@@ -199,8 +203,8 @@ namespace Stellaris
                     worldShip.starSystem.universeObjects.Add(worldShip);
                     ExplorationManager.planetPlayerAt.universeObjects.Add(worldShip);
                 }
+                
             }
-
             return worldShip;
         }
         public static void LaunchShip(Map map, IntVec3 controllerPos,ShipRegion shipRegion)
@@ -259,13 +263,13 @@ namespace Stellaris
 
         public static void ArriveNewMap(Map sourceMap, WorldShip worldShip, ShipRegion shipRegion, bool isLanding = false, Tile TargetTile = null)
         {
-            // 想要真空环境，必须要把Biome改成真空的，就要改Tile的 他妈的
+            // 想要真空环境，必须要把Biome改成真空的，就要改Tile的 ;-;
             // 成了 加了个Layer 老子真聪明
             if (!isLanding)
             {
                 Map mapGenerated = MapGenerator.GenerateMap(new IntVec3(250, 1, 250), worldShip, StellarisDefOf.StellarisSpace);
                 MapObjectTransfer.TransferObjectsFromArea(shipRegion.allCells, sourceMap, mapGenerated, shipRegion.allCells.First());
-
+                RoofCollapseCellsFinder.RemoveBulkCollapsingRoofs(shipRegion.allCells.ToList(), sourceMap);
                 if (Prefs.PauseOnLoad)
                 {
                     Find.TickManager.DoSingleTick();
@@ -321,13 +325,22 @@ namespace Stellaris
                         intVec = new IntVec3(Mathf.Max(intVec.x, value.x), Mathf.Max(intVec.y, value.y), Mathf.Max(intVec.z, value.z));
                     }
                 }
-                Map targetMap = GetOrGenerateMapUtility.GetOrGenerateMap(TargetTile.tile, intVec, mapParent.def);
+                Map targetMap;
+                if (Current.Game.FindMap(TargetTile.tile) != null)
+                {
+                    targetMap = Current.Game.FindMap(TargetTile.tile);
+                }
+                else
+                {
+                    targetMap = StellarisMapGenerator.GenerateMapOnPlayerPlanet(new IntVec3(250,1,250), mapParent, StellarisDefOf.StellarisCommonPlanetGenerator);
+                }
+                //targetMap = GetOrGenerateMapUtility.GetOrGenerateMap(TargetTile.tile, intVec, mapParent.def);
                 ShipRegion copyRegion = shipRegion.DeepCopy();
                 ShipMapComp shipMapComp = targetMap.GetComponent<ShipMapComp>();
                 shipMapComp.isLanding = true;
                 shipMapComp.cachedShipRegion = copyRegion;
-                shipMapComp.landingAction = delegate { MapObjectTransfer.TransferObjectsFromArea(shipRegion.allCells, sourceMap, targetMap, copyRegion.allCells.First()); };
-                CameraJumper.TryJump(targetMap.spawnedThings.First());
+                shipMapComp.landingAction = delegate { MapObjectTransfer.TransferObjectsFromArea(shipRegion.allCells, sourceMap, targetMap, copyRegion.allCells.First()); worldShip.Destroy(); };
+                CameraJumper.TryJump(targetMap.AllCells.First(),targetMap);
             }
             else
             {
@@ -386,12 +399,12 @@ namespace Stellaris
             {
                 if (!compConsole.HasEnoughFuel(fuelToCost))
                 {
-                    Messages.Message("CannotLaunchNotEnoughFuel".Translate().CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);
+                    Messages.Message("StellarisNoEnoughFuel".Translate().CapitalizeFirst(), MessageTypeDefOf.RejectInput, false);
                     return false;
                 }
-                if (!TileFinder.IsValidTileForNewSettlement(tile, null, true))
+                if (!TileFinder.IsValidTileForNewSettlement(tile, null, true) && Current.Game.FindMap(tile) == null)
                 {
-                    Messages.Message("CannotLandOnInvalidTile".Translate(), MessageTypeDefOf.RejectInput, false);
+                    Messages.Message("StellarisCannotLandOnInvalidTile".Translate(), MessageTypeDefOf.RejectInput, false);
                     return false;
                 }
                 return true;
@@ -400,7 +413,7 @@ namespace Stellaris
             {
                 LongEventHandler.QueueLongEvent(delegate
                 {
-                    Log.Message("Tile Chosen");
+                    //Log.Message("Tile Chosen");
                     ShipRegion shipRegion = CalculateShipRegion(console.Position, console.Map);
                     PlanetTile tile2 = tile;
                     ArriveNewMap(console.Map, WorldShip.playerShip, shipRegion, true, tile.Tile);
@@ -445,6 +458,17 @@ namespace Stellaris
             bool hideFormCaravanGizmo = true;
             string noTileChosenMessage = "MessageNoLandingSiteSelected".Translate();
             tilePicker.StartTargeting_NewTemp(validator, tileChosen, onGuiAction, onUpdateAction, true, noTileChosen, title, showRandomButton, selectTileBehindObject, hideFormCaravanGizmo, true, true, noTileChosenMessage);
+        }
+        public static bool TryWrapToPlanet(Planet planet)
+        {
+            if (planet == ExplorationManager.planetPlayerAt)
+            {
+                Messages.Message("StellarisCannotWrapToPlanetPlayerAt".Translate(),MessageTypeDefOf.NegativeEvent,false);
+                return false;
+            }
+            WorldShip worldShip = WorldShip.playerShip;
+            PlanetSwitchService.WarpToNewPlanet(worldShip.Map.mapPawns.AllPawns,planet);
+            return true;
         }
     }
 }

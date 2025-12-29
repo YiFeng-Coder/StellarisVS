@@ -40,7 +40,11 @@ namespace Stellaris
             {
                 shipMapComp.fuelTanks.Add(parent.GetComp<CompRefuelable>());
             }
-            shipMapComp.shipPowerPlants.Add(this);
+            else if (parent is  Building_StellarisShield)
+            {
+                shipMapComp.shields.Add((Building_StellarisShield)parent);
+            }
+                shipMapComp.shipPowerPlants.Add(this);
         }
         public void Unregister()
         {
@@ -56,7 +60,12 @@ namespace Stellaris
             {
                 shipMapComp.fuelTanks.Remove(parent.GetComp<CompRefuelable>());
             }
+            else if (parent is Building_StellarisShield)
+            {
+                shipMapComp.shields.Remove((Building_StellarisShield)parent);
+            }
             shipMapComp.shipPowerPlants.Remove(this);
         }
+
     }
 }

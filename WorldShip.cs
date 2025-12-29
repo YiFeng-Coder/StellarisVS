@@ -3,6 +3,7 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,11 @@ namespace Stellaris
         {
             shipRegion = ShipUtility.CalculateShipRegion(startPosition, Map);
         }
-
+        public override bool ShouldRemoveMapNow(out bool alsoRemoveWorldObject)
+        {
+            alsoRemoveWorldObject = false;
+            return false;
+        }
         public override void ExposeData()
         {
             base.ExposeData();
@@ -54,7 +59,7 @@ namespace Stellaris
 
                 IntVec3 center = IntVec3.Zero;
                 Scribe_Values.Look(ref center, "shipCenter");
-
+                
                 // 重建ShipRegion
                 shipRegion = new ShipRegion();
                 if (cellList != null)

@@ -10,20 +10,18 @@ namespace Stellaris.PlanetTravel
     {
         // 1. 恒星系数据的全局唯一实例
         public static GalaxyCluster GlobalGalaxyCluster;
-
+        
         // 标记是否正在进行星际穿越（用于判断是加载存档还是生成新星球）
         public static bool IsSwitchingPlanets = false;
         public static bool HasPendingShipTransfer = false;
-
+        public static PlanetType SwitchingPlanetType = PlanetType.Terrestrial;
         // 新增：缓存旧世界的时间
         public static int SavedGameAbsTick = 0;
-
+        public static int SavedGameTicksInt = 0;
         // 新增：缓存活体生物（Pawn）
         public static List<Pawn> SavedTravelers = new List<Pawn>();
         // 新增：保存地图尺寸
         public static IntVec3 SavedMapSize = new IntVec3(250, 1, 250);
-        // 2. 飞船蓝图缓存 (用于保存地图结构)
-        public static ShipSnapshot StoredShipSnapshot;
 
         // 重置方法（用于彻底退出到主菜单时清理）
         public static void Reset()

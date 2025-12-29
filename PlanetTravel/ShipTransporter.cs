@@ -51,7 +51,7 @@ namespace Stellaris.PlanetTravel
         /// </summary>
         public static void DeserializeAndReconstruct(Map newMap , bool isSpaceTravel = true,string elementName = "snapshot")
         {
-            if (!StellarisGlobalState.HasPendingShipTransfer || !File.Exists(BufferFilePath))
+            if (!File.Exists(BufferFilePath))
             {
                 Log.Warning("[Stellaris] No ship data in hyperspace buffer.");
                 return;
@@ -120,7 +120,6 @@ namespace Stellaris.PlanetTravel
                     {
                         //Log.Message("allThings"+thingData.Label);
 
-
                         IntVec3 pos = thingData.Position;
 
                         // [修复核心崩溃] 严格的边界检查
@@ -153,25 +152,38 @@ namespace Stellaris.PlanetTravel
                         {
                             Building building = thingData as Building;
                             //Log.Message("spawn building " + building.Label);
-                            GenSpawn.Spawn(building,pos,map);
+                            GenSpawn.Spawn(building, pos, map);
                         }
-                        else if (thingData.def.category  == ThingCategory.Pawn)
+                        else if (thingData.def.category == ThingCategory.Pawn)
                         {
                             Pawn pawn = thingData as Pawn;
                             //Log.Message("spawn pawn " + pawn.Label);
-                            GenSpawn.Spawn(pawn, pos,map);
+                            GenSpawn.Spawn(pawn, pos, map);
+                        }
+                        else if (thingData is Corpse)
+                        {
+                            Corpse corpse = (Corpse) thingData;
+                            if (corpse.InnerPawn == null)
+                            {
+                                Log.Warning("corpse innerPawn is null: " + corpse.Label);
+                            }
+                            else
+                            {
+                                GenSpawn.Spawn(corpse, pos, map, WipeMode.FullRefund);
+                            }
                         }
                     }
                     catch (System.Exception ex)
                     {
                         // 忽略单个错误
+                        Log.Error(ex.ToString());
                     }
                 }
             }
             //恢复pawn
             if (isSpaceTravel)
             {
-                List<Pawn> pawns = HyperspaceCache.RetrieveTravelers();
+                List<Pawn> pawns = HyperspaceCache.RetrieveTravelers(map);
                 foreach (Pawn pawn in pawns)
                 {
                     if (pawn != null)
@@ -180,6 +192,7 @@ namespace Stellaris.PlanetTravel
                     }
                 }
             }
+            map.powerNetManager.UpdatePowerNetsAndConnections_First();
         }
     }
 }

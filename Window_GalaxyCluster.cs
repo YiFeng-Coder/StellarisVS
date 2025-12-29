@@ -44,13 +44,14 @@ namespace Stellaris
             Text.Font = GameFont.Medium;
             Rect titleRect = new Rect(0f, 0f, inRect.width, 35f);
             Widgets.Label(titleRect, "StellarisGalaxyClusterMapTitle".Translate());
+            /*
             if (Prefs.DevMode)
             {
                 titleRect.position = new Vector2(300f, 0);
                 Widgets.Label(titleRect, scrollPosition.x + " " + scrollPosition.y);
                 titleRect.position = new Vector2(600f, 0);
                 Widgets.Label(titleRect, dragStartPosition.x + " " + dragStartPosition.y);
-            }
+            }*/
             Text.Font = GameFont.Small;
 
             // 主内容区域
