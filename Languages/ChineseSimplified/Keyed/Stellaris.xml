@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <StellarisLaunchShipLabel>启动舰船</StellarisLaunchShipLabel>
   <StellarisLaunchShipDesc>将舰船发射到太空</StellarisLaunchShipDesc>
@@ -20,7 +20,6 @@
   <StellarisPlanetScanComplete>当前所处天体调查完毕！</StellarisPlanetScanComplete>
   <StellarisMustPlaceOnSpaceMiningPad>必须放置在太空采矿站基座上。</StellarisMustPlaceOnSpaceMiningPad>
   <StellarisShipIsNotComplete>舰船不完整，需要至少一个控制器和推进器</StellarisShipIsNotComplete>
-  <StellarisInvalidShipRegion>未找到有效的舰船区域</StellarisInvalidShipRegion>
   <StellarisInvalidShipRegion>未找到有效的舰船区域</StellarisInvalidShipRegion>
   <StellarisShipLaunchSuccessfully>舰船成功发射到太空，包含 {0} 个部件</StellarisShipLaunchSuccessfully>
   <StellarisGalaxyClusterMapTitle>星系地图  左键拖动浏览 右键查看恒星系</StellarisGalaxyClusterMapTitle>
@@ -55,4 +54,61 @@
   <StellarisColddown>冷却：{0}</StellarisColddown>
   <StellarisChooseAttackTargetLabel>选择攻击目标</StellarisChooseAttackTargetLabel>
   <StellarisChooseAttackTargetDesc>高速实弹打击。中途撞击建筑即爆炸。</StellarisChooseAttackTargetDesc>
+
+  <StellarisNoGalaxyCluster>未找到 Stellaris 星系数据，无法进行行星际航行。</StellarisNoGalaxyCluster>
+  <StellarisInvalidTargetPlanet>无效的目标行星。</StellarisInvalidTargetPlanet>
+  <StellarisTravelNotInSpace>必须在轨道中的玩家飞船上才能进行行星际航行。</StellarisTravelNotInSpace>
+  <StellarisNoBridgeConsole>飞船缺少舰桥控制台。</StellarisNoBridgeConsole>
+  <StellarisNoPoweredOperatingBridge>舰桥未通电，或没有驾驶员正在操作。</StellarisNoPoweredOperatingBridge>
+  <StellarisNoThruster>飞船缺少推进器。</StellarisNoThruster>
+  <StellarisNoFuelTank>飞船缺少燃料罐。</StellarisNoFuelTank>
+  <StellarisCrewMustEnterCryptosleep>除舰桥驾驶员外，所有人员都必须进入休眠仓。当前醒着：{0}，允许醒着：{1}。</StellarisCrewMustEnterCryptosleep>
+  <StellarisTravelRangeTooShort>推进器航程不足。目标距离：{0}，最大航程：{1}。</StellarisTravelRangeTooShort>
+  <StellarisShipSnapshotFailed>飞船快照保存失败，已取消航行。</StellarisShipSnapshotFailed>
+  <StellarisUnknownPlanetSlot>找不到该行星对应的世界槽位。</StellarisUnknownPlanetSlot>
+  <StellarisArrivedAtPlanet>飞船已抵达 {0} 的轨道。航行耗时 {1} 年。</StellarisArrivedAtPlanet>
+  <StellarisLoadingPlanetWorld>载入目标行星世界</StellarisLoadingPlanetWorld>
+
+  <Stellaris_FusionReactorShutdownLabel>关闭聚变反应堆</Stellaris_FusionReactorShutdownLabel>
+  <Stellaris_FusionReactorShutdownDesc>执行受控停堆。停堆需要约 {0}，期间反应堆会逐步降低输出；在停堆完成前被打穿仍可能触发聚变约束破裂事故。</Stellaris_FusionReactorShutdownDesc>
+  <Stellaris_FusionReactorStartLabel>启动聚变反应堆</Stellaris_FusionReactorStartLabel>
+  <Stellaris_FusionReactorStartDesc>开始预热聚变反应堆。启动需要约 {0}，输出会随预热进度逐步提升；启动过程中被打穿也可能触发严重事故。</Stellaris_FusionReactorStartDesc>
+  <Stellaris_FusionReactorInspectStatus>反应堆状态：{0}</Stellaris_FusionReactorInspectStatus>
+  <Stellaris_FusionReactorStatusRunning>运行中</Stellaris_FusionReactorStatusRunning>
+  <Stellaris_FusionReactorStatusShutdown>已停堆</Stellaris_FusionReactorStatusShutdown>
+  <Stellaris_FusionReactorStatusNoFuel>缺少氘氚燃料芯</Stellaris_FusionReactorStatusNoFuel>
+  <Stellaris_FusionReactorStatusOffline>离线</Stellaris_FusionReactorStatusOffline>
+  <Stellaris_FusionReactorStatusBreach>约束破裂进行中</Stellaris_FusionReactorStatusBreach>
+  <Stellaris_FusionReactorBreachLetterLabel>聚变反应堆约束破裂</Stellaris_FusionReactorBreachLetterLabel>
+  <Stellaris_FusionReactorBreachLetterText>反应堆已经自动停机，但等离子体腔体和燃料系统仍在连续失效。事故将依次造成主约束爆裂、等离子体喷发、强 EMP、燃料系统殉爆和地面玻璃化。</Stellaris_FusionReactorBreachLetterText>
+  <Stellaris_FusionReactorBreachCriticalDamage>聚变反应堆在运行中遭到严重破坏，磁约束结构正在崩溃。</Stellaris_FusionReactorBreachCriticalDamage>
+  <Stellaris_FusionReactorBreachDestroyed>运行中的聚变反应堆被摧毁，磁约束腔体已经失控。</Stellaris_FusionReactorBreachDestroyed>
+  <Stellaris_FusionReactorBreachStage0>聚变反应堆的磁约束结构正在崩溃。连续破裂即将开始。</Stellaris_FusionReactorBreachStage0>
+  <Stellaris_FusionReactorBreachStage1>主约束腔体爆裂，高温等离子体撕开了反应堆大厅。</Stellaris_FusionReactorBreachStage1>
+  <Stellaris_FusionReactorBreachStage2>残余等离子体沿破裂管线喷发，形成多处次级爆裂。</Stellaris_FusionReactorBreachStage2>
+  <Stellaris_FusionReactorBreachStage3>超导线圈残段释放出强电磁脉冲，附近电子设备成片熄灭。</Stellaris_FusionReactorBreachStage3>
+  <Stellaris_FusionReactorBreachStage4>低温燃料芯连续失压，反应堆基座发生燃料系统殉爆。</Stellaris_FusionReactorBreachStage4>
+  <Stellaris_FusionReactorBreachStage4NoFuel>反应堆燃料系统已经排空，没有发生额外燃料殉爆。</Stellaris_FusionReactorBreachStage4NoFuel>
+  <Stellaris_FusionReactorBreachStage5>事故中心的混凝土和陶瓷被烧成玻璃化地面，活化金属残骸散落在周围。</Stellaris_FusionReactorBreachStage5>
+
+  <Stellaris_FusionReactorStartingLabel>聚变反应堆启动中</Stellaris_FusionReactorStartingLabel>
+  <Stellaris_FusionReactorStartingDesc>反应堆正在预热并建立磁约束，当前进度：{0}。</Stellaris_FusionReactorStartingDesc>
+  <Stellaris_FusionReactorShuttingDownLabel>聚变反应堆停堆中</Stellaris_FusionReactorShuttingDownLabel>
+  <Stellaris_FusionReactorShuttingDownDesc>反应堆正在受控降功率并冷却，当前进度：{0}。</Stellaris_FusionReactorShuttingDownDesc>
+  <Stellaris_FusionReactorTransitionBusy>反应堆正在执行启动或停堆序列，不能瞬时切换状态。</Stellaris_FusionReactorTransitionBusy>
+  <Stellaris_FusionReactorStatusStarting>启动中（{0}）</Stellaris_FusionReactorStatusStarting>
+  <Stellaris_FusionReactorStatusShuttingDown>停堆中（{0}）</Stellaris_FusionReactorStatusShuttingDown>
+  <Stellaris_FusionReactorStartupStarted>聚变反应堆开始启动，预热与磁约束建立需要约 {0}。</Stellaris_FusionReactorStartupStarted>
+  <Stellaris_FusionReactorShutdownStarted>聚变反应堆开始受控停堆，降功率与冷却需要约 {0}。</Stellaris_FusionReactorShutdownStarted>
+  <Stellaris_InitialPlanet>初始行星</Stellaris_InitialPlanet>
+  <Stellaris_ResearchRequiresArchaeologicalBlueprint>需要先解析考古蓝图：{0}。</Stellaris_ResearchRequiresArchaeologicalBlueprint>
+  <Stellaris_ResearchRequiresUnknownArchaeologicalBlueprint>需要先解析对应的考古蓝图。</Stellaris_ResearchRequiresUnknownArchaeologicalBlueprint>
+  <Stellaris_AnalyzeFusionReactorBlueprintLabel>解析聚变反应堆蓝图</Stellaris_AnalyzeFusionReactorBlueprintLabel>
+  <Stellaris_AnalyzeFusionReactorBlueprintDesc>将这份考古蓝图录入殖民地研究数据库，使聚变反应堆研究项目变为可研究。蓝图会被作为核心技术资料消耗。</Stellaris_AnalyzeFusionReactorBlueprintDesc>
+  <Stellaris_FusionResearchAlreadyFinished>聚变反应堆研究已经完成。</Stellaris_FusionResearchAlreadyFinished>
+  <Stellaris_FusionBlueprintAlreadyAnalyzed>聚变反应堆蓝图已经解析过。</Stellaris_FusionBlueprintAlreadyAnalyzed>
+  <Stellaris_FusionResearchManagerMissing>无法访问 Stellaris 研究授权管理器。</Stellaris_FusionResearchManagerMissing>
+  <Stellaris_FusionBlueprintAnalyzedMessage>已解析完整聚变反应堆蓝图。聚变反应堆研究现在可以开始。</Stellaris_FusionBlueprintAnalyzedMessage>
+  <Stellaris_FusionBlueprintInspectableUnlock>可解析：解锁聚变反应堆研究。</Stellaris_FusionBlueprintInspectableUnlock>
+  <StellarisTravelStartFailed>无法开始行星际旅行。请查看日志获取详细信息。</StellarisTravelStartFailed>
 </LanguageData>

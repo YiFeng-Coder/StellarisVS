@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Stellaris_FusionReactorSiteDiscoveredLetterLabel>Anomalous Fusion Signal Detected</Stellaris_FusionReactorSiteDiscoveredLetterLabel>
+  <Stellaris_FusionReactorSiteDiscoveredLetterText>The orbital scanner detected a stable repeating low-frequency magnetic pulse. The source is accompanied by slight tritium leakage and activated-metal radiation. This does not resemble natural geology; it looks like an ancient power facility still running periodic self-checks.</Stellaris_FusionReactorSiteDiscoveredLetterText>
+  <Stellaris_ArchaeologySiteDiscoveredLetterLabel>{0} discovered</Stellaris_ArchaeologySiteDiscoveredLetterLabel>
+  <Stellaris_ArchaeologySiteDiscoveredLetterText>Orbital scanning found {0}. {1}</Stellaris_ArchaeologySiteDiscoveredLetterText>
+  <Stellaris_ArchaeologySiteCompletedLetterLabel>{0} completed</Stellaris_ArchaeologySiteCompletedLetterLabel>
+  <Stellaris_ArchaeologySiteCompletedLetterText>Your colonists completed the archaeology work at {0}. {1}</Stellaris_ArchaeologySiteCompletedLetterText>
+  <Stellaris_ArchaeologySiteScanFound>{0} completed an orbital scan and found an anomalous archaeology site.</Stellaris_ArchaeologySiteScanFound>
+  <Stellaris_ArchaeologyWork>Work on archaeology target</Stellaris_ArchaeologyWork>
+  <Stellaris_ArchaeologyWorkDesc>Assign a colonist to work on this archaeology target.</Stellaris_ArchaeologyWorkDesc>
+  <Stellaris_ArchaeologyTargetCompleted>Archaeology work completed.</Stellaris_ArchaeologyTargetCompleted>
+  <Stellaris_ArchaeologyTargetProgress>Archaeology progress: {0}</Stellaris_ArchaeologyTargetProgress>
+  <Stellaris_ArchaeologyInvalidTarget>Invalid target.</Stellaris_ArchaeologyInvalidTarget>
+  <Stellaris_ArchaeologyAlreadyCompleted>This target has already been completed.</Stellaris_ArchaeologyAlreadyCompleted>
+  <Stellaris_ArchaeologyFinalChoiceAlreadyMade>The final decision for this site has already been made.</Stellaris_ArchaeologyFinalChoiceAlreadyMade>
+  <Stellaris_ArchaeologyMissingFlag>Missing prerequisite archaeology clue or facility authorization: {0}</Stellaris_ArchaeologyMissingFlag>
+  <Stellaris_ArchaeologyNeedCoolant>At least {0} coolant manifolds must be secured.</Stellaris_ArchaeologyNeedCoolant>
+  <Stellaris_ArchaeologySkillTooLow>Requires {0} skill level {1}.</Stellaris_ArchaeologySkillTooLow>
+  <Stellaris_ArchaeologyMissingCost>Missing material: {0} x{1} (map has {2}).</Stellaris_ArchaeologyMissingCost>
+  <Stellaris_ArchaeologyMissingMap>Cannot inspect map materials.</Stellaris_ArchaeologyMissingMap>
+  <Stellaris_ArchaeologyResearcher>researcher</Stellaris_ArchaeologyResearcher>
+  <Stellaris_ArchaeologyWork_BypassSecurity>Hack security terminal</Stellaris_ArchaeologyWork_BypassSecurity>
+  <Stellaris_ArchaeologyWork_BypassSecurityDesc>Shut down some entrance turrets and recover old access codes. Destroying the terminal counts as a forced breach.</Stellaris_ArchaeologyWork_BypassSecurityDesc>
+  <Stellaris_ArchaeologyWork_ReadFinalLog>Analyze final operation log</Stellaris_ArchaeologyWork_ReadFinalLog>
+  <Stellaris_ArchaeologyWork_ReadFinalLogDesc>Read the interrupted operation record in the main control center. The record provides procedure fragments and missing confirmations, not a complete answer. Afterward, the control data core can be recovered.</Stellaris_ArchaeologyWork_ReadFinalLogDesc>
+  <Stellaris_ArchaeologyWork_RecoverControlDataCore>Recover control data core</Stellaris_ArchaeologyWork_RecoverControlDataCore>
+  <Stellaris_ArchaeologyWork_RecoverControlDataCoreDesc>After reading the final operation log, carefully remove the fusion control data core from the main console. The console will be destroyed.</Stellaris_ArchaeologyWork_RecoverControlDataCoreDesc>
+  <Stellaris_ArchaeologyWork_SecureCoolant>Secure coolant manifold</Stellaris_ArchaeologyWork_SecureCoolant>
+  <Stellaris_ArchaeologyWork_SecureCoolantDesc>Verify the vent shaft and residual charge state. Two manifolds must be secured before safe core handling.</Stellaris_ArchaeologyWork_SecureCoolantDesc>
+  <Stellaris_ArchaeologyWork_OpenFuelCanister>Open fuel canister carefully</Stellaris_ArchaeologyWork_OpenFuelCanister>
+  <Stellaris_ArchaeologyWork_OpenFuelCanisterDesc>Recover deuterium-tritium fuel and helium-3. Failure or destruction may cause tritium leakage.</Stellaris_ArchaeologyWork_OpenFuelCanisterDesc>
+  <Stellaris_ArchaeologyWork_ReadShelterLog>Read shelter emergency log</Stellaris_ArchaeologyWork_ReadShelterLog>
+  <Stellaris_ArchaeologyWork_ReadShelterLogDesc>Read the shelter log and recover the chief engineer override sequence.</Stellaris_ArchaeologyWork_ReadShelterLogDesc>
+  <Stellaris_ArchaeologyWork_StabilizeCore>Stabilize core</Stellaris_ArchaeologyWork_StabilizeCore>
+  <Stellaris_ArchaeologyWork_StabilizeCoreDesc>Use the final log, coolant confirmation, and chief engineer override to complete the interrupted shutdown. Requires advanced components.</Stellaris_ArchaeologyWork_StabilizeCoreDesc>
+  <Stellaris_ArchaeologyWork_DismantleCore>Dismantle core</Stellaris_ArchaeologyWork_DismantleCore>
+  <Stellaris_ArchaeologyWork_DismantleCoreDesc>Cut the reactor into salvage. Good material reward, no complete blueprint, small EMP or leakage risk.</Stellaris_ArchaeologyWork_DismantleCoreDesc>
+  <Stellaris_ArchaeologyWork_ForceExtractData>Force extract data</Stellaris_ArchaeologyWork_ForceExtractData>
+  <Stellaris_ArchaeologyWork_ForceExtractDataDesc>Bypass shelter authorization and rip data from the core database. This will wake the security AI.</Stellaris_ArchaeologyWork_ForceExtractDataDesc>
+  <Stellaris_ArchaeologySecurityBypassedMessage>{0} hacked {1}. Some entrance turrets were shut down and old access codes were recovered.</Stellaris_ArchaeologySecurityBypassedMessage>
+  <Stellaris_ArchaeologySecurityTurretsDisabled>{0} entrance turrets shut down.</Stellaris_ArchaeologySecurityTurretsDisabled>
+  <Stellaris_ArchaeologyControlLogMessage>{0} restored the interrupted main-control record from {1}. The console marks coolant, shelter authorization, and ARGOS maintenance as unresolved confirmations.</Stellaris_ArchaeologyControlLogMessage>
+  <Stellaris_ArchaeologyCoolantSecuredMessage>{0} verified one damaged coolant manifold. Verify at least two manifolds to open the core hall safely.</Stellaris_ArchaeologyCoolantSecuredMessage>
+  <Stellaris_ArchaeologyShelterLogMessage>{0} read the shelter emergency log and recovered a chief engineer override sequence.</Stellaris_ArchaeologyShelterLogMessage>
+  <Stellaris_ArchaeologyFuelRecoveredMessage>{0} recovered ancient fusion fuel from {1}.</Stellaris_ArchaeologyFuelRecoveredMessage>
+  <Stellaris_ArchaeologyCoreStabilizedMessage>{0} stabilized {1}. The core completed its final safe shutdown.</Stellaris_ArchaeologyCoreStabilizedMessage>
+  <Stellaris_ArchaeologyCoreDismantledMessage>{0} dismantled {1}. Alloys, an ancient core module, and fuel injectors were recovered.</Stellaris_ArchaeologyCoreDismantledMessage>
+  <Stellaris_ArchaeologyCoreDataExtractedMessage>{0} force-extracted damaged fusion data from {1} and recovered a fusion control data core.</Stellaris_ArchaeologyCoreDataExtractedMessage>
+  <Stellaris_ArchaeologySecurityAwakeLabel>Security AI awakened</Stellaris_ArchaeologySecurityAwakeLabel>
+  <Stellaris_ArchaeologySecurityAwakeText>The ancient security AI has classified the facility as under hostile seizure. Dormant mechanical guards are coming online.</Stellaris_ArchaeologySecurityAwakeText>
+  <Stellaris_ArchaeologyEMPBurst>An old capacitor triggered an EMP burst. Nearby electronics may be disabled.</Stellaris_ArchaeologyEMPBurst>
+  <Stellaris_ArchaeologyTritiumLeak>A fuel container leaked tritium, causing toxic exposure nearby. Extreme-environment gear greatly reduces the risk.</Stellaris_ArchaeologyTritiumLeak>
+  <Stellaris_ArchaeologyHeatRelease>The core area released residual heat and high-pressure arcs, starting localized fires.</Stellaris_ArchaeologyHeatRelease>
+  <Stellaris_FusionReactorEnding_Stabilize>You combine the final operation log, the coolant channel status, and the chief engineer override sequence. The core does not reignite the ancient city; instead, it completes the shutdown sequence that was interrupted a thousand years ago. Old capacitors discharge in order, the magnetic confinement ring goes dark, and the security AI stops classifying you as hostile takeover agents. You leave with a complete fusion blueprint and the last command that still mattered in this dead facility.</Stellaris_FusionReactorEnding_Stabilize>
+  <Stellaris_FusionReactorEnding_Dismantle>The reactor core is cut into transportable metal blocks. It once powered city shields, shelter life support, and orbital lift systems; now it is alloy, scorched coils, fuel injectors, and one still-shielded core module. You gain a rich material haul, but the last intact database fails under the vibration, taking the complete fusion design with it.</Stellaris_FusionReactorEnding_Dismantle>
+  <Stellaris_FusionReactorEnding_ForceExtract>The data extraction succeeds only in part. Then the core security system identifies a hostile takeover, burns the remaining database, and wakes the dormant security network. You leave with a damaged fusion blueprint—and with the site’s last warning routines dragged back into the present.</Stellaris_FusionReactorEnding_ForceExtract>
+
+  <Stellaris_FusionSiteArrivalLabel>Entered the collapsed fusion reactor site</Stellaris_FusionSiteArrivalLabel>
+  <Stellaris_FusionSiteArrivalText>The landing team reaches a collapsed industrial shell. Broken transmission pylons lean over the loading yard, cargo containers and evacuation luggage lie outside the entrance, and a low vibration still comes from below. The only clear fact is that the underground facility is not completely dead.</Stellaris_FusionSiteArrivalText>
+  <Stellaris_ArchaeologyNarrativeLetterLabel>Site record updated</Stellaris_ArchaeologyNarrativeLetterLabel>
+  <Stellaris_FusionSiteSecurityBypassedText>The security terminal does not welcome you. It classifies the intrusion as a post-disaster maintenance team. Several entry turrets power down, and the inner access state drops from red to amber. The recovered access code repeatedly points to one location: the control center, where the final seventeen minutes of the shutdown should still be stored.</Stellaris_FusionSiteSecurityBypassedText>
+  <Stellaris_FusionSiteControlLogText>The main console only restores fragments. Several power requests were forced into the priority queue at the same time, cooling loops downgraded one after another, and the shutdown sequence was interrupted by an external authorization check. The log does not explain the whole accident. Its edge notes list three unresolved confirmations: coolant manifold parameters, shelter-zone chief engineer authorization, and ARGOS maintenance identity.</Stellaris_FusionSiteControlLogText>
+  <Stellaris_FusionSiteCoolantReadyText>Two coolant manifolds are now verified. The cooling system cannot be restored, but you know which lines still carry charge and which vent shafts still retain heat. You can open the core hall safely now—or cut it open by force and release heat, arcs, and old capacitor discharge.</Stellaris_FusionSiteCoolantReadyText>
+  <Stellaris_FusionSiteShelterTruthText>The shelter log supplies the missing truth: the underground vent shaft had been converted into an evacuation passage, and people were still inside. The chief engineer knew. But without immediate plasma venting, the entire city, the shielded shelters, and the orbital lift would have been destroyed. The last record is not a farewell. It is a usable authorization sequence.
+
+The final core interaction now has a true good-ending option: stabilize the core.</Stellaris_FusionSiteShelterTruthText>
+  <Stellaris_FusionSiteCoreSealOpenedText>The core hall seal opens according to the ancient shutdown procedure. Warning lights go dark in sequence, old capacitors drain into grounding lines, and the reactor does not classify you as hostile takeover agents. You can now make the final choice: complete the shutdown, dismantle the core, or risk a forced database extraction.</Stellaris_FusionSiteCoreSealOpenedText>
+  <Stellaris_FusionSiteCoreSealBreachedText>The moment the seal is cut open, hot air and ozone burst from the core hall. You bypassed the cooling procedure, which tells the security AI that the facility is being seized by force. The core can now be handled, but the risk has increased sharply.</Stellaris_FusionSiteCoreSealBreachedText>
+  <Stellaris_FusionSiteCoreBreachLabel>Core hall seal breached</Stellaris_FusionSiteCoreBreachLabel>
+  <Stellaris_FusionSiteCoreBreachText>The core hall seal has been forced open. Residual heat, arcs, and old capacitor discharge release at once, and the security AI begins reassessing every intruder.</Stellaris_FusionSiteCoreBreachText>
+  <Stellaris_ArchaeologyWork_OpenCoreSeal>Open core hall seal</Stellaris_ArchaeologyWork_OpenCoreSeal>
+  <Stellaris_ArchaeologyWork_OpenCoreSealDesc>Use the control log and at least two verified coolant manifolds to open the core hall safely. This unlocks the final reactor choices.</Stellaris_ArchaeologyWork_OpenCoreSealDesc>
+  <Stellaris_ArchaeologyWork_ForceOpenCoreSeal>Cut open core seal</Stellaris_ArchaeologyWork_ForceOpenCoreSeal>
+  <Stellaris_ArchaeologyWork_ForceOpenCoreSealDesc>Ignore full cooling confirmation and cut the core hall open. This reaches the final stage faster, but releases residual heat, EMP discharge, and security countermeasures.</Stellaris_ArchaeologyWork_ForceOpenCoreSealDesc>
+  <Stellaris_ArchaeologyCoreSealOpenedMessage>{0} opened the core hall seal on {1} safely.</Stellaris_ArchaeologyCoreSealOpenedMessage>
+  <Stellaris_ArchaeologyCoreSealBreachedMessage>{0} forced open the core hall seal on {1}.</Stellaris_ArchaeologyCoreSealBreachedMessage>
+  <Stellaris_ArchaeologyCoreSealPathOpened>The core hall isolation wall has opened, revealing a path to the reactor core.</Stellaris_ArchaeologyCoreSealPathOpened>
+  <Stellaris_Flag_ReadFinalOperationLog>the control center final operation log has not been recovered</Stellaris_Flag_ReadFinalOperationLog>
+  <Stellaris_Flag_RecoveredChiefEngineerOverride>the shelter chief engineer override sequence has not been recovered</Stellaris_Flag_RecoveredChiefEngineerOverride>
+  <Stellaris_Flag_SecurityTerminalBypassed>the security terminal has not been handled</Stellaris_Flag_SecurityTerminalBypassed>
+  <Stellaris_Flag_CoolantReady>not enough coolant manifolds have been verified</Stellaris_Flag_CoolantReady>
+  <Stellaris_Flag_ReactorHallAccessGranted>the core hall seal has not been opened</Stellaris_Flag_ReactorHallAccessGranted>
+  <Stellaris_Flag_ReactorHallBreached>the core hall has not been breached</Stellaris_Flag_ReactorHallBreached>
+  <Stellaris_ArchaeologyWork_ReadDispatchOrder>Check dispatch terminal</Stellaris_ArchaeologyWork_ReadDispatchOrder>
+  <Stellaris_ArchaeologyWork_ReadDispatchOrderDesc>Recover partial power dispatch records from the terminal.</Stellaris_ArchaeologyWork_ReadDispatchOrderDesc>
+  <Stellaris_ArchaeologyDispatchOrderMessage>{0} recovered dispatch records from {1}.</Stellaris_ArchaeologyDispatchOrderMessage>
+  <Stellaris_FusionSiteDispatchOrderText>The recovered dispatch records show simultaneous load spikes from shield, elevator, shelter and military feeds. The last manual note only says that backup cooling could not hold for long.</Stellaris_FusionSiteDispatchOrderText>
+  <Stellaris_ArchaeologyWork_ReadPersonalLogs>Recover personal logs</Stellaris_ArchaeologyWork_ReadPersonalLogs>
+  <Stellaris_ArchaeologyWork_ReadPersonalLogsDesc>Recover fragmented personal logs from the living quarters.</Stellaris_ArchaeologyWork_ReadPersonalLogsDesc>
+  <Stellaris_ArchaeologyPersonalLogsMessage>{0} recovered personal logs from {1}.</Stellaris_ArchaeologyPersonalLogsMessage>
+  <Stellaris_FusionSitePersonalLogsText>The recovered fragments mention overtime, evacuation lists, oxygen bottles, knocking on sealed doors and repeated access denied tones.</Stellaris_FusionSitePersonalLogsText>
+  <Stellaris_ArchaeologyWork_ManageCapacitors>Isolate capacitors</Stellaris_ArchaeologyWork_ManageCapacitors>
+  <Stellaris_ArchaeologyWork_ManageCapacitorsDesc>Inspect and isolate the ignition capacitor banks.</Stellaris_ArchaeologyWork_ManageCapacitorsDesc>
+  <Stellaris_ArchaeologyCapacitorsManagedMessage>{0} isolated {1}.</Stellaris_ArchaeologyCapacitorsManagedMessage>
+  <Stellaris_FusionSiteCapacitorsManagedText>Grounding lines are reconnected and the capacitor hall falls to a lower hum.</Stellaris_FusionSiteCapacitorsManagedText>
+  <Stellaris_ArchaeologyWork_ARGOSMaintenance>Set ARGOS to maintenance mode</Stellaris_ArchaeologyWork_ARGOSMaintenance>
+  <Stellaris_ArchaeologyWork_ARGOSMaintenanceDesc>Use the ARGOS node to suppress part of the facility security response.</Stellaris_ArchaeologyWork_ARGOSMaintenanceDesc>
+  <Stellaris_ArchaeologyARGOSMaintenanceMessage>{0} set {1} to maintenance mode.</Stellaris_ArchaeologyARGOSMaintenanceMessage>
+  <Stellaris_FusionSiteARGOSMaintenanceText>The server columns remain online, but the warning cycle changes into maintenance yellow.</Stellaris_FusionSiteARGOSMaintenanceText>
+  <Stellaris_Flag_ReadOverloadOrder>dispatch records not recovered</Stellaris_Flag_ReadOverloadOrder>
+  <Stellaris_Flag_PersonalLogsRecovered>personal logs not recovered</Stellaris_Flag_PersonalLogsRecovered>
+  <Stellaris_Flag_ArgosMaintenanceMode>ARGOS is not in maintenance mode</Stellaris_Flag_ArgosMaintenanceMode>
+  <Stellaris_Flag_CapacitorsManaged>capacitors not isolated</Stellaris_Flag_CapacitorsManaged>
+
+  <Stellaris_ArchaeologySecurityDocksWaking>ARGOS drone docks begin drawing reserve power. Clamp lights turn red one by one; the guards will not appear instantly, but the launch positions are exposed.</Stellaris_ArchaeologySecurityDocksWaking>
+  <Stellaris_ArchaeologySecurityDockLaunch>A dock clamp releases completely, and a security mech starts from the marked position.</Stellaris_ArchaeologySecurityDockLaunch>
+  <Stellaris_ArchaeologyWork_OpenBunkLocker>Open locker</Stellaris_ArchaeologyWork_OpenBunkLocker>
+  <Stellaris_ArchaeologyWork_OpenBunkLockerDesc>Open a station worker's personal locker. It may contain emergency food, medicine, small parts, or saved technical fragments.</Stellaris_ArchaeologyWork_OpenBunkLockerDesc>
+  <Stellaris_ArchaeologyBunkLockerOpenedMessage>{0} opened {1}.</Stellaris_ArchaeologyBunkLockerOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenEmergencyCrate>Open emergency crate</Stellaris_ArchaeologyWork_OpenEmergencyCrate>
+  <Stellaris_ArchaeologyWork_OpenEmergencyCrateDesc>Check an abandoned emergency crate for rations, medicine and spare parts.</Stellaris_ArchaeologyWork_OpenEmergencyCrateDesc>
+  <Stellaris_ArchaeologyEmergencyCrateOpenedMessage>{0} opened {1}.</Stellaris_ArchaeologyEmergencyCrateOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenToolCrate>Search tool crate</Stellaris_ArchaeologyWork_OpenToolCrate>
+  <Stellaris_ArchaeologyWork_OpenToolCrateDesc>Search a repair team tool crate for steel, industrial components or small amounts of plasteel.</Stellaris_ArchaeologyWork_OpenToolCrateDesc>
+  <Stellaris_ArchaeologyToolCrateOpenedMessage>{0} searched {1}.</Stellaris_ArchaeologyToolCrateOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenWeaponLocker>Open weapon locker</Stellaris_ArchaeologyWork_OpenWeaponLocker>
+  <Stellaris_ArchaeologyWork_OpenWeaponLockerDesc>Open a security weapon locker. It may contain old weapons or parts, but may also trip ARGOS residual alarms.</Stellaris_ArchaeologyWork_OpenWeaponLockerDesc>
+  <Stellaris_ArchaeologyWeaponLockerOpenedMessage>{0} opened {1}.</Stellaris_ArchaeologyWeaponLockerOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenMedicalStation>Search medical station</Stellaris_ArchaeologyWork_OpenMedicalStation>
+  <Stellaris_ArchaeologyWork_OpenMedicalStationDesc>Search the field medical station and drug cabinets for unused medicine.</Stellaris_ArchaeologyWork_OpenMedicalStationDesc>
+  <Stellaris_ArchaeologyMedicalStationOpenedMessage>{0} searched {1}.</Stellaris_ArchaeologyMedicalStationOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenFuelRack>Open fuel rack</Stellaris_ArchaeologyWork_OpenFuelRack>
+  <Stellaris_ArchaeologyWork_OpenFuelRackDesc>Release the locks on a fuel rack and recover remaining fusion fuel. Mishandling it may cause a leak.</Stellaris_ArchaeologyWork_OpenFuelRackDesc>
+  <Stellaris_ArchaeologyFuelRackOpenedMessage>{0} opened {1}.</Stellaris_ArchaeologyFuelRackOpenedMessage>
+  <Stellaris_ARGOSBroadcastInitial>ARGOS broadcast: “Identity invalid. Facility under wartime lockdown. Reactor, shelter and evacuation-route protection protocols remain active.”</Stellaris_ARGOSBroadcastInitial>
+  <Stellaris_ARGOSBroadcastDockCountdown>ARGOS broadcast: “Near-zone drone launch sequence entering final verification. Unauthorized personnel must clear the dock.”</Stellaris_ARGOSBroadcastDockCountdown>
+
+
+  <Stellaris_ArchaeologyControlDataCoreRecoveredMessage>{0} recovered the fusion control data core from {1}. The console goes dark, leaving only the exported log copy.</Stellaris_ArchaeologyControlDataCoreRecoveredMessage>
+</LanguageData>

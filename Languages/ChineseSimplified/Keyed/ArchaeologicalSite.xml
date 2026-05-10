@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StellarisViewOrEditTextLabel>查看/编辑信息</StellarisViewOrEditTextLabel>
+  <StellarisViewOrEditTextDesc>查看或者编辑这个信息载体上含有的信息。</StellarisViewOrEditTextDesc>
+  <StellarisTextDataProtocol>物体所含信息</StellarisTextDataProtocol>
+  <Stellaris_ReverseEngineer>逆向工程</Stellaris_ReverseEngineer>
+  <Stellaris_ReverseEngineerDesc>命令殖民者安全拆解此设备并分析其原理，这将销毁建筑并生成一份详细的科技蓝图。</Stellaris_ReverseEngineerDesc>
+  <Stellaris_ReverseEngineerComplete>{0} 成功将 {1} 逆向分析完毕，获得了一份技术蓝图。</Stellaris_ReverseEngineerComplete>
+
+  <Stellaris_ArchaeologySiteDiscoveredLetterLabel>发现考古站点：{0}</Stellaris_ArchaeologySiteDiscoveredLetterLabel>
+  <Stellaris_ArchaeologySiteDiscoveredLetterText>轨道扫描确认了一个有发掘价值的地点：{0}
+
+{1}
+
+该站点已经标记在世界地图上。派遣殖民者进入站点，调查核心遗物或逆向工程关键设备，即可推进考古链。</Stellaris_ArchaeologySiteDiscoveredLetterText>
+  <Stellaris_ArchaeologySiteCompletedLetterLabel>考古站点完成：{0}</Stellaris_ArchaeologySiteCompletedLetterLabel>
+  <Stellaris_ArchaeologySiteCompletedLetterText>殖民者已经完成了 {0} 的关键发掘。
+
+{1}
+
+这个地点的主要价值已经被提取，残余结构仍可按普通遗迹处理。</Stellaris_ArchaeologySiteCompletedLetterText>
+  <Stellaris_ArchaeologySiteScanFound>{0} 完成了轨道扫描，并在当前行星上发现了一个考古站点。</Stellaris_ArchaeologySiteScanFound>
+  <Stellaris_ArchaeologyTargetProgress>考古分析进度：{0}</Stellaris_ArchaeologyTargetProgress>
+  <Stellaris_ArchaeologyTargetCompleted>这个目标已经完成逆向分析。</Stellaris_ArchaeologyTargetCompleted>
+  <Stellaris_ArchaeologyResearcher>研究员</Stellaris_ArchaeologyResearcher>
+</LanguageData>

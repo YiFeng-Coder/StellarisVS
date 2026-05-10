@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 <ShipActive>Ship Active</ShipActive>
 <ShipActiveDesc>The ship systems are powered and operational.</ShipActiveDesc>
@@ -23,4 +23,78 @@
 <ReturnToPlanet>Return to Planet</ReturnToPlanet>
 <ShipStatus>Ship Status</ShipStatus>
 
+
+  <StellarisNoGalaxyCluster>No Stellaris galaxy data was found, so interplanetary travel cannot start.</StellarisNoGalaxyCluster>
+  <StellarisInvalidTargetPlanet>Invalid target planet.</StellarisInvalidTargetPlanet>
+  <StellarisTravelNotInSpace>Interplanetary travel must start from the player ship in orbit.</StellarisTravelNotInSpace>
+  <StellarisNoBridgeConsole>The ship needs a bridge console.</StellarisNoBridgeConsole>
+  <StellarisNoPoweredOperatingBridge>The bridge is unpowered, or no pilot is operating it.</StellarisNoPoweredOperatingBridge>
+  <StellarisNoThruster>The ship needs at least one thruster.</StellarisNoThruster>
+  <StellarisNoFuelTank>The ship needs at least one fuel tank.</StellarisNoFuelTank>
+  <StellarisCrewMustEnterCryptosleep>All crew except the bridge pilot must enter cryptosleep. Awake: {0}; allowed: {1}.</StellarisCrewMustEnterCryptosleep>
+  <StellarisTravelRangeTooShort>Thruster range is too short. Distance: {0}; max range: {1}.</StellarisTravelRangeTooShort>
+  <StellarisShipSnapshotFailed>Failed to save the ship snapshot. Travel cancelled.</StellarisShipSnapshotFailed>
+  <StellarisUnknownPlanetSlot>The requested planet world slot could not be found.</StellarisUnknownPlanetSlot>
+  <StellarisArrivedAtPlanet>The ship has arrived in orbit of {0}. Travel took {1} years.</StellarisArrivedAtPlanet>
+  <StellarisLoadingPlanetWorld>Loading target planet world</StellarisLoadingPlanetWorld>
+
+  <Stellaris_ArchaeologySiteDiscoveredLetterLabel>Archaeological site discovered: {0}</Stellaris_ArchaeologySiteDiscoveredLetterLabel>
+  <Stellaris_ArchaeologySiteDiscoveredLetterText>Orbital scanning has confirmed a valuable archaeological location: {0}
+
+{1}
+
+The site has been marked on the world map. Send colonists to investigate core relics or reverse-engineer key devices to advance the chain.</Stellaris_ArchaeologySiteDiscoveredLetterText>
+  <Stellaris_ArchaeologySiteCompletedLetterLabel>Archaeological site completed: {0}</Stellaris_ArchaeologySiteCompletedLetterLabel>
+  <Stellaris_ArchaeologySiteCompletedLetterText>Your colonists have completed the key excavation at {0}.
+
+{1}
+
+The main value of this site has been extracted; remaining structures can be treated as ordinary ruins.</Stellaris_ArchaeologySiteCompletedLetterText>
+  <Stellaris_ArchaeologySiteScanFound>{0} completed an orbital scan and found an archaeological site on the current planet.</Stellaris_ArchaeologySiteScanFound>
+  <Stellaris_ArchaeologyTargetProgress>Archaeology analysis progress: {0}</Stellaris_ArchaeologyTargetProgress>
+  <Stellaris_ArchaeologyTargetCompleted>This target has already been reverse-engineered.</Stellaris_ArchaeologyTargetCompleted>
+  <Stellaris_ArchaeologyResearcher>researcher</Stellaris_ArchaeologyResearcher>
+
+  <Stellaris_FusionReactorShutdownLabel>Shut down fusion reactor</Stellaris_FusionReactorShutdownLabel>
+  <Stellaris_FusionReactorShutdownDesc>Perform a controlled shutdown. Shutdown takes about {0}; the reactor gradually reduces output, and it can still trigger a containment breach if destroyed before shutdown completes.</Stellaris_FusionReactorShutdownDesc>
+  <Stellaris_FusionReactorStartLabel>Start fusion reactor</Stellaris_FusionReactorStartLabel>
+  <Stellaris_FusionReactorStartDesc>Begin reactor startup. Startup takes about {0}; output rises gradually as the magnetic containment stabilizes, and the reactor can still fail catastrophically if breached during startup.</Stellaris_FusionReactorStartDesc>
+  <Stellaris_FusionReactorInspectStatus>Reactor status: {0}</Stellaris_FusionReactorInspectStatus>
+  <Stellaris_FusionReactorStatusRunning>running</Stellaris_FusionReactorStatusRunning>
+  <Stellaris_FusionReactorStatusShutdown>shut down</Stellaris_FusionReactorStatusShutdown>
+  <Stellaris_FusionReactorStatusNoFuel>out of deuterium-tritium fuel cells</Stellaris_FusionReactorStatusNoFuel>
+  <Stellaris_FusionReactorStatusOffline>offline</Stellaris_FusionReactorStatusOffline>
+  <Stellaris_FusionReactorStatusBreach>containment breach in progress</Stellaris_FusionReactorStatusBreach>
+  <Stellaris_FusionReactorBreachLetterLabel>Fusion reactor containment breach</Stellaris_FusionReactorBreachLetterLabel>
+  <Stellaris_FusionReactorBreachLetterText>The reactor has shut down, but the plasma chamber and fuel system are failing in sequence. Expect a main containment burst, plasma venting, a strong EMP, fuel-system cookoff, and vitrified ground.</Stellaris_FusionReactorBreachLetterText>
+  <Stellaris_FusionReactorBreachCriticalDamage>A running fusion reactor has suffered critical damage. Its magnetic containment is collapsing.</Stellaris_FusionReactorBreachCriticalDamage>
+  <Stellaris_FusionReactorBreachDestroyed>A running fusion reactor has been destroyed. Its containment chamber is out of control.</Stellaris_FusionReactorBreachDestroyed>
+  <Stellaris_FusionReactorBreachStage0>The fusion reactor containment structure is collapsing. Sequential failure is about to begin.</Stellaris_FusionReactorBreachStage0>
+  <Stellaris_FusionReactorBreachStage1>The main containment chamber ruptures, tearing through the reactor hall with superheated plasma.</Stellaris_FusionReactorBreachStage1>
+  <Stellaris_FusionReactorBreachStage2>Residual plasma vents through broken conduits, causing multiple secondary bursts.</Stellaris_FusionReactorBreachStage2>
+  <Stellaris_FusionReactorBreachStage3>Broken superconducting coils discharge a strong EMP, blacking out nearby electronics.</Stellaris_FusionReactorBreachStage3>
+  <Stellaris_FusionReactorBreachStage4>Cryogenic fuel cells depressurize in sequence, causing fuel-system cookoff beneath the reactor base.</Stellaris_FusionReactorBreachStage4>
+  <Stellaris_FusionReactorBreachStage4NoFuel>The reactor fuel system was empty, preventing an additional fuel cookoff.</Stellaris_FusionReactorBreachStage4NoFuel>
+  <Stellaris_FusionReactorBreachStage5>Concrete and ceramics at the accident center vitrify, leaving activated metal debris across the site.</Stellaris_FusionReactorBreachStage5>
+
+  <Stellaris_FusionReactorStartingLabel>Fusion reactor starting</Stellaris_FusionReactorStartingLabel>
+  <Stellaris_FusionReactorStartingDesc>The reactor is warming up and establishing magnetic containment. Current progress: {0}.</Stellaris_FusionReactorStartingDesc>
+  <Stellaris_FusionReactorShuttingDownLabel>Fusion reactor shutting down</Stellaris_FusionReactorShuttingDownLabel>
+  <Stellaris_FusionReactorShuttingDownDesc>The reactor is reducing power and cooling down under control. Current progress: {0}.</Stellaris_FusionReactorShuttingDownDesc>
+  <Stellaris_FusionReactorTransitionBusy>The reactor is already executing a startup or shutdown sequence and cannot switch instantly.</Stellaris_FusionReactorTransitionBusy>
+  <Stellaris_FusionReactorStatusStarting>starting ({0})</Stellaris_FusionReactorStatusStarting>
+  <Stellaris_FusionReactorStatusShuttingDown>shutting down ({0})</Stellaris_FusionReactorStatusShuttingDown>
+  <Stellaris_FusionReactorStartupStarted>Fusion reactor startup has begun. Warmup and magnetic containment setup will take about {0}.</Stellaris_FusionReactorStartupStarted>
+  <Stellaris_FusionReactorShutdownStarted>Fusion reactor controlled shutdown has begun. Power-down and cooldown will take about {0}.</Stellaris_FusionReactorShutdownStarted>
+  <Stellaris_InitialPlanet>Initial Planet</Stellaris_InitialPlanet>
+  <Stellaris_ResearchRequiresArchaeologicalBlueprint>Requires analyzing archaeology blueprint: {0}.</Stellaris_ResearchRequiresArchaeologicalBlueprint>
+  <Stellaris_ResearchRequiresUnknownArchaeologicalBlueprint>Requires analyzing the corresponding archaeology blueprint.</Stellaris_ResearchRequiresUnknownArchaeologicalBlueprint>
+  <Stellaris_AnalyzeFusionReactorBlueprintLabel>Analyze fusion reactor blueprint</Stellaris_AnalyzeFusionReactorBlueprintLabel>
+  <Stellaris_AnalyzeFusionReactorBlueprintDesc>Enter this archaeology blueprint into the colony research database, making the fusion reactor research project available. The blueprint will be consumed as core technical data.</Stellaris_AnalyzeFusionReactorBlueprintDesc>
+  <Stellaris_FusionResearchAlreadyFinished>Fusion reactor research is already finished.</Stellaris_FusionResearchAlreadyFinished>
+  <Stellaris_FusionBlueprintAlreadyAnalyzed>The fusion reactor blueprint has already been analyzed.</Stellaris_FusionBlueprintAlreadyAnalyzed>
+  <Stellaris_FusionResearchManagerMissing>Could not access the Stellaris research unlock manager.</Stellaris_FusionResearchManagerMissing>
+  <Stellaris_FusionBlueprintAnalyzedMessage>Complete fusion reactor blueprint analyzed. Fusion reactor research can now begin.</Stellaris_FusionBlueprintAnalyzedMessage>
+  <Stellaris_FusionBlueprintInspectableUnlock>Can be analyzed: unlocks fusion reactor research.</Stellaris_FusionBlueprintInspectableUnlock>
+  <StellarisTravelStartFailed>Could not start interplanetary travel. Check the log for details.</StellarisTravelStartFailed>
 </LanguageData>

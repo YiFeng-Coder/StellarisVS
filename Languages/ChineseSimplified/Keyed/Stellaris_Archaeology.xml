@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Stellaris_FusionReactorSiteDiscoveredLetterLabel>发现异常聚变信号</Stellaris_FusionReactorSiteDiscoveredLetterLabel>
+  <Stellaris_FusionReactorSiteDiscoveredLetterText>轨道扫描仪检测到一组稳定重复的低频磁场脉冲。信号源附近存在轻微氚泄漏和活化金属辐射。这不像自然地质活动，更像是某种古代能源设施仍在执行周期性自检。</Stellaris_FusionReactorSiteDiscoveredLetterText>
+
+  <Stellaris_ArchaeologySiteDiscoveredLetterLabel>发现{0}</Stellaris_ArchaeologySiteDiscoveredLetterLabel>
+  <Stellaris_ArchaeologySiteDiscoveredLetterText>轨道扫描发现了{0}。{1}</Stellaris_ArchaeologySiteDiscoveredLetterText>
+  <Stellaris_ArchaeologySiteCompletedLetterLabel>{0}考古完成</Stellaris_ArchaeologySiteCompletedLetterLabel>
+  <Stellaris_ArchaeologySiteCompletedLetterText>你们完成了{0}的考古工作。{1}</Stellaris_ArchaeologySiteCompletedLetterText>
+  <Stellaris_ArchaeologySiteScanFound>{0}完成轨道扫描，并发现了一处异常考古站点。</Stellaris_ArchaeologySiteScanFound>
+
+  <Stellaris_ArchaeologyWork>处理考古目标</Stellaris_ArchaeologyWork>
+  <Stellaris_ArchaeologyWorkDesc>指定殖民者处理这个考古目标。</Stellaris_ArchaeologyWorkDesc>
+  <Stellaris_ArchaeologyTargetCompleted>考古处理已完成。</Stellaris_ArchaeologyTargetCompleted>
+  <Stellaris_ArchaeologyTargetProgress>考古处理进度：{0}</Stellaris_ArchaeologyTargetProgress>
+  <Stellaris_ArchaeologyInvalidTarget>目标无效。</Stellaris_ArchaeologyInvalidTarget>
+  <Stellaris_ArchaeologyAlreadyCompleted>这个目标已经处理过。</Stellaris_ArchaeologyAlreadyCompleted>
+  <Stellaris_ArchaeologyFinalChoiceAlreadyMade>这个站点的最终选择已经完成。</Stellaris_ArchaeologyFinalChoiceAlreadyMade>
+  <Stellaris_ArchaeologyMissingFlag>缺少前置考古线索或设施授权：{0}</Stellaris_ArchaeologyMissingFlag>
+  <Stellaris_ArchaeologyNeedCoolant>需要至少确认 {0} 个冷却歧管。</Stellaris_ArchaeologyNeedCoolant>
+  <Stellaris_ArchaeologySkillTooLow>需要 {0} 技能达到 {1} 级。</Stellaris_ArchaeologySkillTooLow>
+  <Stellaris_ArchaeologyMissingCost>缺少材料：{0} × {1}（当前地图有 {2}）。</Stellaris_ArchaeologyMissingCost>
+  <Stellaris_ArchaeologyMissingMap>无法确认当前地图材料。</Stellaris_ArchaeologyMissingMap>
+  <Stellaris_ArchaeologyResearcher>研究员</Stellaris_ArchaeologyResearcher>
+
+  <Stellaris_ArchaeologyWork_BypassSecurity>骇入安保终端</Stellaris_ArchaeologyWork_BypassSecurity>
+  <Stellaris_ArchaeologyWork_BypassSecurityDesc>尝试关闭入口炮塔并获得旧访问码。摧毁终端会被安保 AI 视为强行突破。</Stellaris_ArchaeologyWork_BypassSecurityDesc>
+  <Stellaris_ArchaeologyWork_ReadFinalLog>分析最后运行日志</Stellaris_ArchaeologyWork_ReadFinalLog>
+  <Stellaris_ArchaeologyWork_ReadFinalLogDesc>读取主控制室中断前的运行记录。记录只能提供操作顺序和未完成确认项，不会直接给出完整结论。读取完成后可进一步拆出控制数据核心。</Stellaris_ArchaeologyWork_ReadFinalLogDesc>
+  <Stellaris_ArchaeologyWork_RecoverControlDataCore>拆出控制数据核心</Stellaris_ArchaeologyWork_RecoverControlDataCore>
+  <Stellaris_ArchaeologyWork_RecoverControlDataCoreDesc>在读取最后运行日志后，小心拆出主控台深处的聚变控制数据核心。拆出后主控台将报废。</Stellaris_ArchaeologyWork_RecoverControlDataCoreDesc>
+  <Stellaris_ArchaeologyWork_SecureCoolant>确认冷却歧管</Stellaris_ArchaeologyWork_SecureCoolant>
+  <Stellaris_ArchaeologyWork_SecureCoolantDesc>确认排放井与残余电荷状态。至少处理两个歧管才能安全处理核心。</Stellaris_ArchaeologyWork_SecureCoolantDesc>
+  <Stellaris_ArchaeologyWork_OpenFuelCanister>谨慎开启燃料罐</Stellaris_ArchaeologyWork_OpenFuelCanister>
+  <Stellaris_ArchaeologyWork_OpenFuelCanisterDesc>回收氘氚燃料与氦-3。操作失败或破坏燃料罐可能造成氚泄漏。</Stellaris_ArchaeologyWork_OpenFuelCanisterDesc>
+  <Stellaris_ArchaeologyWork_ReadShelterLog>读取避难区紧急日志</Stellaris_ArchaeologyWork_ReadShelterLog>
+  <Stellaris_ArchaeologyWork_ReadShelterLogDesc>读取地下避难区日志，寻找工程主管的覆盖授权序列。</Stellaris_ArchaeologyWork_ReadShelterLogDesc>
+  <Stellaris_ArchaeologyWork_StabilizeCore>稳定核心</Stellaris_ArchaeologyWork_StabilizeCore>
+  <Stellaris_ArchaeologyWork_StabilizeCoreDesc>使用最后运行日志、冷却确认和工程主管授权序列，完成千年前中断的停堆流程。需要高级零部件。</Stellaris_ArchaeologyWork_StabilizeCoreDesc>
+  <Stellaris_ArchaeologyWork_DismantleCore>拆解核心</Stellaris_ArchaeologyWork_DismantleCore>
+  <Stellaris_ArchaeologyWork_DismantleCoreDesc>切割反应堆核心以回收材料。收益稳定，但会丢失完整聚变蓝图，并有小概率 EMP 或泄漏事故。</Stellaris_ArchaeologyWork_DismantleCoreDesc>
+  <Stellaris_ArchaeologyWork_ForceExtractData>强行提取数据</Stellaris_ArchaeologyWork_ForceExtractData>
+  <Stellaris_ArchaeologyWork_ForceExtractDataDesc>绕过避难区授权，直接抽取核心数据库。会惊醒安保 AI，并可能烧毁剩余数据。</Stellaris_ArchaeologyWork_ForceExtractDataDesc>
+
+  <Stellaris_ArchaeologySecurityBypassedMessage>{0}骇入了{1}，部分入口炮塔已关闭，旧访问码已恢复。</Stellaris_ArchaeologySecurityBypassedMessage>
+  <Stellaris_ArchaeologySecurityTurretsDisabled>已关闭 {0} 座入口炮塔。</Stellaris_ArchaeologySecurityTurretsDisabled>
+  <Stellaris_ArchaeologyControlLogMessage>{0}恢复了{1}中断前的主控记录。主控台边缘标出了冷却、避难授权和安保机房三个未完成确认项。日志读取完成后，可以进一步拆出控制数据核心。</Stellaris_ArchaeologyControlLogMessage>
+  <Stellaris_ArchaeologyCoolantSecuredMessage>{0}确认了一个损坏冷却歧管。至少确认两个歧管后，才能安全解除核心大厅密封。</Stellaris_ArchaeologyCoolantSecuredMessage>
+  <Stellaris_ArchaeologyShelterLogMessage>{0}读取了避难区紧急日志，并恢复了一段工程主管授权序列。</Stellaris_ArchaeologyShelterLogMessage>
+  <Stellaris_ArchaeologyFuelRecoveredMessage>{0}从{1}中回收了古代聚变燃料。</Stellaris_ArchaeologyFuelRecoveredMessage>
+  <Stellaris_ArchaeologyCoreStabilizedMessage>{0}稳定了{1}，核心完成了最后一次安全停堆。</Stellaris_ArchaeologyCoreStabilizedMessage>
+  <Stellaris_ArchaeologyCoreDismantledMessage>{0}拆解了{1}，大量合金、古代核心模块和燃料注入器被回收。</Stellaris_ArchaeologyCoreDismantledMessage>
+  <Stellaris_ArchaeologyCoreDataExtractedMessage>{0}从{1}中强行提取了残缺聚变数据，并拆出了一个聚变控制数据核心。</Stellaris_ArchaeologyCoreDataExtractedMessage>
+
+  <Stellaris_ArchaeologySecurityAwakeLabel>安保 AI 苏醒</Stellaris_ArchaeologySecurityAwakeLabel>
+  <Stellaris_ArchaeologySecurityAwakeText>广播扬声器突然接入断续电流声：“身份无效。战时封锁仍在执行。所有未登记人员立即离开反应堆维护区。” 远处的无人机停泊槽开始依次供电，机械锁扣还没有完全释放。</Stellaris_ArchaeologySecurityAwakeText>
+  <Stellaris_ArchaeologyEMPBurst>旧电容发生 EMP 爆发，附近电子设备可能被暂时瘫痪。</Stellaris_ArchaeologyEMPBurst>
+  <Stellaris_ArchaeologyTritiumLeak>燃料容器发生氚泄漏，附近人员遭受毒性暴露。极端环境防护装备能显著降低风险。</Stellaris_ArchaeologyTritiumLeak>
+  <Stellaris_ArchaeologyHeatRelease>核心区释放残余热量与高压电弧，引发局部火灾。</Stellaris_ArchaeologyHeatRelease>
+
+  <Stellaris_FusionReactorEnding_Stabilize>你们将最后运行日志、冷却通道状态和工程主管授权序列拼合到一起。核心没有重新点亮城市，而是按照千年前未完成的流程完成了最后一次安全停堆。旧电容逐级释放，磁约束环暗了下去，安保 AI 也停止把你们识别为夺取者。你们得到的是完整聚变蓝图和一把授权钥，也是这座城市最后一个仍然有意义的命令。</Stellaris_FusionReactorEnding_Stabilize>
+  <Stellaris_FusionReactorEnding_Dismantle>反应堆核心被切割成可运输的金属块。它曾经为城市护盾、避难区生命维持和轨道升降系统供能，如今只剩下合金、烧蚀线圈、燃料注入器和一个仍能封存的核心模块。你们获得了丰厚材料，但随着最后一组数据库在拆解震动中失效，完整聚变设计永远丢失了。</Stellaris_FusionReactorEnding_Dismantle>
+  <Stellaris_FusionReactorEnding_ForceExtract>数据提取成功了一部分。随后，核心安全系统判定设施遭到敌对夺取，主动烧毁剩余数据库并唤醒沉睡的安保系统。你们带走了残缺的聚变蓝图，也把这个遗址最后的警戒程序重新拖回了现实。</Stellaris_FusionReactorEnding_ForceExtract>
+
+  <Stellaris_FusionSiteArrivalLabel>进入坍塌的聚变反应堆遗址</Stellaris_FusionSiteArrivalLabel>
+  <Stellaris_FusionSiteArrivalText>登陆队抵达地表废墟。半塌的输电塔倒向装卸平台，物流箱和撤离行李散在入口外侧。地下设施深处传来低频震动，南侧检查站仍有断续门禁灯。现在能确认的只有一件事：这不是普通废墟，地下还有电力系统在工作。</Stellaris_FusionSiteArrivalText>
+  <Stellaris_ArchaeologyNarrativeLetterLabel>遗址记录更新</Stellaris_ArchaeologyNarrativeLetterLabel>
+  <Stellaris_FusionSiteSecurityBypassedText>监控办公室里的安保终端接受了临时维护身份。外层门禁从红色锁定变成黄色待命，远处几处火力点停止转动。广播仍在重复：“维护身份仅限外层。核心层、主控室与机房仍需二级确认。”</Stellaris_FusionSiteSecurityBypassedText>
+  <Stellaris_FusionSiteControlLogText>主控台保存的记录断断续续：同一时段有多组供能请求被强行排进优先队列，冷却回路连续降级，停堆流程在最后阶段被外部权限打断。记录没有完整说明事故经过，只在屏幕边缘留下三条未完成确认：冷却歧管参数、避难区工程主管授权、ARGOS 机房维护身份。</Stellaris_FusionSiteControlLogText>
+  <Stellaris_FusionSiteCoolantReadyText>被确认的冷却歧管没有恢复运转，但你们已经标出了带电管线、堵塞排放井和仍有余热的阀门段。核心大厅的密封流程现在有了足够的现场参数。</Stellaris_FusionSiteCoolantReadyText>
+  <Stellaris_FusionSiteShelterTruthText>避难舱终端只恢复出几段轮班记录、氧气分配表和一串工程主管授权。最后的时间戳停在备用灯熄灭前。</Stellaris_FusionSiteShelterTruthText>
+  <Stellaris_FusionSiteCoreSealOpenedText>核心大厅密封门缓慢抬起。通道两侧的红灯逐级熄灭，热雾从门缝里散开，前方能看到环形线圈和中央核心腔的微光。</Stellaris_FusionSiteCoreSealOpenedText>
+  <Stellaris_FusionSiteCoreSealBreachedText>密封门被切开后，热风和臭氧味从核心大厅涌出。几盏沉睡的警示灯重新亮起，附近的监控节点开始转向。</Stellaris_FusionSiteCoreSealBreachedText>
+  <Stellaris_FusionSiteCoreBreachLabel>核心大厅强行破封</Stellaris_FusionSiteCoreBreachLabel>
+  <Stellaris_FusionSiteCoreBreachText>核心大厅密封被暴力破开。残余热量、电弧和旧电容同时释放，安保 AI 开始重新评估所有入侵者。</Stellaris_FusionSiteCoreBreachText>
+  <Stellaris_ArchaeologyWork_OpenCoreSeal>解除核心大厅密封</Stellaris_ArchaeologyWork_OpenCoreSeal>
+  <Stellaris_ArchaeologyWork_OpenCoreSealDesc>使用控制中心日志和至少两个冷却歧管的确认结果，按停堆流程安全开启核心大厅。开启后才能执行最终选择。</Stellaris_ArchaeologyWork_OpenCoreSealDesc>
+  <Stellaris_ArchaeologyWork_ForceOpenCoreSeal>强行切开核心密封</Stellaris_ArchaeologyWork_ForceOpenCoreSeal>
+  <Stellaris_ArchaeologyWork_ForceOpenCoreSealDesc>不等待完整冷却确认，直接切开核心大厅密封。可以更快进入最终阶段，但会释放残余热量、EMP 和安保反制。</Stellaris_ArchaeologyWork_ForceOpenCoreSealDesc>
+  <Stellaris_ArchaeologyCoreSealOpenedMessage>{0}安全解除了{1}的核心大厅密封。</Stellaris_ArchaeologyCoreSealOpenedMessage>
+  <Stellaris_ArchaeologyCoreSealBreachedMessage>{0}强行切开了{1}的核心大厅密封。</Stellaris_ArchaeologyCoreSealBreachedMessage>
+  <Stellaris_ArchaeologyCoreSealPathOpened>核心大厅隔离墙已经打开，通往反应堆核心的路径出现了。</Stellaris_ArchaeologyCoreSealPathOpened>
+  <Stellaris_Flag_ReadFinalOperationLog>控制中心最后运行日志未恢复</Stellaris_Flag_ReadFinalOperationLog>
+  <Stellaris_Flag_RecoveredChiefEngineerOverride>避难区工程主管授权序列未恢复</Stellaris_Flag_RecoveredChiefEngineerOverride>
+  <Stellaris_Flag_SecurityTerminalBypassed>安保终端尚未处理</Stellaris_Flag_SecurityTerminalBypassed>
+  <Stellaris_Flag_CoolantReady>冷却歧管确认不足</Stellaris_Flag_CoolantReady>
+  <Stellaris_Flag_ReactorHallAccessGranted>核心大厅密封尚未解除</Stellaris_Flag_ReactorHallAccessGranted>
+  <Stellaris_Flag_ReactorHallBreached>核心大厅尚未破封</Stellaris_Flag_ReactorHallBreached>
+  <Stellaris_ArchaeologyWork_ReadDispatchOrder>检查调度终端</Stellaris_ArchaeologyWork_ReadDispatchOrder>
+  <Stellaris_ArchaeologyWork_ReadDispatchOrderDesc>整理调度终端里残留的供能记录。它不会直接给出答案，但能补上事故前的负载变化。</Stellaris_ArchaeologyWork_ReadDispatchOrderDesc>
+  <Stellaris_ArchaeologyDispatchOrderMessage>{0}整理了{1}中的调度记录。</Stellaris_ArchaeologyDispatchOrderMessage>
+  <Stellaris_FusionSiteDispatchOrderText>调度记录里反复出现几个同一时段的负载尖峰：护盾、升降系统、避难区和军用接口同时请求供电。最后一组记录被手工标红，旁边只有一行简短备注：备用冷却无法长期承受。记录没有说明后来谁下达了封锁命令，但它把下一步指向了两个地方：生活区的人员记录，以及冷却泵站的抢修现场。</Stellaris_FusionSiteDispatchOrderText>
+  <Stellaris_ArchaeologyWork_ReadPersonalLogs>整理个人日志</Stellaris_ArchaeologyWork_ReadPersonalLogs>
+  <Stellaris_ArchaeologyWork_ReadPersonalLogsDesc>从生活区残留终端中恢复几段私人记录。它们只保留了片段，但能补上人员如何被困在这里。</Stellaris_ArchaeologyWork_ReadPersonalLogsDesc>
+  <Stellaris_ArchaeologyPersonalLogsMessage>{0}整理了{1}里的个人日志。</Stellaris_ArchaeologyPersonalLogsMessage>
+  <Stellaris_FusionSitePersonalLogsText>日志片段很短：有人抱怨第三轮加班，有人询问家属撤离名单，有人记录氧气瓶数量。最后几条没有标题，只剩下轮流值守、敲门声和门禁拒绝提示。生活区尸体的死亡日期落在同一个事故年份，只是有人在封锁早期死于交火，有人在最后几天死于缺氧和饥饿。</Stellaris_FusionSitePersonalLogsText>
+  <Stellaris_ArchaeologyWork_ManageCapacitors>处理点火电容</Stellaris_ArchaeologyWork_ManageCapacitors>
+  <Stellaris_ArchaeologyWork_ManageCapacitorsDesc>检查并隔离点火电容阵列，减少核心处理时的 EMP 和电弧风险。</Stellaris_ArchaeologyWork_ManageCapacitorsDesc>
+  <Stellaris_ArchaeologyCapacitorsManagedMessage>{0}完成了{1}的电容隔离。</Stellaris_ArchaeologyCapacitorsManagedMessage>
+  <Stellaris_FusionSiteCapacitorsManagedText>几根烧黑的接地线重新接上，电容大厅的嗡鸣声低了下来。仍有个别柱体闪烁，但主储能回路已经不再直连核心点火接口。</Stellaris_FusionSiteCapacitorsManagedText>
+  <Stellaris_ArchaeologyWork_ARGOSMaintenance>切换安保维护模式</Stellaris_ArchaeologyWork_ARGOSMaintenance>
+  <Stellaris_ArchaeologyWork_ARGOSMaintenanceDesc>在阿尔戈斯主节点上植入维护身份，使一部分门禁、火力点和巡逻逻辑停止主动反制。</Stellaris_ArchaeologyWork_ARGOSMaintenanceDesc>
+  <Stellaris_ArchaeologyARGOSMaintenanceMessage>{0}让{1}进入了维护模式。</Stellaris_ArchaeologyARGOSMaintenanceMessage>
+  <Stellaris_FusionSiteARGOSMaintenanceText>服务器柱的冷光没有熄灭，只是从红色验证循环切换成了维护黄灯。广播重复了最后一遍：“维护身份确认。外部人员不再列入夺取者名单。” 远处几处墙嵌火力点停止转动，无人机停泊槽的锁扣重新闭合。</Stellaris_FusionSiteARGOSMaintenanceText>
+  <Stellaris_Flag_ReadOverloadOrder>调度室供能记录未整理</Stellaris_Flag_ReadOverloadOrder>
+  <Stellaris_Flag_PersonalLogsRecovered>生活区个人日志未整理</Stellaris_Flag_PersonalLogsRecovered>
+  <Stellaris_Flag_ArgosMaintenanceMode>阿尔戈斯尚未进入维护模式</Stellaris_Flag_ArgosMaintenanceMode>
+  <Stellaris_Flag_CapacitorsManaged>点火电容尚未处理</Stellaris_Flag_CapacitorsManaged>
+
+  <Stellaris_ArchaeologySecurityDocksWaking>附近的阿尔戈斯无人机停泊槽开始供电，锁扣逐个弹开。</Stellaris_ArchaeologySecurityDocksWaking>
+  <Stellaris_ArchaeologySecurityDockLaunch>一台安保机械体从停泊槽中启动。</Stellaris_ArchaeologySecurityDockLaunch>
+  <Stellaris_ArchaeologyWork_OpenBunkLocker>打开储物柜</Stellaris_ArchaeologyWork_OpenBunkLocker>
+  <Stellaris_ArchaeologyWork_OpenBunkLockerDesc>撬开驻站人员的个人储物柜，里面可能有应急食品、药品、小型零件或私人保存的技术碎片。</Stellaris_ArchaeologyWork_OpenBunkLockerDesc>
+  <Stellaris_ArchaeologyBunkLockerOpenedMessage>{0}打开了{1}。</Stellaris_ArchaeologyBunkLockerOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenEmergencyCrate>打开应急补给箱</Stellaris_ArchaeologyWork_OpenEmergencyCrate>
+  <Stellaris_ArchaeologyWork_OpenEmergencyCrateDesc>检查事故后没有搬走的应急补给箱，内容通常是口粮、药品和少量备用零件。</Stellaris_ArchaeologyWork_OpenEmergencyCrateDesc>
+  <Stellaris_ArchaeologyEmergencyCrateOpenedMessage>{0}打开了{1}。</Stellaris_ArchaeologyEmergencyCrateOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenToolCrate>翻找工具箱</Stellaris_ArchaeologyWork_OpenToolCrate>
+  <Stellaris_ArchaeologyWork_OpenToolCrateDesc>翻找工程抢修现场留下的工具箱，通常能找到钢材、工业零件或少量塑钢。</Stellaris_ArchaeologyWork_OpenToolCrateDesc>
+  <Stellaris_ArchaeologyToolCrateOpenedMessage>{0}翻找了{1}。</Stellaris_ArchaeologyToolCrateOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenWeaponLocker>打开武器柜</Stellaris_ArchaeologyWork_OpenWeaponLocker>
+  <Stellaris_ArchaeologyWork_OpenWeaponLockerDesc>撬开安保武器柜。里面可能还有旧武器或零件，但也可能触发阿尔戈斯残留警戒。</Stellaris_ArchaeologyWork_OpenWeaponLockerDesc>
+  <Stellaris_ArchaeologyWeaponLockerOpenedMessage>{0}打开了{1}。</Stellaris_ArchaeologyWeaponLockerOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenMedicalStation>翻找急救台</Stellaris_ArchaeologyWork_OpenMedicalStation>
+  <Stellaris_ArchaeologyWork_OpenMedicalStationDesc>检查站医急救台和药柜，回收事故中没有用完的药品。</Stellaris_ArchaeologyWork_OpenMedicalStationDesc>
+  <Stellaris_ArchaeologyMedicalStationOpenedMessage>{0}翻找了{1}。</Stellaris_ArchaeologyMedicalStationOpenedMessage>
+  <Stellaris_ArchaeologyWork_OpenFuelRack>开启燃料货架</Stellaris_ArchaeologyWork_OpenFuelRack>
+  <Stellaris_ArchaeologyWork_OpenFuelRackDesc>解除燃料货架的固定锁，回收残留聚变燃料。操作不稳可能造成泄漏。</Stellaris_ArchaeologyWork_OpenFuelRackDesc>
+  <Stellaris_ArchaeologyFuelRackOpenedMessage>{0}开启了{1}。</Stellaris_ArchaeologyFuelRackOpenedMessage>
+  <Stellaris_ARGOSBroadcastInitial>ARGOS 广播：“身份无效。设施处于战时封锁。反应堆、避难区和撤离通道保护协议仍在执行。”</Stellaris_ARGOSBroadcastInitial>
+  <Stellaris_ARGOSBroadcastDockCountdown>ARGOS 广播：“近区无人机发射序列进入最后校验。非授权人员远离停泊槽。”</Stellaris_ARGOSBroadcastDockCountdown>
+
+
+  <Stellaris_ArchaeologyControlDataCoreRecoveredMessage>{0}从{1}中拆出了聚变控制数据核心。主控台失去响应，只剩下已经导出的日志副本。</Stellaris_ArchaeologyControlDataCoreRecoveredMessage>
+</LanguageData>
