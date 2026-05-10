@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WeatherDef>
+    <defName>Stellaris_LostAshHaze</defName>
+    <label>废墟灰霾</label>
+    <description>腐朽城市与工业尘埃形成的低能见度灰霾。空气勉强存在，却夹杂细粉尘、惰性气体和毒性残留物。</description>
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <ambientSounds><li>Ambient_Wind_Desolate</li></ambientSounds>
+    <skyColorsDay><sky>(0.55,0.50,0.45)</sky><shadow>(0.30,0.28,0.26)</shadow><overlay>(0.60,0.55,0.50)</overlay><saturation>0.45</saturation></skyColorsDay>
+    <skyColorsDusk><sky>(0.42,0.32,0.26)</sky><shadow>(0.24,0.20,0.18)</shadow><overlay>(0.48,0.36,0.28)</overlay><saturation>0.40</saturation></skyColorsDusk>
+    <skyColorsNightEdge><sky>(0.09,0.08,0.08)</sky><shadow>(0.02,0.02,0.025)</shadow><overlay>(0.12,0.10,0.09)</overlay><saturation>0.25</saturation></skyColorsNightEdge>
+    <skyColorsNightMid><sky>(0.035,0.032,0.035)</sky><shadow>(0,0,0)</shadow><overlay>(0.05,0.045,0.05)</overlay><saturation>0.18</saturation></skyColorsNightMid>
+    <accuracyMultiplier>0.75</accuracyMultiplier>
+    <moveSpeedMultiplier>0.92</moveSpeedMultiplier>
+  </WeatherDef>
+  <WeatherDef>
+    <defName>Stellaris_LostCorrosiveDrizzle</defName>
+    <label>腐蚀性薄雨</label>
+    <description>从残余工业云层中凝结出的弱酸性降水。雨量不大，但足以腐蚀裸露金属与劣质防护服。</description>
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <ambientSounds><li>Ambient_Wind_Storm</li></ambientSounds>
+    <skyColorsDay><sky>(0.50,0.44,0.30)</sky><shadow>(0.32,0.27,0.18)</shadow><overlay>(0.58,0.48,0.30)</overlay><saturation>0.50</saturation></skyColorsDay>
+    <skyColorsDusk><sky>(0.40,0.25,0.16)</sky><shadow>(0.24,0.16,0.10)</shadow><overlay>(0.45,0.28,0.16)</overlay><saturation>0.42</saturation></skyColorsDusk>
+    <skyColorsNightEdge><sky>(0.08,0.07,0.045)</sky><shadow>(0.02,0.015,0.01)</shadow><overlay>(0.12,0.10,0.06)</overlay><saturation>0.25</saturation></skyColorsNightEdge>
+    <skyColorsNightMid><sky>(0.03,0.028,0.018)</sky><shadow>(0,0,0)</shadow><overlay>(0.05,0.045,0.03)</overlay><saturation>0.18</saturation></skyColorsNightMid>
+    <accuracyMultiplier>0.68</accuracyMultiplier>
+    <moveSpeedMultiplier>0.82</moveSpeedMultiplier>
+  </WeatherDef>
+  <WeatherDef>
+    <defName>Stellaris_LostReactorGlow</defName>
+    <label>反应堆余辉</label>
+    <description>地下衰变反应堆与熔封数据核心释放出病态蓝绿辉光，照亮玻璃化地表并携带持续辐射风险。</description>
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <skyColorsDay><sky>(0.38,0.43,0.43)</sky><shadow>(0.18,0.22,0.24)</shadow><overlay>(0.42,0.52,0.50)</overlay><saturation>0.38</saturation></skyColorsDay>
+    <skyColorsDusk><sky>(0.23,0.30,0.32)</sky><shadow>(0.10,0.14,0.16)</shadow><overlay>(0.28,0.38,0.40)</overlay><saturation>0.35</saturation></skyColorsDusk>
+    <skyColorsNightEdge><sky>(0.02,0.07,0.08)</sky><shadow>(0,0.02,0.025)</shadow><overlay>(0.04,0.13,0.13)</overlay><saturation>0.30</saturation></skyColorsNightEdge>
+    <skyColorsNightMid><sky>(0.006,0.035,0.045)</sky><shadow>(0,0,0)</shadow><overlay>(0.015,0.075,0.085)</overlay><saturation>0.28</saturation></skyColorsNightMid>
+    <accuracyMultiplier>0.8</accuracyMultiplier>
+    <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
+  </WeatherDef>
+</Defs>

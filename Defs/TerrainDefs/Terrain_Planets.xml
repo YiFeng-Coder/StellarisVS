@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!--Lava-->
   <TerrainDef ParentName="LavaBase">
     <defName>StellarisMeltTerrain</defName>
     <label>高温熔融物</label>
@@ -19,5 +20,198 @@
       <li>Bridgeable</li>
     </affordances>
     <pathCost>300</pathCost>
+  </TerrainDef>
+  <!--Toxic-->
+  <TerrainDef>
+    <defName>StellarisToxicSoil</defName>
+    <label>酸性土壤</label>
+    <description>被重金属化合物和腐蚀性雨水浸透的地面。它几乎无法维持生命。</description>
+    <texturePath>Terrain/Surfaces/StellarisToxicSoil</texturePath>
+    <!-- 你需要制作这个纹理 -->
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <!-- 渲染层级，确保它在水下，在岩石上 -->
+    <pathCost>2</pathCost>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <fertility>0.05</fertility>
+    <takeFootprints>True</takeFootprints>
+    <!-- 增加一种病态的颜色滤镜 (可选) -->
+    <color>(160, 160, 140)</color>
+    <tags>
+      <li>Stellaris_AcidicBiome</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef>
+    <defName>Stellaris_StoneCorroded_Rough</defName>
+    <label>腐蚀岩</label>
+    <description>在酸性大气压下形成蜂窝状的古老岩层。它锋利、不平坦，行走起来很危险，但足够坚固，可以支撑重型结构。</description>
+    <!-- 纹理路径：建议使用无缝平铺纹理 -->
+    <texturePath>Terrain/Surfaces/Stellaris_StoneCorroded_Rough</texturePath>
+    <!-- 边缘混合类型：FadeRough 会让它和周围泥土有自然的过渡 -->
+    <edgeType>FadeRough</edgeType>
+    <!-- 渲染层级：通常粗糙岩石在 190 左右，设为 192 让它覆盖普通沙土 -->
+    <renderPrecedence>192</renderPrecedence>
+    <!-- 路径成本：20 代表这是很难走的地形 (普通土地是2，沙子是10) -->
+    <pathCost>20</pathCost>
+    <statBases>
+      <!-- 美观度：负值，体现荒凉感 -->
+      <Beauty>-2</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <!-- 允许生成的脚印/污秽 -->
+    <scatterType>Rocky</scatterType>
+    <!-- 承重能力：这里很关键，它是岩石，所以必须能造重型墙 -->
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+      <!-- 如果你想让玩家能在上面种真菌，保留这个；如果不想，去掉它 -->
+    </affordances>
+    <fertility>0</fertility>
+    <!-- 岩石不长庄稼 -->
+    <!-- 生成相关的标签 -->
+    <tags>
+      <li>Stellaris_AcidicBiome_Rock</li>
+    </tags>
+    <!-- 视觉颜色调整：在纹理基础上叠加一层微弱的灰绿色 (R,G,B) -->
+    <!-- 如果你的贴图已经画好颜色了，可以把这个改成 (255,255,255) -->
+    <color>(140, 155, 130)</color>
+  </TerrainDef>
+
+  <!--DeadPlanet-->
+  <TerrainDef>
+    <defName>Stellaris_DeadRegolith</defName>
+    <label>松散风化层</label>
+    <description>由亿万年微陨石撞击粉碎出的灰色岩屑层，松散、干燥且没有任何有机质。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_DeadRegolith</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>180</renderPrecedence>
+    <pathCost>4</pathCost>
+    <scatterType>Rocky</scatterType>
+    <fertility>0</fertility>
+    <takeFootprints>true</takeFootprints>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <color>(150,145,137)</color>
+    <tags>
+      <li>Stellaris_DeadPlanet</li>
+      <li>Stellaris_DeadPlanet_Regolith</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef>
+    <defName>Stellaris_DeadBasaltRough</defName>
+    <label>裸露玄武岩</label>
+    <description>没有大气侵蚀的冷硬基岩，呈暗灰到铁黑色，表面布满热胀冷缩造成的裂纹。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_DeadBasaltRough</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>195</renderPrecedence>
+    <pathCost>10</pathCost>
+    <scatterType>Rocky</scatterType>
+    <fertility>0</fertility>
+    <statBases>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <color>(95,92,90)</color>
+    <tags>
+      <li>Stellaris_DeadPlanet</li>
+      <li>Stellaris_DeadPlanet_Rock</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef>
+    <defName>Stellaris_DeadMeteoricGravel</defName>
+    <label>陨铁碎砾</label>
+    <description>混杂着镍铁陨石碎片的撞击砾层，行走不便，但常能从中回收钢铁和稀有金属。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_DeadMeteoricGravel</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>200</renderPrecedence>
+    <pathCost>14</pathCost>
+    <scatterType>Rocky</scatterType>
+    <fertility>0</fertility>
+    <statBases>
+      <Beauty>-2</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <color>(115,108,100)</color>
+    <tags>
+      <li>Stellaris_DeadPlanet</li>
+      <li>Stellaris_DeadPlanet_Meteoric</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef>
+    <defName>Stellaris_DeadRadiationDust</defName>
+    <label>辐射粉尘</label>
+    <description>被恒星辐射与宇宙射线长期轰击后形成的细腻硅酸盐粉尘。它会陷住脚步，并携带危险的放射性颗粒。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_DeadRadiationDust</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>181</renderPrecedence>
+    <pathCost>18</pathCost>
+    <scatterType>Sand</scatterType>
+    <fertility>0</fertility>
+    <takeFootprints>true</takeFootprints>
+    <statBases>
+      <Beauty>-3</Beauty>
+      <Cleanliness>-2</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <color>(135,138,130)</color>
+    <tags>
+      <li>Stellaris_DeadPlanet</li>
+      <li>Stellaris_DeadPlanet_Radiation</li>
+    </tags>
+  </TerrainDef>
+  <TerrainDef>
+    <defName>Stellaris_DeadStaticGlass</defName>
+    <label>静电玻璃沉积层</label>
+    <description>被辐射固结的玻璃状沉积层，表面有细碎裂纹并积累危险静电。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_DeadStaticGlass</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>205</renderPrecedence>
+    <pathCost>22</pathCost>
+    <scatterType>Rocky</scatterType>
+    <fertility>0</fertility>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>Diggable</li>
+    </affordances>
+    <color>(115,130,128)</color>
+    <tags>
+      <li>Stellaris_DeadPlanet</li>
+      <li>Stellaris_DeadPlanet_Glass</li>
+    </tags>
   </TerrainDef>
 </Defs>

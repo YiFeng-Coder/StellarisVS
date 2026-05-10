@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Defs/WorldObjects/WorldObjects_Ship.xml -->
+<Defs>
+  <GenStepDef>
+    <defName>StellarisGenStep_Acidification</defName>
+    <order>1200</order>
+    <genStep Class="Stellaris.GenStep_Acidification" />
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>Stellaris_GenStep_DeadPlanetTerrain</defName>
+    <!-- Run immediately after vanilla Terrain and before start-spot/structure steps. -->
+    <order>310</order>
+    <genStep Class="Stellaris.GenStep_DeadPlanetTerrain" />
+  </GenStepDef>
+</Defs>

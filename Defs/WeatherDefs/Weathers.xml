@@ -32,4 +32,117 @@
       <saturation>1.25</saturation>
     </skyColorsNightMid>
   </WeatherDef>
+  <WeatherDef>
+    <defName>StellarisAcidSmog</defName>
+    <label>硫酸烟雾</label>
+    <description>一层厚重且令人窒息的硫磺云层和高压雾霾。会对绝大多数衣物造成腐蚀。</description>
+    <!-- 即使是晴天逻辑，也不要移动风向，制造那种死气沉沉的压抑感 -->
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <!-- 看不清 -->
+    <ambientSounds>
+      <li>Ambient_Wind_Storm</li>
+    </ambientSounds>
+    <!-- 视觉核心：黄色/橙色滤镜 -->
+    <skyColorsDay>
+      <sky>(0.8, 0.6, 0.2)</sky>
+      <!-- 土黄色天空 -->
+      <shadow>(0.6, 0.5, 0.2)</shadow>
+      <overlay>(0.8, 0.6, 0.2)</overlay>
+      <!-- 强烈的黄色覆盖层 -->
+      <saturation>0.8</saturation>
+      <!-- 高饱和度 -->
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.6, 0.3, 0.1)</sky>
+      <shadow>(0.5, 0.3, 0.1)</shadow>
+      <overlay>(0.6, 0.3, 0.1)</overlay>
+      <saturation>0.7</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.2, 0.15, 0.05)</sky>
+      <!-- 夜晚是暗淡的棕色，不是黑色 -->
+      <shadow>(0.1, 0.05, 0.0)</shadow>
+      <overlay>(0.2, 0.15, 0.05)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.2, 0.15, 0.05)</sky>
+      <!-- 夜晚是暗淡的棕色，不是黑色 -->
+      <shadow>(0.1, 0.05, 0.0)</shadow>
+      <overlay>(0.2, 0.15, 0.05)</overlay>
+      <saturation>0.5</saturation>
+    </skyColorsNightMid>
+    <!-- 精度惩罚：雾太浓了 -->
+    <accuracyMultiplier>0.6</accuracyMultiplier>
+    <!-- 移动惩罚：这里不仅是Biome难走，天气也让你难受 -->
+    <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
+  </WeatherDef>
+
+  <WeatherDef>
+    <defName>Stellaris_DeadStillness</defName>
+    <label>绝对死寂</label>
+    <description>没有风、没有云、没有任何声音传播介质。恒星光线直接照射地表，阴影区域则迅速坠入极寒。</description>
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>0</perceivePriority>
+    <skyColorsDay>
+      <sky>(0.62,0.61,0.58)</sky>
+      <shadow>(0.15,0.15,0.16)</shadow>
+      <overlay>(0.82,0.80,0.75)</overlay>
+      <saturation>0.55</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.38,0.35,0.32)</sky>
+      <shadow>(0.12,0.11,0.13)</shadow>
+      <overlay>(0.52,0.48,0.42)</overlay>
+      <saturation>0.45</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.02,0.025,0.035)</sky>
+      <shadow>(0,0,0)</shadow>
+      <overlay>(0.05,0.055,0.07)</overlay>
+      <saturation>0.25</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.005,0.006,0.01)</sky>
+      <shadow>(0,0,0)</shadow>
+      <overlay>(0.025,0.028,0.04)</overlay>
+      <saturation>0.15</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+  <WeatherDef>
+    <defName>Stellaris_ElectrostaticDust</defName>
+    <label>静电尘暴</label>
+    <description>没有大气层中的风，却有静电荷失衡引发的粉尘喷涌。细粉尘会遮蔽视线、干扰设备，并让所有户外行动变得困难。</description>
+    <repeatable>true</repeatable>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>0</perceivePriority>
+    <skyColorsDay>
+      <sky>(0.45,0.45,0.42)</sky>
+      <shadow>(0.10,0.10,0.11)</shadow>
+      <overlay>(0.62,0.62,0.56)</overlay>
+      <saturation>0.35</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.28,0.27,0.25)</sky>
+      <shadow>(0.08,0.08,0.09)</shadow>
+      <overlay>(0.42,0.40,0.36)</overlay>
+      <saturation>0.3</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.03,0.035,0.04)</sky>
+      <shadow>(0,0,0)</shadow>
+      <overlay>(0.08,0.08,0.09)</overlay>
+      <saturation>0.2</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.01,0.012,0.018)</sky>
+      <shadow>(0,0,0)</shadow>
+      <overlay>(0.04,0.045,0.055)</overlay>
+      <saturation>0.15</saturation>
+    </skyColorsNightMid>
+    <accuracyMultiplier>0.55</accuracyMultiplier>
+    <moveSpeedMultiplier>0.75</moveSpeedMultiplier>
+  </WeatherDef>
 </Defs>

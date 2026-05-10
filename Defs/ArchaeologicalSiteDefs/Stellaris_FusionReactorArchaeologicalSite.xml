@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Stellaris.ArchaeologicalSiteDef>
+    <defName>Stellaris_FusionReactorArchaeologicalSite</defName>
+    <label>黎明核心聚变阵列遗址</label>
+    <description>一座深埋在废墟下的古代聚变阵列。地表只剩输电塔和物流平台残骸，地下仍保存着生活区、调度室、冷却泵站、安保主机和巨大的环形核心腔。</description>
+    <repeatable>false</repeatable>
+    <canBeFoundByScanner>true</canBeFoundByScanner>
+    <discoveryWeight>1.0</discoveryWeight>
+    <sitePartDef>Stellaris_FusionReactorArchaeologicalSitePart</sitePartDef>
+    <timeoutTicks>10800000</timeoutTicks>
+    <threatPoints>450</threatPoints>
+    <ruinSizeX>164</ruinSizeX>
+    <ruinSizeZ>152</ruinSizeZ>
+    <floorTerrain>Concrete</floorTerrain>
+    <wallDef>Wall</wallDef>
+    <doorDef>Door</doorDef>
+    <wallStuff>Steel</wallStuff>
+    <floorCoverage>0.82</floorCoverage>
+    <wallDamageChance>0.28</wallDamageChance>
+    <rubbleChance>0.065</rubbleChance>
+    <requiredCompletedTargets>1</requiredCompletedTargets>
+    <planetDiscoveryWeights>
+      <li><planetDef>Stellaris_LostPlanet</planetDef><weight>1.00</weight></li>
+      <li><planetDef>Stellaris_DeadPlanet</planetDef><weight>0.45</weight></li>
+      <li><planetDef>Stellaris_FrozenPlanet</planetDef><weight>0.22</weight></li>
+      <li><planetDef>StellarisTerrestrialPlanet</planetDef><weight>0.035</weight></li>
+    </planetDiscoveryWeights>
+  </Stellaris.ArchaeologicalSiteDef>
+</Defs>

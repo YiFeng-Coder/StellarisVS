@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 1. 起飞持续音 (引擎轰鸣) -->
+  <SoundDef>
+    <defName>Stellaris_ShipEngineLoop</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <!-- 关键：标记为循环音 -->
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <!-- 指向你的音频文件路径，或者借用原版空投舱发射的声音 -->
+            <clipPath>Ship/Stellaris_ShipEngineLoop</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>35</min>
+          <max>35</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.8</min>
+          <max>1.0</max>
+        </pitchRange>
+        <distRange>
+          <min>25</min>
+          <max>70</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!-- 2. (可选) 起飞瞬间爆发音 -->
+  <SoundDef>
+    <defName>Stellaris_ShipIgnition</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ship/Stellaris_ShipIgnition</clipPath>
+            <!-- 借用EMP爆炸声作为启动音 -->
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Stellaris.ArchaeologicalSiteDef>
+    <defName>Stellaris_ArchaeologicalSiteA</defName>
+    <label>坍塌的聚变反应堆遗址</label>
+    <description>一座远古聚变反应堆设施的残骸。外围结构已经坍塌，核心舱仍保留着可逆向分析的数据与部件。</description>
+    <repeatable>true</repeatable>
+    <canBeFoundByScanner>false</canBeFoundByScanner>
+    <discoveryWeight>1</discoveryWeight>
+    <sitePartDef>Stellaris_ArchaeologicalSite</sitePartDef>
+    <timeoutTicks>10800000</timeoutTicks>
+    <threatPoints>350</threatPoints>
+
+    <ruinSizeX>46</ruinSizeX>
+    <ruinSizeZ>34</ruinSizeZ>
+    <floorTerrain>Concrete</floorTerrain>
+    <wallDef>Wall</wallDef>
+    <doorDef>Door</doorDef>
+    <wallStuff>Steel</wallStuff>
+    <floorCoverage>0.82</floorCoverage>
+    <wallDamageChance>0.28</wallDamageChance>
+    <rubbleChance>0.055</rubbleChance>
+    <sideRoomChance>0.65</sideRoomChance>
+    <extraInteriorWalls>3</extraInteriorWalls>
+
+    <centralThings>
+      <Stellaris_AncientFusionReactor>1</Stellaris_AncientFusionReactor>
+    </centralThings>
+    <scatterThings>
+      <Stellaris_PaperInfo>4</Stellaris_PaperInfo>
+      <Stellaris_StoneInfo>2</Stellaris_StoneInfo>
+      <Stellaris_AncientTechFragment>12</Stellaris_AncientTechFragment>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </scatterThings>
+    <completionRewards>
+      <Stellaris_AncientTechFragment>20</Stellaris_AncientTechFragment>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </completionRewards>
+    <requiredCompletedTargets>1</requiredCompletedTargets>
+  </Stellaris.ArchaeologicalSiteDef>
+</Defs>

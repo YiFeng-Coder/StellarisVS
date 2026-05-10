@@ -11,4 +11,10 @@
     <driverClass>Stellaris.JobDriver_Console</driverClass>
     <reportString>使用TargetA驾驶飞船。</reportString>
   </JobDef>
+  <JobDef>
+    <defName>Stellaris_ReverseEngineerJob</defName>
+    <driverClass>Stellaris.JobDriver_ReverseEngineer</driverClass>
+    <reportString>正在逆向工程 TargetA。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

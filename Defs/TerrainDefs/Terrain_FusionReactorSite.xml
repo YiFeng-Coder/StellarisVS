@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <TerrainDef>
+    <defName>Stellaris_VitrifiedReactorFloor</defName>
+    <label>玻璃化反应堆地面</label>
+    <description>灰蓝色玻璃化混凝土和陶瓷地面，裂缝中嵌着熔凝金属颗粒。</description>
+    <texturePath>Terrain/Surfaces/Stellaris_VitrifiedReactorFloor</texturePath>
+    <edgeType>FadeRough</edgeType><renderPrecedence>218</renderPrecedence><pathCost>16</pathCost><fertility>0</fertility>
+    <statBases><Beauty>-2</Beauty><Cleanliness>-2</Cleanliness></statBases>
+    <affordances><li>Light</li><li>Heavy</li><li>Diggable</li></affordances><color>(105,118,124)</color>
+  </TerrainDef>
+</Defs>

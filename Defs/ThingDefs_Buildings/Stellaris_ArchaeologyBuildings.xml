@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_AncientFusionReactorCore</defName>
+    <label>古代聚变反应堆核心</label>
+    <description>城市级聚变反应堆的残存核心。它不会像裂变堆一样链式核爆，但残余等离子体、高温活化金属、旧电容与安保 AI 仍足以杀死粗心的探索者。</description>
+    <graphicData>
+      <texPath>Things/Building/Archaeology/Stellaris_AncientFusionReactorCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5.8,5.8)</drawSize>
+    </graphicData>
+    <size>(5,5)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>1</fillPercent>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <blockLight>true</blockLight>
+    <altitudeLayer>Building</altitudeLayer>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>2200</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <killedLeavings>
+      <Steel>80</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </killedLeavings>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_StabilizeCore</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_StabilizeCoreDesc</workDesc>
+        <workTicks>6200</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>12</requiredSkillLevel>
+        <archaeologyActionType>StabilizeCore</archaeologyActionType>
+        <requireFlags>
+          <li>ReadFinalOperationLog</li>
+          <li>RecoveredChiefEngineerOverride</li>
+          <li>ReactorHallAccessGranted</li>
+        </requireFlags>
+        <requireCoolantManifoldsSecured>2</requireCoolantManifoldsSecured>
+        <costs>
+          <li><thingDef>ComponentSpacer</thingDef><count>2</count></li>
+        </costs>
+        <rewards>
+          <li><thingDef>Stellaris_FusionReactorBlueprint</thingDef><count>1</count></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>8</minCount><maxCount>12</maxCount></li>
+          <li><thingDef>Stellaris_DeuteriumTritiumFuel</thingDef><minCount>20</minCount><maxCount>40</maxCount></li>
+          <li><thingDef>ComponentSpacer</thingDef><minCount>2</minCount><maxCount>4</maxCount></li>
+          <li><thingDef>Stellaris_ChiefEngineerOverrideKey</thingDef><count>1</count></li>
+                  <li><thingDef>Stellaris_FusionControlDataCore</thingDef><count>1</count></li>
+                  <li><thingDef>Stellaris_AncientFusionCoreModule</thingDef><count>1</count></li>
+                  <li><thingDef>Stellaris_AncientFuelInjector</thingDef><minCount>2</minCount><maxCount>3</maxCount></li>
+        </rewards>
+        <siteProgressKey>FinalChoiceMade</siteProgressKey>
+        <successMessageKey>Stellaris_ArchaeologyCoreStabilizedMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionReactorEnding_Stabilize</successLetterKey>
+        <completeSite>true</completeSite>
+        <completionOutcome>StabilizedCore</completionOutcome>
+        <researchProject>StellarisResearch_NuclearFusionReactor</researchProject>
+        <finishResearchProject>false</finishResearchProject>
+      </li>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_DismantleCore</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_DismantleCoreDesc</workDesc>
+        <workTicks>5200</workTicks>
+        <requiredSkill>Construction</requiredSkill>
+        <requiredSkillLevel>8</requiredSkillLevel>
+        <archaeologyActionType>DismantleCore</archaeologyActionType>
+        <requireFlags>
+          <li>ReactorHallAccessGranted</li>
+        </requireFlags>
+        <rewards>
+          <li><thingDef>Steel</thingDef><minCount>400</minCount><maxCount>800</maxCount></li>
+          <li><thingDef>Plasteel</thingDef><minCount>80</minCount><maxCount>160</maxCount></li>
+          <li><thingDef>Uranium</thingDef><minCount>40</minCount><maxCount>80</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>8</minCount><maxCount>16</maxCount></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>3</minCount><maxCount>5</maxCount></li>
+                  <li><thingDef>Stellaris_FusionControlDataCore</thingDef><count>1</count></li>
+                  <li><thingDef>Stellaris_AncientFusionCoreModule</thingDef><count>1</count></li>
+                  <li><thingDef>Stellaris_AncientFuelInjector</thingDef><minCount>1</minCount><maxCount>2</maxCount></li>
+        </rewards>
+        <siteProgressKey>FinalChoiceMade</siteProgressKey>
+        <successMessageKey>Stellaris_ArchaeologyCoreDismantledMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionReactorEnding_Dismantle</successLetterKey>
+        <failIncidentChance>0.18</failIncidentChance>
+        <threatOnFail>DismantleAccident</threatOnFail>
+        <destroyOnComplete>true</destroyOnComplete>
+        <completeSite>true</completeSite>
+        <completionOutcome>DismantledCore</completionOutcome>
+      </li>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ForceExtractData</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ForceExtractDataDesc</workDesc>
+        <workTicks>4200</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>8</requiredSkillLevel>
+        <archaeologyActionType>ForceExtractData</archaeologyActionType>
+        <requireFlags>
+          <li>ReadFinalOperationLog</li>
+          <li>ReactorHallAccessGranted</li>
+        </requireFlags>
+        <rewards>
+          <li><thingDef>Stellaris_DamagedFusionBlueprint</thingDef><count>1</count></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>5</minCount><maxCount>8</maxCount></li>
+                  <li><thingDef>Stellaris_FusionControlDataCore</thingDef><count>1</count></li>
+        </rewards>
+        <siteProgressKey>FinalChoiceMade</siteProgressKey>
+        <successMessageKey>Stellaris_ArchaeologyCoreDataExtractedMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionReactorEnding_ForceExtract</successLetterKey>
+        <threatOnComplete>SecurityCoreCountermeasure</threatOnComplete>
+        <completeSite>true</completeSite>
+        <completionOutcome>ForcedDataExtraction</completionOutcome>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ReactorHallSealConsole</defName>
+    <label>核心大厅密封控制台</label>
+    <description>控制核心大厅隔离墙和停堆联锁的密封控制台。它不保存最终数据，但决定你们是按流程进入核心大厅，还是强行破封。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_AncientSecurityTerminal</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.5</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>360</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenCoreSeal</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenCoreSealDesc</workDesc>
+        <workTicks>2600</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>6</requiredSkillLevel>
+        <archaeologyActionType>OpenCoreSeal</archaeologyActionType>
+        <requireFlags>
+          <li>ReadFinalOperationLog</li>
+          <li>CoolantReady</li>
+        </requireFlags>
+        <siteProgressKey>ReactorHallAccessGranted</siteProgressKey>
+        <addFlags><li>ReactorHallAccessGranted</li></addFlags>
+        <successMessageKey>Stellaris_ArchaeologyCoreSealOpenedMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionSiteCoreSealOpenedText</successLetterKey>
+      </li>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ForceOpenCoreSeal</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ForceOpenCoreSealDesc</workDesc>
+        <workTicks>3600</workTicks>
+        <requiredSkill>Construction</requiredSkill>
+        <requiredSkillLevel>8</requiredSkillLevel>
+        <archaeologyActionType>ForceOpenCoreSeal</archaeologyActionType>
+        <requireFlags>
+          <li>ReadFinalOperationLog</li>
+        </requireFlags>
+        <siteProgressKey>ReactorHallAccessGranted</siteProgressKey>
+        <addFlags>
+          <li>ReactorHallAccessGranted</li>
+          <li>ReactorHallBreached</li>
+        </addFlags>
+        <successMessageKey>Stellaris_ArchaeologyCoreSealBreachedMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionSiteCoreSealBreachedText</successLetterKey>
+        <threatOnComplete>CoreBreach</threatOnComplete>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FusionControlConsole</defName>
+    <label>聚变反应堆控制台</label>
+    <description>烧蚀严重的反应堆控制台，仍保存着事故最后十七分钟的运行记录。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FusionControlConsole</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.5</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>450</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ReadFinalLog</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ReadFinalLogDesc</workDesc>
+        <workTicks>3000</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>5</requiredSkillLevel>
+        <archaeologyActionType>ReadControlLog</archaeologyActionType>
+        <siteProgressKey>ReadFinalOperationLog</siteProgressKey>
+        <successMessageKey>Stellaris_ArchaeologyControlLogMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionSiteControlLogText</successLetterKey>
+      </li>
+    
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_RecoverControlDataCore</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_RecoverControlDataCoreDesc</workDesc>
+        <workTicks>2400</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>6</requiredSkillLevel>
+        <archaeologyActionType>RecoverControlDataCore</archaeologyActionType>
+        <requireFlags>
+          <li>ReadFinalOperationLog</li>
+        </requireFlags>
+        <rewards>
+          <li><thingDef>Stellaris_FusionControlDataCore</thingDef><count>1</count></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>2</minCount><maxCount>4</maxCount></li>
+        </rewards>
+        <destroyOnComplete>true</destroyOnComplete>
+        <successMessageKey>Stellaris_ArchaeologyControlDataCoreRecoveredMessage</successMessageKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_DamagedCoolantManifold</defName>
+    <label>损坏冷却歧管</label>
+    <description>断裂的冷却与排放管线。它无法完全修复，但可以确认排放井和残余电荷状态。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_DamagedCoolantManifold</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.45</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>380</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_SecureCoolant</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_SecureCoolantDesc</workDesc>
+        <workTicks>2400</workTicks>
+        <requiredSkill>Construction</requiredSkill>
+        <requiredSkillLevel>4</requiredSkillLevel>
+        <archaeologyActionType>SecureCoolantManifold</archaeologyActionType>
+        <siteProgressKey>CoolantManifoldsSecured</siteProgressKey>
+        <successMessageKey>Stellaris_ArchaeologyCoolantSecuredMessage</successMessageKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_AncientSecurityTerminal</defName>
+    <label>古代安保终端</label>
+    <description>安保检查站的装甲访问终端。骇入它能关闭部分入口防御，并降低核心区安保 AI 的反制强度。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_AncientSecurityTerminal</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.0,2.0)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.5</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>300</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_BypassSecurity</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_BypassSecurityDesc</workDesc>
+        <workTicks>2600</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>6</requiredSkillLevel>
+        <archaeologyActionType>BypassSecurity</archaeologyActionType>
+        <siteProgressKey>SecurityTerminalBypassed</siteProgressKey>
+        <addFlags><li>SecurityTerminalBypassed</li></addFlags>
+        <successMessageKey>Stellaris_ArchaeologySecurityBypassedMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionSiteSecurityBypassedText</successLetterKey>
+        <deactivateSecurityTurrets>true</deactivateSecurityTurrets>
+        <postDestroyThreat>Security</postDestroyThreat>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_AncientFusionFuelCanister</defName>
+    <label>古代聚变燃料罐</label>
+    <description>封存在厚墙燃料仓里的古代聚变燃料罐。谨慎开启能回收氘氚燃料和氦-3，粗暴破坏会造成氚泄漏。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_AncientFusionFuelCanister</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.65</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenFuelCanister</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenFuelCanisterDesc</workDesc>
+        <workTicks>1800</workTicks>
+        <requiredSkill>Construction</requiredSkill>
+        <requiredSkillLevel>5</requiredSkillLevel>
+        <archaeologyActionType>OpenFuelCanister</archaeologyActionType>
+        <rewards>
+          <li><thingDef>Stellaris_DeuteriumTritiumFuel</thingDef><minCount>8</minCount><maxCount>18</maxCount></li>
+          <li><thingDef>Stellaris_Helium3Canister</thingDef><minCount>2</minCount><maxCount>5</maxCount></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>1</minCount><maxCount>3</maxCount></li>
+                  <li><thingDef>Stellaris_AncientFuelInjector</thingDef><minCount>1</minCount><maxCount>2</maxCount></li>
+        </rewards>
+        <failIncidentChance>0.35</failIncidentChance>
+        <threatOnFail>FuelLeak</threatOnFail>
+        <postDestroyThreat>FuelLeak</postDestroyThreat>
+        <destroyOnComplete>true</destroyOnComplete>
+        <successMessageKey>Stellaris_ArchaeologyFuelRecoveredMessage</successMessageKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ShelterEmergencyLog</defName>
+    <label>避难区紧急日志</label>
+    <description>地下避难区遗留的数据终端。外壳接着最后一块应急电池，屏幕停在工程主管授权序列上。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ShelterEmergencyLog</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.45</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>260</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ReadShelterLog</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ReadShelterLogDesc</workDesc>
+        <workTicks>2600</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>5</requiredSkillLevel>
+        <archaeologyActionType>ReadShelterEmergencyLog</archaeologyActionType>
+        <siteProgressKey>RecoveredChiefEngineerOverride</siteProgressKey>
+        <addFlags><li>RecoveredChiefEngineerOverride</li></addFlags>
+        <successMessageKey>Stellaris_ArchaeologyShelterLogMessage</successMessageKey>
+        <successLetterKey>Stellaris_FusionSiteShelterTruthText</successLetterKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ActivatedMetalDebris</defName>
+    <label>活化金属残骸</label>
+    <description>被高能中子与长年热冲击活化的反应堆残骸。它主要作为危险遗址中的装饰性废墟。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ActivatedMetalDebris</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>180</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ReactorDispatchConsole</defName>
+    <label>反应堆调度终端</label>
+    <description>行政调度室残留的能源分配终端。屏幕在断续刷新，几个负载区域始终停在红色。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ReactorDispatchConsole</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.45</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>340</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ReadDispatchOrder</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ReadDispatchOrderDesc</workDesc>
+        <workTicks>2200</workTicks><requiredSkill>Intellectual</requiredSkill><requiredSkillLevel>4</requiredSkillLevel>
+        <archaeologyActionType>ReadDispatchOrder</archaeologyActionType><siteProgressKey>ReadOverloadOrder</siteProgressKey>
+        <addFlags><li>ReadOverloadOrder</li></addFlags>
+        <successMessageKey>Stellaris_ArchaeologyDispatchOrderMessage</successMessageKey><successLetterKey>Stellaris_FusionSiteDispatchOrderText</successLetterKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FusionSitePersonalLog</defName>
+    <label>员工个人日志终端</label>
+    <description>生活区角落里仍接着应急电池的小型终端，外壳上有手指擦出的灰痕。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FusionSitePersonalLog</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.35</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>220</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0.1</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ReadPersonalLogs</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_ReadPersonalLogsDesc</workDesc>
+        <workTicks>2000</workTicks><requiredSkill>Intellectual</requiredSkill><requiredSkillLevel>3</requiredSkillLevel>
+        <archaeologyActionType>ReadPersonalLogs</archaeologyActionType><siteProgressKey>PersonalLogsRecovered</siteProgressKey>
+        <addFlags><li>PersonalLogsRecovered</li></addFlags>
+        <successMessageKey>Stellaris_ArchaeologyPersonalLogsMessage</successMessageKey><successLetterKey>Stellaris_FusionSitePersonalLogsText</successLetterKey>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_AncientCapacitorBank</defName>
+    <label>古代点火电容阵列</label>
+    <description>两排厚重电容柱之间布满电弧烧痕，绝缘陶瓷已经开裂。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_AncientCapacitorBank</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.55</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>520</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ManageCapacitors</workLabel><workDesc>Stellaris_ArchaeologyWork_ManageCapacitorsDesc</workDesc>
+        <workTicks>2600</workTicks><requiredSkill>Construction</requiredSkill><requiredSkillLevel>6</requiredSkillLevel>
+        <archaeologyActionType>ManageCapacitors</archaeologyActionType><siteProgressKey>CapacitorsManaged</siteProgressKey>
+        <addFlags><li>CapacitorsManaged</li></addFlags><successMessageKey>Stellaris_ArchaeologyCapacitorsManagedMessage</successMessageKey><successLetterKey>Stellaris_FusionSiteCapacitorsManagedText</successLetterKey>
+        <failIncidentChance>0.18</failIncidentChance><threatOnFail>EMP</threatOnFail>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ARGOSSecurityCore</defName>
+    <label>阿尔戈斯安保核心</label>
+    <description>独立供电的安保主机仍保持整洁，服务器柱之间有稳定的冷光。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ARGOSSecurityCore</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.65</fillPercent><passability>PassThroughOnly</passability><blockWind>true</blockWind><blockLight>true</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>700</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_ARGOSMaintenance</workLabel><workDesc>Stellaris_ArchaeologyWork_ARGOSMaintenanceDesc</workDesc>
+        <workTicks>3600</workTicks><requiredSkill>Intellectual</requiredSkill><requiredSkillLevel>7</requiredSkillLevel>
+        <archaeologyActionType>ARGOSMaintenanceMode</archaeologyActionType><siteProgressKey>ArgosMaintenanceMode</siteProgressKey>
+        <addFlags><li>ArgosMaintenanceMode</li></addFlags><successMessageKey>Stellaris_ArchaeologyARGOSMaintenanceMessage</successMessageKey><successLetterKey>Stellaris_FusionSiteARGOSMaintenanceText</successLetterKey>
+        <deactivateSecurityTurrets>true</deactivateSecurityTurrets><postDestroyThreat>SecurityCoreCountermeasure</postDestroyThreat>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_BrokenPowerPylon</defName>
+    <label>倒塌输电塔残骸</label>
+    <description>地表输能塔坍塌后的扭曲钢架，断开的电缆埋进尘土。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_BrokenPowerPylon</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.1,2.1)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_CollapsedCatwalk</defName>
+    <label>坍塌检修栈桥</label>
+    <description>从高处摔落的检修栈桥，金属格栅和护栏挤成一团。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_CollapsedCatwalk</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+
+
+
+
+
+
+
+
+
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_DestroyedSecurityDrone</defName>
+    <label>损毁安保无人机</label>
+    <description>被近距离打穿的古代安保无人机残骸。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_DestroyedSecurityDrone</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ARGOSCamera</defName>
+    <label>阿尔戈斯监控节点</label>
+    <description>墙角的古代监控节点，镜头外壳布满灰尘。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ARGOSCamera</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ARGOSWallTurret</defName>
+    <label>阿尔戈斯墙嵌火力点</label>
+    <description>嵌在墙体里的古代自动火力点。它使用原版炮塔逻辑，由 ARGOS 机房的集中电网供能。</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Archaeology/Stellaris_ARGOSWallTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.8,1.8)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <rotatable>true</rotatable>
+    <fillPercent>0.55</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <blockWind>false</blockWind>
+    <blockLight>false</blockLight>
+    <altitudeLayer>Building</altitudeLayer>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <building>
+      <turretGunDef>Gun_MiniTurret</turretGunDef>
+      <turretBurstWarmupTime>0.6</turretBurstWarmupTime>
+      <turretBurstCooldownTime>2.2</turretBurstCooldownTime>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>85</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ARGOSDroneDock</defName>
+    <label>阿尔戈斯无人机停泊槽</label>
+    <description>地面停泊槽里还有断电的巡逻机接口。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ARGOSDroneDock</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_WeaponLockerDebris</defName>
+    <label>武器柜残骸</label>
+    <description>被撬开或撞裂的安保武器柜。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_WeaponLockerDebris</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenWeaponLocker</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenWeaponLockerDesc</workDesc>
+        <workTicks>850</workTicks>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyWeaponLockerOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>Steel</thingDef><minCount>8</minCount><maxCount>18</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+          <li><thingDef>Gun_Revolver</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+        </rewards>
+        <failIncidentChance>0.12</failIncidentChance>
+        <threatOnFail>Security</threatOnFail>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_PowerRoutingWallMap</defName>
+    <label>供能调度墙图</label>
+    <description>占据墙面的旧供能示意图，线路指示灯停在不同颜色。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_PowerRoutingWallMap</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(3.8,3.8)</drawSize></graphicData>
+    <size>(3,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_CrackedMonitorWall</defName>
+    <label>破裂监控屏墙</label>
+    <description>多联监控屏幕，有些完全熄灭，有些只剩下雪花。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_CrackedMonitorWall</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(3.8,3.8)</drawSize></graphicData>
+    <size>(3,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_EmergencySupplyCrate</defName>
+    <label>应急补给箱</label>
+    <description>没来得及搬走的应急补给箱，封条已经破裂。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_EmergencySupplyCrate</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenEmergencyCrate</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenEmergencyCrateDesc</workDesc>
+        <workTicks>650</workTicks>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyEmergencyCrateOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>MealSurvivalPack</thingDef><minCount>1</minCount><maxCount>4</maxCount></li>
+          <li><thingDef>MedicineIndustrial</thingDef><minCount>0</minCount><maxCount>2</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_OfficeDebris</defName>
+    <label>调度室办公残骸</label>
+    <description>翻倒的座椅、碎屏和文件盒混在一起。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_OfficeDebris</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_CargoPalletDebris</defName>
+    <label>货运托盘残骸</label>
+    <description>物流托盘、箱体和绑带散在地上。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_CargoPalletDebris</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_BunkLocker</defName>
+    <label>驻站储物柜</label>
+    <description>生活区的个人储物柜，有些柜门半开。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_BunkLocker</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenBunkLocker</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenBunkLockerDesc</workDesc>
+        <workTicks>520</workTicks>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyBunkLockerOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>MealSurvivalPack</thingDef><minCount>0</minCount><maxCount>2</maxCount></li>
+          <li><thingDef>MedicineIndustrial</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+          <li><thingDef>Stellaris_AncientTechFragment</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_MessTableClutter</defName>
+    <label>配餐桌残骸</label>
+    <description>配餐桌、餐盘和饮料包散乱地停在事故发生时的状态。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_MessTableClutter</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_EmergencyOxygenBottles</defName>
+    <label>空氧气瓶堆</label>
+    <description>一堆用尽的便携氧气瓶。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_EmergencyOxygenBottles</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_WorkbenchClutter</defName>
+    <label>工程值班台</label>
+    <description>值班台上摊着工具、接线盒和未收起的维修记录。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_WorkbenchClutter</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_PipeDiagramBoard</defName>
+    <label>管线示意板</label>
+    <description>维护区墙上的管线示意板，部分线路被手工圈出。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_PipeDiagramBoard</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ToolCrateDebris</defName>
+    <label>工具箱残骸</label>
+    <description>翻开的工具箱与散落零件。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ToolCrateDebris</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenToolCrate</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenToolCrateDesc</workDesc>
+        <workTicks>620</workTicks>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyToolCrateOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>Steel</thingDef><minCount>10</minCount><maxCount>28</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>0</minCount><maxCount>2</maxCount></li>
+          <li><thingDef>Plasteel</thingDef><minCount>0</minCount><maxCount>12</maxCount></li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FieldMedicalStation</defName>
+    <label>站医急救台</label>
+    <description>临时急救台、药柜和断电监护器挤在一起。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FieldMedicalStation</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenMedicalStation</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenMedicalStationDesc</workDesc>
+        <workTicks>700</workTicks>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyMedicalStationOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>MedicineIndustrial</thingDef><minCount>1</minCount><maxCount>4</maxCount></li>
+          <li><thingDef>MedicineUltratech</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+          <li><thingDef>ComponentIndustrial</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+        </rewards>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_CoolantPumpColumn</defName>
+    <label>巨型冷却泵柱</label>
+    <description>高大的冷却泵柱，管壁凝着白霜与灰尘。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_CoolantPumpColumn</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_RupturedCoolantVent</defName>
+    <label>破裂冷却蒸汽口</label>
+    <description>破裂喷口周围结着冷却剂白霜，偶尔有残余蒸汽冒出。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_RupturedCoolantVent</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_MobileRepairRig</defName>
+    <label>移动抢修架</label>
+    <description>推到现场的抢修架，接线还挂在半空。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_MobileRepairRig</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FusionFuelRack</defName>
+    <label>聚变燃料货架</label>
+    <description>加固货架上固定着几只冷冻燃料罐。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FusionFuelRack</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologyWork">
+        <workLabel>Stellaris_ArchaeologyWork_OpenFuelRack</workLabel>
+        <workDesc>Stellaris_ArchaeologyWork_OpenFuelRackDesc</workDesc>
+        <workTicks>900</workTicks>
+        <requiredSkill>Intellectual</requiredSkill>
+        <requiredSkillLevel>4</requiredSkillLevel>
+        <archaeologyActionType>OpenLootContainer</archaeologyActionType>
+        <successMessageKey>Stellaris_ArchaeologyFuelRackOpenedMessage</successMessageKey>
+        <rewards>
+          <li><thingDef>Stellaris_DeuteriumTritiumFuel</thingDef><minCount>4</minCount><maxCount>12</maxCount></li>
+          <li><thingDef>Stellaris_Helium3Canister</thingDef><minCount>0</minCount><maxCount>3</maxCount></li>
+          <li><thingDef>Stellaris_AncientFuelInjector</thingDef><minCount>0</minCount><maxCount>1</maxCount></li>
+        </rewards>
+        <failIncidentChance>0.16</failIncidentChance>
+        <threatOnFail>FuelLeak</threatOnFail>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FuelInjectionBench</defName>
+    <label>燃料注入预处理台</label>
+    <description>注入器、压力管线和机械臂停在半动作状态。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FuelInjectionBench</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_MagneticPulseEmitter</defName>
+    <label>不稳定电磁脉冲源</label>
+    <description>破裂线圈旁的电磁节点，附近散落物被吸向同一方向。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_MagneticPulseEmitter</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_LastStandBarricade</defName>
+    <label>临时掩体</label>
+    <description>用桌子、箱体和金属板匆忙堆出的掩体。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_LastStandBarricade</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ObservationWindow</defName>
+    <label>强化观察窗</label>
+    <description>面向核心区的厚重观察窗，玻璃布满冲击裂纹。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ObservationWindow</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ReactorBurnthroughPit</defName>
+    <label>反应堆熔穿井</label>
+    <description>核心下方的熔穿井，边缘是凝固金属和玻璃化地面。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ReactorBurnthroughPit</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(3.8,3.8)</drawSize></graphicData>
+    <size>(3,3)</size><rotatable>true</rotatable><fillPercent>1</fillPercent><passability>Impassable</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>9999</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_DamagedMagneticCoil</defName>
+    <label>损毁磁约束线圈</label>
+    <description>围绕核心的超导线圈残段，部分外壳扭曲撕裂。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_DamagedMagneticCoil</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,2)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_EmergencyQuenchNozzle</defName>
+    <label>紧急喷淬喷头</label>
+    <description>指向核心腔的粗大喷淬装置，喷口处有烧蚀痕。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_EmergencyQuenchNozzle</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FuelInjectionPort</defName>
+    <label>核心燃料注入口</label>
+    <description>连接核心的燃料注入口，管线在事故后被强行切断。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_FuelInjectionPort</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(2.8,2.8)</drawSize></graphicData>
+    <size>(2,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_ManualBreakerPanel</defName>
+    <label>手动断路面板</label>
+    <description>手动断路面板旁有烧焦手印和切割痕。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_ManualBreakerPanel</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_PowerConduitBundle</defName>
+    <label>裸露电缆束</label>
+    <description>从墙体和地板里拖出的粗电缆束。</description>
+    <graphicData><texPath>Things/Building/Archaeology/Stellaris_PowerConduitBundle</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>(1.8,1.8)</drawSize></graphicData>
+    <size>(1,1)</size><rotatable>true</rotatable><fillPercent>0.25</fillPercent><passability>PassThroughOnly</passability><blockWind>false</blockWind><blockLight>false</blockLight><altitudeLayer>Building</altitudeLayer><terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <statBases><MaxHitPoints>160</MaxHitPoints><WorkToBuild>0</WorkToBuild><Flammability>0</Flammability></statBases>
+  </ThingDef>
+
+</Defs>

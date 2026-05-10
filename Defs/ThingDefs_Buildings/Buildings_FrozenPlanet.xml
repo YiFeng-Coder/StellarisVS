@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_FrozenLuminousIceCrystal</defName>
+    <label>发光冰晶簇</label>
+    <description>在冰下洞穴中缓慢生长的半透明冰晶簇，内部封存的微量矿物会折射出淡蓝绿色光芒。它主要作为环境装饰，也能在黑暗洞穴中提供少量光照。</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Building/Natural/Stellaris_FrozenLuminousIceCrystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.15,1.15)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <fillPercent>0.35</fillPercent>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Beauty>3</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <passability>PassThroughOnly</passability>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockLight>false</blockLight>
+    <blockWind>false</blockWind>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4.2</glowRadius>
+        <glowColor>(95,190,220,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

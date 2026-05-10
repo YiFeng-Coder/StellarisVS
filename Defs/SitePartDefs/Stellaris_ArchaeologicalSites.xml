@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <SitePartDef>
-    <defName>Stellaris_ArchaeologicalSite</defName>
-    <label>考古站点</label>
-    <description>一处可发掘的远古遗址。</description>
+    <defName>Stellaris_FusionReactorArchaeologicalSitePart</defName>
+    <label>坍塌的聚变反应堆遗址</label>
+    <description>一处仍在周期性自检的古代聚变反应堆封存遗址。</description>
     <workerClass>Stellaris.SitePartWorker_ArchaeologicalSite</workerClass>
     <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
@@ -12,20 +12,20 @@
     <requiresFaction>false</requiresFaction>
     <approachOrderString>接近 {0}</approachOrderString>
     <approachingReportString>接近 {0}。</approachingReportString>
-    <arrivedLetter>已经到达考古站点。</arrivedLetter>
-    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <arrivedLetter>已经到达坍塌的聚变反应堆遗址。</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
     <wantsThreatPoints>true</wantsThreatPoints>
     <gravShipsCanLandOn>true</gravShipsCanLandOn>
-    <minThreatPoints>300</minThreatPoints>
+    <minThreatPoints>350</minThreatPoints>
     <tags>
-      <li>Stellaris_ArchaeologicalSiteA</li>
+      <li>Stellaris_FusionReactorArchaeologicalSite</li>
     </tags>
   </SitePartDef>
 
   <GenStepDef>
-    <defName>Stellaris_GenStep_ArchaeologicalSite</defName>
-    <linkWithSite>Stellaris_ArchaeologicalSite</linkWithSite>
+    <defName>Stellaris_GenStep_FusionReactorArchaeologicalSite</defName>
+    <linkWithSite>Stellaris_FusionReactorArchaeologicalSitePart</linkWithSite>
     <order>1200</order>
-    <genStep Class="Stellaris.GenStep_ArchaeologicalSite" />
+    <genStep Class="Stellaris.GenStep_FusionReactorArchaeologicalSite" />
   </GenStepDef>
 </Defs>

@@ -132,7 +132,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>StellarisResourceExoticCrystals</defName>
     <label>稀有水晶</label>
-    <description>确实挺稀有的</description>
+    <description>一块散发着非自然内部光芒的晶体碎片。它的形成需要极端压力、高温以及微量奇异粒子——这种条件极为罕见。晶体的晶格以近乎不可察觉的频率持续振动，缓慢释放储存的能量。它可用作武器的聚焦透镜，或仅仅作为一颗美丽的异星宝石被珍藏。</description>
     <graphicData>
       <texPath>Item/Resource/RareCrystal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -188,7 +188,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>StellarisResourceUraniumFuelCapsule</defName>
     <label>铀燃料仓</label>
-    <description>反正是铀的燃料仓</description>
+    <description>用高密度金属包裹的放射性铀同位素的燃料仓。</description>
     <possessionCount>10</possessionCount>
     <graphicData>
       <texPath>Item/Resource/UraniumFuelCapsule</texPath>

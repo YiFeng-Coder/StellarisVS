@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ResearchProjectDef Name="StellarisResearchProjectBase" Abstract="True">
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -189,8 +189,8 @@
   <ResearchProjectDef ParentName="StellarisResearchProjectBase">
     <defName>StellarisResearch_NuclearFusionReactor</defName>
     <label>聚变反应堆</label>
-    <description>氘核和氚核在一定条件下（如超高温、高压）可以聚变为氦核，在发生聚变反应的同时，会释放出巨大能量。核聚变反应所产生的能量比核裂变反应所产生的能量更大。恒星内部连续进行着氢聚变成氦的过程，它的光和热就是由这种不断的核聚变反应产生的。\n\n我们要做的，就是利用聚变反应产生的巨大能量，让它为我们所用。</description>
-    <baseCost>4000</baseCost>
+    <description>根据古代聚变反应堆蓝图复原殖民地级聚变能源设施。该研究解锁复原型聚变反应堆与氘氚聚变燃料芯封装配方。反应堆平时不需要维护，但运行中被外力打穿时会发生严重约束破裂事故。该研究不能通过原版科技蓝图交易解锁，必须先从考古站点获得完整聚变反应堆蓝图，并解析蓝图数据。</description>
+    <baseCost>12000</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>StellarisResearch_NuclearFissionReactor</li>
@@ -207,12 +207,11 @@
         <li>subject_gerund-&gt;constructing starship sensors</li>
       </rulesStrings>
     </generalRules>
-    <techprintCount>1</techprintCount>
-    <techprintCommonality>0</techprintCommonality>
-    <techprintMarketValue>10000</techprintMarketValue>
-    <heldByFactionCategoryTags>
-      <li>Empire</li>
-    </heldByFactionCategoryTags>
+    <modExtensions>
+      <li Class="Stellaris.StellarisArchaeologicalBlueprintResearchExtension">
+        <requiredBlueprint>Stellaris_FusionReactorBlueprint</requiredBlueprint>
+      </li>
+    </modExtensions>
   </ResearchProjectDef>
   <ResearchProjectDef ParentName="StellarisResearchProjectBase">
     <defName>StellarisResearch_OrbitalRailgun</defName>
@@ -244,6 +243,28 @@
     <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>StellarisResearch_SafeSuperBattery</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>6.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;interstellar navigation</li>
+        <li>subject_story-&gt;used prototype starship sensors to detect an incoming extinction-level asteroid and evacuate the planet</li>
+        <li>subject_story-&gt;was employed as navigator and cook on a Glitterworld star-yacht</li>
+        <li>subject_story-&gt;refined the design of long-range sensors, improving their utility</li>
+        <li>subject_gerund-&gt;navigating interstellar space</li>
+        <li>subject_gerund-&gt;constructing starship sensors</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_BioDigester</defName>
+    <label>污染消化仓</label>
+    <description>经过基因改造的细菌，专为高效分解有毒废物而设计。废物越积越多，菌群活性越强，处理速度呈指数级提升。</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>StellarisResearch_LifeSupport</li>
     </prerequisites>
     <researchViewX>1.00</researchViewX>
     <researchViewY>6.00</researchViewY>

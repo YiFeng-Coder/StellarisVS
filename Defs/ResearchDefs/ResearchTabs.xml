@@ -3,8 +3,8 @@
   <!-- To add a research tab, make a new ResearchTabDef here and then set the <tab> field of your research project to match it -->
   <ResearchTabDef>
     <defName>StellarisResearchTab</defName>
-    <label>群星</label>
-    <generalTitle>群星研究项目</generalTitle>
+    <label>星际科技</label>
+    <generalTitle>星际科技研究项目</generalTitle>
     <generalDescription>研究星际航行项目。</generalDescription>
   </ResearchTabDef>
 </Defs>

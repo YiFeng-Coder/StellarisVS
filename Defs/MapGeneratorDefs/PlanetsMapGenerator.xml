@@ -37,4 +37,30 @@
   <MapGeneratorDef ParentName="StellarisPlanetMapBase" Name="StellarisLavaPlanetGenerator">
     <defName>StellarisLavaPlanetGenerator</defName>
   </MapGeneratorDef>
+  <MapGeneratorDef ParentName="StellarisPlanetMapBase">
+    <defName>StellarisAcidBarrensGenerator</defName>
+    <label>acid barrens generation</label>
+    <genSteps>
+      <li>StellarisGenStep_Acidification</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <!--
+    Dead planets must not use StellarisPlanetMapBase.
+    The shared base includes MutatorCriticalStructures, MutatorNonCriticalStructures and ScenParts,
+    which can place ruins, ancient human-made objects, quest structures and other civilization debris.
+    A dead planet is geologically dead rather than a fallen civilization world, so it receives only
+    terrain/elevation, the dead-planet geological terrain pass, player-start selection and fog.
+  -->
+  <MapGeneratorDef>
+    <defName>Stellaris_DeadPlanetGenerator</defName>
+    <label>dead planet generation</label>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Terrain</li>
+      <li>Stellaris_GenStep_DeadPlanetTerrain</li>
+      <li>FindPlayerStartSpot</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
 </Defs>

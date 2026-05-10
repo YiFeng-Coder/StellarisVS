@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>Stellaris_DoArchaeologyWork</defName>
+    <label>处理 Stellaris 考古目标</label>
+    <giverClass>Stellaris.WorkGiver_StellarisArchaeologyWork</giverClass>
+    <workType>Research</workType>
+    <priorityInType>95</priorityInType>
+    <verb>处理考古目标</verb>
+    <gerund>正在处理考古目标</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+</Defs>

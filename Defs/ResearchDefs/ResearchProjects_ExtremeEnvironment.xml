@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef ParentName="StellarisResearchProjectBase">
+    <defName>StellarisResearch_ExtremeEnvironmentSurvival</defName>
+    <label>极端环境生存</label>
+    <description>系统研究极端行星登陆所需的密封、隔热、保温、过滤与生命维持接口技术。完成后，可在精密装配台制作死寂、冰封与熔融行星专用防护装备。</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Fabrication</li>
+      <li>OrbitalTech</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>6.00</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject-&gt;extreme environment survival</li>
+        <li>subject_story-&gt;designed sealed survival suits for dead worlds, frozen planets, and molten planets</li>
+        <li>subject_story-&gt;survived a landing on an airless world by improvising a thermal-pressure suit</li>
+        <li>subject_gerund-&gt;engineering extreme environment survival equipment</li>
+        <li>subject_gerund-&gt;testing sealed suits under lethal planetary conditions</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

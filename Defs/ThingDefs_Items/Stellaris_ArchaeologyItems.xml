@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_FusionReactorBlueprint</defName>
+    <label>完整聚变反应堆蓝图</label>
+    <description>从古代聚变核心中完整恢复的反应堆蓝图。它不是一次性建造材料，也不是原版科技蓝图商品。选择该物品并解析蓝图数据后，才能开始研究聚变反应堆。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_FusionReactorBlueprint</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.85</drawSize></graphicData>
+    <stackLimit>1</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>10000</MarketValue><Mass>0.5</Mass><Flammability>0.2</Flammability><DeteriorationRate>0.1</DeteriorationRate></statBases>
+    <tradeability>None</tradeability>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+    <comps>
+      <li Class="Stellaris.CompProperties_StellarisArchaeologicalBlueprint">
+        <researchProject>StellarisResearch_NuclearFusionReactor</researchProject>
+        <destroyOnApply>true</destroyOnApply>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_DamagedFusionBlueprint</defName>
+    <label>破损聚变反应堆蓝图</label>
+    <description>强行提取数据后得到的残缺聚变蓝图。它包含有价值的设计片段，但许多关键安全序列已经永久丢失。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_DamagedFusionBlueprint</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.85</drawSize></graphicData>
+    <stackLimit>1</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>500</MarketValue><Mass>0.35</Mass><Flammability>0.3</Flammability><DeteriorationRate>0.25</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_ChiefEngineerOverrideKey</defName>
+    <label>工程主管授权钥</label>
+    <description>一枚烧蚀严重的古代授权数据钥。它是那名工程主管最后覆盖 AI 指令的证据，也是一件罕见纪念品。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_ChiefEngineerOverrideKey</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.85</drawSize></graphicData>
+    <stackLimit>1</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Metal_Drop</soundInteract><soundDrop>Metal_Drop</soundDrop>
+    <statBases><MarketValue>850</MarketValue><Mass>0.08</Mass><Beauty>2</Beauty><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_DeuteriumTritiumFuel</defName>
+    <label>氘氚燃料</label>
+    <description>封存在低温燃料芯中的氘氚混合燃料。它可用于聚变相关科技、舰船能源设备和未来的高能反应堆配方。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_DeuteriumTritiumFuel</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.75</drawSize></graphicData>
+    <stackLimit>150</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Metal_Drop</soundInteract><soundDrop>Metal_Drop</soundDrop>
+    <statBases><MarketValue>850</MarketValue><Mass>0.08</Mass><Flammability>0</Flammability><DeteriorationRate>0.15</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_Helium3Canister</defName>
+    <label>氦-3燃料罐</label>
+    <description>稀有的氦-3燃料罐，可作为高级聚变、舰船能源和深空工程材料。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_Helium3Canister</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.78</drawSize></graphicData>
+    <stackLimit>75</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Metal_Drop</soundInteract><soundDrop>Metal_Drop</soundDrop>
+    <statBases><MarketValue>45</MarketValue><Mass>0.12</Mass><Flammability>0</Flammability><DeteriorationRate>0.1</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_FusionControlDataCore</defName><label>聚变控制数据核心</label><description>从控制系统中拆出的数据核心，外壳有高温熏黑和重新焊接痕迹。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_FusionControlDataCore</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.8</drawSize></graphicData>
+    <stackLimit>1</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>900</MarketValue><Mass>0.35</Mass><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_SuperconductiveCoilFragment</defName><label>超导线圈残片</label><description>从磁约束环上回收的超导材料残片，断面仍有蓝绿色斑点。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_SuperconductiveCoilFragment</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.8</drawSize></graphicData>
+    <stackLimit>75</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>36</MarketValue><Mass>0.12</Mass><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_AncientFuelInjector</defName><label>古代燃料注入器</label><description>聚变燃料系统中的高精度注入器，接口处有未清除的冷冻燃料残留。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_AncientFuelInjector</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.8</drawSize></graphicData>
+    <stackLimit>5</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>280</MarketValue><Mass>0.4</Mass><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_AncientFusionCoreModule</defName><label>古代聚变核心模块</label><description>从核心内层完整拆出的高价值模块，仍被多层屏蔽壳包住。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_AncientFusionCoreModule</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.8</drawSize></graphicData>
+    <stackLimit>1</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>2200</MarketValue><Mass>3.5</Mass><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_FusedReactorGlass</defName><label>反应堆熔凝玻璃</label><description>熔穿井边缘回收的玻璃化碎片，里面夹着细小金属颗粒。</description>
+    <graphicData><texPath>Things/Item/Resource/Stellaris_FusedReactorGlass</texPath><graphicClass>Graphic_Single</graphicClass><drawSize>0.8</drawSize></graphicData>
+    <stackLimit>100</stackLimit><healthAffectsPrice>false</healthAffectsPrice><soundInteract>Standard_Drop</soundInteract><soundDrop>Standard_Drop</soundDrop>
+    <statBases><MarketValue>18</MarketValue><Mass>0.1</Mass><Flammability>0</Flammability><DeteriorationRate>0.05</DeteriorationRate></statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+  </ThingDef>
+
+</Defs>

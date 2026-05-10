@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Stellaris_ArchaeologyWorkJob</defName>
+    <driverClass>Stellaris.JobDriver_StellarisArchaeologyWork</driverClass>
+    <reportString>正在处理 TargetA。</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

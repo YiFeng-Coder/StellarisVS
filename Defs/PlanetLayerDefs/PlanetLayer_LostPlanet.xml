@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PlanetLayerDef>
+    <defName>Stellaris_LostPlanetSurface</defName>
+    <label>遗落行星</label>
+    <viewGizmoTooltip>观察遗落行星表面位置。</viewGizmoTooltip>
+    <viewGizmoTexPath>UI/Commands/ViewPlanet</viewGizmoTexPath>
+    <layerType>SurfaceLayer</layerType>
+    <tileType>SurfaceTile</tileType>
+    <elevationString>{0}m</elevationString>
+    <gerundLabel>在</gerundLabel>
+    <backgroundBiome>Stellaris_LostPlanetBackGround</backgroundBiome>
+    <worldGenSteps>
+      <li>Stellaris_WorldGenStep_LostPlanet</li>
+      <li>Mutators</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <li>Features</li>
+    </worldGenSteps>
+    <worldDrawLayers>
+      <li>WorldDrawLayer_CurrentMapTile</li>
+      <li>WorldDrawLayer_SelectedTile</li>
+      <li>WorldDrawLayer_SettleTile</li>
+      <li>WorldDrawLayer_MouseTile</li>
+      <li>WorldDrawLayer_ClosestTile</li>
+      <li>Stellaris.WorldDrawLayer_LostPlanetUngeneratedPlanetParts</li>
+      <li>WorldDrawLayer_WorldObjects_Expandable</li>
+      <li>WorldDrawLayer_WorldObjects_NonExpandable</li>
+      <li>WorldDrawLayer_DebugNoise</li>
+      <li>WorldDrawLayer_Landmarks</li>
+      <li>WorldDrawLayer_Glow</li>
+      <li>WorldDrawLayer_Hills</li>
+      <li>WorldDrawLayer_Terrain</li>
+    </worldDrawLayers>
+    <worldTabs>
+      <li>WITab_Terrain</li>
+      <li>WITab_Planet</li>
+    </worldTabs>
+  </PlanetLayerDef>
+</Defs>

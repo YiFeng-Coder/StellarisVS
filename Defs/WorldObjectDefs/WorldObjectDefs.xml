@@ -23,4 +23,17 @@
     <texture>UI/Ship/UniverseMapParent_Ship</texture>
     <expandingIconPriority>100</expandingIconPriority>
   </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>WorldObject_EnemyShip</defName>
+    <label>敌舰</label>
+    <worldObjectClass>Stellaris.WorldObject_EnemyShip</worldObjectClass>
+    <canHaveFaction>true</canHaveFaction>
+    <selectable>false</selectable>
+    <texture>UI/Ship/UniverseMapParent_Ship</texture>
+    <expandingIconPriority>100</expandingIconPriority>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>UI/Ship/UniverseMapParent_Ship</expandingIconTexture>
+    <expandMore>true</expandMore>
+    <useDynamicDrawer>true</useDynamicDrawer>
+  </WorldObjectDef>
 </Defs>

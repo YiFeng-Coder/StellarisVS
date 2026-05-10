@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef>
+    <defName>Stellaris_LostPlanetGenerator</defName>
+    <label>lost planet generation</label>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Terrain</li>
+      <li>Stellaris_GenStep_LostPlanetTerrain</li>
+      <li>MutatorCriticalStructures</li>
+      <li>MutatorNonCriticalStructures</li>
+      <li>FindPlayerStartSpot</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <li>Snow</li>
+      <li>MutatorFinal</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+</Defs>

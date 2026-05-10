@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--石碑-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_StoneInfo</defName>
+    <label>刻字石碑</label>
+    <description>刻有文字的石碑。</description>
+    <graphicData>
+      <texPath>Building/Site/StoneInfo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3.2,3.2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_TextData"></li>
+    </comps>
+    <designationCategory>Misc</designationCategory>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <researchPrerequisites>
+      <li>StellarisResearch_Sheild</li>
+    </researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+  </ThingDef>
+  <!--草稿纸-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_PaperInfo</defName>
+    <label>写满字的散乱纸堆</label>
+    <description>一堆乱七八糟的草稿纸，上面写满了字。</description>
+    <graphicData>
+      <texPath>Building/Site/PaperInfo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.2,1.2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <fillPercent>0.5</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="Stellaris.CompProperties_TextData"></li>
+    </comps>
+    <designationCategory>Misc</designationCategory>
+    <blockWind>true</blockWind>
+    <passability>PassThroughOnly</passability>
+    <researchPrerequisites>
+      <li>StellarisResearch_Sheild</li>
+    </researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+  </ThingDef>
+  <!--远古聚变反应堆-->
+  <ThingDef ParentName="BuildingBase">
+    <defName>Stellaris_AncientFusionReactor</defName>
+    <label>远古聚变反应堆</label>
+    <description>一个古老的聚变反应堆。看上去已经损坏了，但我们依旧能从中得到不少关于聚变反应堆的科技应用。</description>
+    <comps>
+      <!-- 添加自定义组件 -->
+      <li Class="Stellaris.CompProperties_ReverseEngineer">
+        <!-- 逆向后掉落科技蓝图 (必须替换成你模组里的真实物品DefName) -->
+        <techprintDef>Stellaris_FusionReactorBlueprint</techprintDef>
+        <!-- 工作量，3000 ticks 约等于游戏内0.8小时 -->
+        <workAmount>3000</workAmount>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <canOverlapZones>false</canOverlapZones>
+    <blockLight>true</blockLight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>0</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <rotatable>false</rotatable>
+    <fillPercent>1</fillPercent>
+    <size>(8,4)</size>
+    <graphicData>
+      <texPath>Building/Site/StellarisAncientFusionReactor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8.8,4.4)</drawSize>
+    </graphicData>
+  </ThingDef>
+</Defs>

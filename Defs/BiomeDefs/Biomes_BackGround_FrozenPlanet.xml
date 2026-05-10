@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BiomeDef>
+    <defName>Stellaris_FrozenPlanetBackGround</defName>
+    <label>冰封行星</label>
+    <workerClass>BiomeWorker_IceSheet</workerClass>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <settlementSelectionWeight>0</settlementSelectionWeight>
+    <texture>Biome/Stellaris_FrozenPlanet</texture>
+    <forageability>0</forageability>
+  </BiomeDef>
+</Defs>

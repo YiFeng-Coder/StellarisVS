@@ -47,9 +47,10 @@
     <viewGizmoTooltip>星际空间</viewGizmoTooltip>
     <elevationString>3000km</elevationString>
     <defaultBiome>Orbit</defaultBiome>
-    <rangeDistanceFactor>80</rangeDistanceFactor>
+    <rangeDistanceFactor>40</rangeDistanceFactor>
   </PlanetLayerDef>
   <!--Planets-->
+  <!--Lava-->
   <PlanetLayerDef>
     <defName>StellarisLavaPlanetSurface</defName>
     <label>熔融行星</label>
@@ -73,6 +74,82 @@
       <li>WorldDrawLayer_MouseTile</li>
       <li>WorldDrawLayer_ClosestTile</li>
       <li>Stellaris.WorldDrawLayer_LavaPlanetUngeneratedPlanetParts</li>
+      <li>WorldDrawLayer_WorldObjects_Expandable</li>
+      <li>WorldDrawLayer_WorldObjects_NonExpandable</li>
+      <li>WorldDrawLayer_DebugNoise</li>
+      <li>WorldDrawLayer_Landmarks</li>
+      <li>WorldDrawLayer_Glow</li>
+      <li>WorldDrawLayer_Hills</li>
+      <li>WorldDrawLayer_Terrain</li>
+    </worldDrawLayers>
+    <worldTabs>
+      <li>WITab_Terrain</li>
+      <li>WITab_Planet</li>
+    </worldTabs>
+  </PlanetLayerDef>
+  <!--Toxic-->
+  <PlanetLayerDef>
+    <defName>StellarisToxicPlanetSurface</defName>
+    <label>剧毒行星</label>
+    <viewGizmoTooltip>观察剧毒行星表面位置。</viewGizmoTooltip>
+    <viewGizmoTexPath>UI/Commands/ViewPlanet</viewGizmoTexPath>
+    <layerType>SurfaceLayer</layerType>
+    <tileType>SurfaceTile</tileType>
+    <elevationString>{0}m</elevationString>
+    <gerundLabel>在</gerundLabel>
+    <backgroundBiome>StellarisLavaFieldBackGround</backgroundBiome>
+    <worldDrawLayers>
+      <li>WorldDrawLayer_CurrentMapTile</li>
+      <li>WorldDrawLayer_SelectedTile</li>
+      <li>WorldDrawLayer_SettleTile</li>
+      <li>WorldDrawLayer_MouseTile</li>
+      <li>WorldDrawLayer_ClosestTile</li>
+      <li>Stellaris.WorldDrawLayer_ToxicPlanetUngeneratedPlanetParts</li>
+      <li>WorldDrawLayer_WorldObjects_Expandable</li>
+      <li>WorldDrawLayer_WorldObjects_NonExpandable</li>
+      <li>WorldDrawLayer_DebugNoise</li>
+      <li>WorldDrawLayer_Landmarks</li>
+      <li>WorldDrawLayer_Glow</li>
+      <li>WorldDrawLayer_Hills</li>
+      <li>WorldDrawLayer_Terrain</li>
+      <li>Stellaris.WorldDrawLayer_ToxicAtmosphere</li>
+    </worldDrawLayers>
+    <worldTabs>
+      <li>WITab_Terrain</li>
+      <li>WITab_Planet</li>
+    </worldTabs>
+    <worldGenSteps>
+      <li>Mutators</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">Pollution</li>
+      <!--<li>Factions</li>-->
+      <li>Features</li>
+      <li>StellarisWorldGenStepToxicPlanet</li>
+    </worldGenSteps>
+  </PlanetLayerDef>
+
+  <!--Dead-->
+  <PlanetLayerDef>
+    <defName>Stellaris_DeadPlanetSurface</defName>
+    <label>死寂行星</label>
+    <viewGizmoTooltip>观察死寂行星表面位置。</viewGizmoTooltip>
+    <viewGizmoTexPath>UI/Commands/ViewPlanet</viewGizmoTexPath>
+    <layerType>SurfaceLayer</layerType>
+    <tileType>SurfaceTile</tileType>
+    <elevationString>{0}m</elevationString>
+    <gerundLabel>在</gerundLabel>
+    <backgroundBiome>Stellaris_DeadPlanetBackGround</backgroundBiome>
+    <worldGenSteps>
+      <li>Stellaris_WorldGenStep_DeadPlanet</li>
+      <li>Mutators</li>
+      <li>Features</li>
+    </worldGenSteps>
+    <worldDrawLayers>
+      <li>WorldDrawLayer_CurrentMapTile</li>
+      <li>WorldDrawLayer_SelectedTile</li>
+      <li>WorldDrawLayer_SettleTile</li>
+      <li>WorldDrawLayer_MouseTile</li>
+      <li>WorldDrawLayer_ClosestTile</li>
+      <li>Stellaris.WorldDrawLayer_DeadPlanetUngeneratedPlanetParts</li>
       <li>WorldDrawLayer_WorldObjects_Expandable</li>
       <li>WorldDrawLayer_WorldObjects_NonExpandable</li>
       <li>WorldDrawLayer_DebugNoise</li>

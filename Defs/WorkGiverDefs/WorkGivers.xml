@@ -14,4 +14,19 @@
     </requiredCapacities>
     <canBeDoneByMechs>false</canBeDoneByMechs>
   </WorkGiverDef>
+  <!-- 分配工作的规则 -->
+  <!-- 这里的 workType 使用了 Research (研究)，意味着只有负责研究的人才会去做 -->
+  <WorkGiverDef>
+    <defName>Stellaris_DoReverseEngineer</defName>
+    <label>逆向工程外星建筑</label>
+    <giverClass>Stellaris.WorkGiver_ReverseEngineer</giverClass>
+    <workType>Research</workType>
+    <priorityInType>90</priorityInType>
+    <!-- 优先级很高，优先于普通研究 -->
+    <verb>逆向工程</verb>
+    <gerund>正在逆向工程</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
 </Defs>

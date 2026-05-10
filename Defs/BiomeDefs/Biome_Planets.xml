@@ -26,7 +26,8 @@
       </li>
     </diseases>
     <baseWeatherCommonalities>
-      <StellarisNoOxygen>1</StellarisNoOxygen>
+      <StellarisNoOxygen>0.95</StellarisNoOxygen>
+      <Clear>0.05</Clear>
     </baseWeatherCommonalities>
     <noAmbientWind>true</noAmbientWind>
     <allowRoads>false</allowRoads>
@@ -42,6 +43,156 @@
       </li>
     </terrainsByFertility>
     <allowFarmingCamps>false</allowFarmingCamps>
+    <isExtremeBiome>true</isExtremeBiome>
+    <canAutoChoose>true</canAutoChoose>
+  </BiomeDef>
+  <!--ToxicPlanet-->
+  <BiomeDef>
+    <defName>StellarisPressurizedAcidicBarrens</defName>
+    <label>高压酸性荒地</label>
+    <description>这是一个死寂的世界，大气压得令人窒息，酸湖沸腾。空气中弥漫着硫磺和二氧化碳，形成了失控的温室效应。地表无法获得阳光，而气压之高足以压垮脆弱的结构。在这里生存需要完全密封大气层。</description>
+    <!-- 使用沙漠的生成逻辑，但只在极热地区生成 -->
+    <workerClass>BiomeWorker_Desert</workerClass>
+    <implemented>true</implemented>
+    <canBuildBase>true</canBuildBase>
+    <canAutoChoose>true</canAutoChoose>
+    <!-- 极低降雨（酸雨不算水），极高温度 -->
+    <baseWeatherCommonalities>
+      <StellarisAcidSmog>0.95</StellarisAcidSmog>
+      <Clear>0.05</Clear>
+    </baseWeatherCommonalities>
+    <!-- 环境极难生存 -->
+    <diseaseMtbDays>15</diseaseMtbDays>
+    <!-- 极其容易生病（模拟化学中毒） -->
+    <settlementSelectionWeight>0.1</settlementSelectionWeight>
+    <!-- 派系不喜欢住这 -->
+    <movementDifficulty>2.5</movementDifficulty>
+    <!-- 关键：模拟高气压，移动速度大幅降低 -->
+    <forageability>0</forageability>
+    <!-- 无法在这里觅食 -->
+    <!-- 死寂世界的核心设定 -->
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <!-- 地形纹理：大量裸岩 -->
+    <terrainsByFertility>
+      <li>
+        <terrain>Stellaris_StoneCorroded_Rough</terrain>
+        <min>-999</min>
+        <max>0.8</max>
+      </li>
+      <li>
+        <terrain>StellarisToxicSoil</terrain>
+        <min>0.8</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
+    <!-- 声音环境 -->
+    <soundsAmbient>
+      <li>Ambient_Wind_Desolate</li>
+      <!-- 使用凄凉的风声 -->
+    </soundsAmbient>
+    <texture>Biome/ToxicPlanetBiome</texture>
+    <inVacuum>true</inVacuum>
+    <isExtremeBiome>true</isExtremeBiome>
+  </BiomeDef>
+
+  <!--DeadPlanet-->
+  <BiomeDef>
+    <defName>Stellaris_DeadCraterWastes</defName>
+    <label>陨坑荒原</label>
+    <description>死寂行星最典型的地貌。一望无际的灰色平原上密布大小不一的撞击坑，地表覆盖由撞击粉碎的岩石风化层，夹杂陨铁碎片与冲击玻璃颗粒。</description>
+    <workerClass>BiomeWorker_Desert</workerClass>
+    <implemented>true</implemented>
+    <canBuildBase>true</canBuildBase>
+    <canAutoChoose>true</canAutoChoose>
+    <settleWarning>死寂行星没有可呼吸大气，也没有磁场屏蔽。殖民者暴露在户外会遭遇真空、极端昼夜温差、宇宙辐射和微陨石轰击。
+
+你确定你的飞船、舱外服与供暖/散热系统足够可靠吗？</settleWarning>
+    <allowFarmingCamps>false</allowFarmingCamps>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <settlementSelectionWeight>0</settlementSelectionWeight>
+    <movementDifficulty>3</movementDifficulty>
+    <texture>Biome/Stellaris_DeadCraterWastes</texture>
+    <forageability>0</forageability>
+    <geyserCountFactor>0</geyserCountFactor>
+    <maxFishPopulation>0</maxFishPopulation>
+    <soundsAmbient>
+      <li>Ambient_Wind_Desolate</li>
+    </soundsAmbient>
+    <baseWeatherCommonalities>
+      <Stellaris_DeadStillness>0.95</Stellaris_DeadStillness>
+      <Clear>0.05</Clear>
+    </baseWeatherCommonalities>
+    <noAmbientWind>true</noAmbientWind>
+    <allowRoads>false</allowRoads>
+    <allowRivers>false</allowRivers>
+    <hasVirtualPlants>false</hasVirtualPlants>
+    <inVacuum>true</inVacuum>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <terrainsByFertility>
+      <li>
+        <terrain>Stellaris_DeadRegolith</terrain>
+        <min>-999</min>
+        <max>0.45</max>
+      </li>
+      <li>
+        <terrain>Stellaris_DeadBasaltRough</terrain>
+        <min>0.45</min>
+        <max>0.8</max>
+      </li>
+      <li>
+        <terrain>Stellaris_DeadMeteoricGravel</terrain>
+        <min>0.8</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
+    <isExtremeBiome>true</isExtremeBiome>
+  </BiomeDef>
+  <BiomeDef>
+    <defName>Stellaris_DeadRadiationDesert</defName>
+    <label>辐射沙漠</label>
+    <description>这里并非因水或风形成的沙漠，而是因恒星辐射与宇宙射线长年轰击而“烤干”的高原区。硅酸盐粉尘像灰一样堆积，放射性矿物偶尔在黑暗中泛出微弱荧光。</description>
+    <workerClass>BiomeWorker_Desert</workerClass>
+    <implemented>true</implemented>
+    <canBuildBase>true</canBuildBase>
+    <canAutoChoose>true</canAutoChoose>
+    <settleWarning>辐射沙漠兼具真空、强辐射、极端温差和静电粉尘风险。长期暴露会迅速累积中毒/辐射等价损伤，并可能损坏户外设备。</settleWarning>
+    <allowFarmingCamps>false</allowFarmingCamps>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <settlementSelectionWeight>0</settlementSelectionWeight>
+    <movementDifficulty>4.5</movementDifficulty>
+    <texture>Biome/Stellaris_DeadRadiationDesert</texture>
+    <forageability>0</forageability>
+    <geyserCountFactor>0</geyserCountFactor>
+    <maxFishPopulation>0</maxFishPopulation>
+    <soundsAmbient>
+      <li>Ambient_Wind_Desolate</li>
+    </soundsAmbient>
+    <baseWeatherCommonalities>
+      <Stellaris_DeadStillness>0.65</Stellaris_DeadStillness>
+      <Stellaris_ElectrostaticDust>0.30</Stellaris_ElectrostaticDust>
+      <Clear>0.05</Clear>
+    </baseWeatherCommonalities>
+    <noAmbientWind>true</noAmbientWind>
+    <allowRoads>false</allowRoads>
+    <allowRivers>false</allowRivers>
+    <hasVirtualPlants>false</hasVirtualPlants>
+    <inVacuum>true</inVacuum>
+    <wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+    <terrainsByFertility>
+      <li>
+        <terrain>Stellaris_DeadRadiationDust</terrain>
+        <min>-999</min>
+        <max>0.72</max>
+      </li>
+      <li>
+        <terrain>Stellaris_DeadStaticGlass</terrain>
+        <min>0.72</min>
+        <max>999</max>
+      </li>
+    </terrainsByFertility>
     <isExtremeBiome>true</isExtremeBiome>
   </BiomeDef>
 </Defs>

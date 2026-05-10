@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Stellaris.EnemyShipDef>
+    <defName>StellarisEnemyShipTest</defName>
+    <label>测试敌舰</label>
+    <description>一个测试敌舰。</description>
+    <fromMod>FengMod.Stellaris</fromMod>
+    <threatLevel>10</threatLevel>
+    <!--fromMod处请填写你mod的packageId-->
+  </Stellaris.EnemyShipDef>
+</Defs>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <PlanetLayerSettingsDef>
+    <defName>Stellaris_FrozenPlanetLayerSetting</defName>
+    <label>冰封行星</label>
+    <settings>
+      <radius>100</radius>
+      <subdivisions>10</subdivisions>
+      <origin>(0,0,0)</origin>
+    </settings>
+  </PlanetLayerSettingsDef>
+</Defs>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>Stellaris_AncientTechFragment</defName>
+    <label>远古科技碎片</label>
+    <description>从遗落文明设备、数据板或损坏智库核心中回收的高密度科技残片。它无法直接理解，但可作为逆向工程、稀有科技解锁或遗落科技制造的核心材料。</description>
+    <graphicData>
+      <texPath>Item/Resource/Stellaris_AncientTechFragment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>150</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MarketValue>18</MarketValue>
+      <Mass>0.15</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0.2</DeteriorationRate>
+    </statBases>
+    <thingCategories><li>ResourcesRaw</li></thingCategories>
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+</Defs>

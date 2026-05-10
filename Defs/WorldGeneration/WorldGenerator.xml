@@ -5,4 +5,15 @@
     <order>0</order>
     <worldGenStep Class="Stellaris.WorldGenSteps.WorldGenStep_LavaPlanet" />
   </WorldGenStepDef>
+  <WorldGenStepDef>
+    <defName>StellarisWorldGenStepToxicPlanet</defName>
+    <order>0</order>
+    <worldGenStep Class="Stellaris.WorldGenSteps.WorldGenStep_ToxicTerrain" />
+  </WorldGenStepDef>
+
+  <WorldGenStepDef>
+    <defName>Stellaris_WorldGenStep_DeadPlanet</defName>
+    <order>0</order>
+    <worldGenStep Class="Stellaris.WorldGenSteps.WorldGenStep_DeadPlanet" />
+  </WorldGenStepDef>
 </Defs>

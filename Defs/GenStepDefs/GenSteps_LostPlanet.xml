@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GenStepDef>
+    <defName>Stellaris_GenStep_LostPlanetTerrain</defName>
+    <order>315</order>
+    <genStep Class="Stellaris.GenStep_LostPlanetTerrain" />
+  </GenStepDef>
+</Defs>

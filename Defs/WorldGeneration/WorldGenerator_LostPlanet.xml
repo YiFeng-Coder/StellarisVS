@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorldGenStepDef>
+    <defName>Stellaris_WorldGenStep_LostPlanet</defName>
+    <order>0</order>
+    <worldGenStep Class="Stellaris.WorldGenSteps.WorldGenStep_LostPlanet" />
+  </WorldGenStepDef>
+</Defs>

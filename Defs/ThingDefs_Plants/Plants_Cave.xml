@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="StellarisCavePlantBase" ParentName="PlantBase" Abstract="True">
+    <plant>
+      <neverBlightable>true</neverBlightable>
+      <growMinGlow>0</growMinGlow>
+      <growOptimalGlow>0</growOptimalGlow>
+      <cavePlant>true</cavePlant>
+      <diesToLight>false</diesToLight>
+      <wildOrder>1</wildOrder>
+      <wildEqualLocalDistribution>false</wildEqualLocalDistribution>
+    </plant>
+  </ThingDef>
+  <!--菌丝-->
+  <ThingDef ParentName="StellarisCavePlantBase">
+    <defName>StellarisToxMycelium</defName>
+    <label>嗜毒菌丝</label>
+    <description>这是一种生物工程真菌，以污染为主要能量来源，能主动从土壤中吸收污染物，从而为其快速繁殖提供能量。\n\n成熟的菌丝会不断向周围蔓延、生长。</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Beauty>2</Beauty>
+      <BeautyOutdoors>2</BeautyOutdoors>
+      <Nutrition>0.5</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Plant/StellarisToxMycelium</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <fertilityMin>0.01</fertilityMin>
+      <fertilitySensitivity>0.05</fertilitySensitivity>
+      <growDays>5</growDays>
+      <dieIfLeafless>false</dieIfLeafless>
+      <harvestYield>20</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>StellarisToxSporePod</harvestedThingDef>
+      <maxMeshCount>4</maxMeshCount>
+      <neverBlightable>true</neverBlightable>
+      <visualSizeRange>0.4~0.7</visualSizeRange>
+      <topWindExposure>0.05</topWindExposure>
+      <wildClusterRadius>3</wildClusterRadius>
+      <wildClusterWeight>5</wildClusterWeight>
+      <purpose>Food</purpose>
+      <pollution>Any</pollution>
+    </plant>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5.9</glowRadius>
+        <glowColor>(10,50,64,0)</glowColor>
+      </li>
+      <li Class="Stellaris.CompProperties_ToxMycelium">
+        <checkIntervalTicks>2000</checkIntervalTicks>
+        <spreadChance>0.1</spreadChance>
+        <pollutionConsumption>0.5</pollutionConsumption>
+      </li>
+    </comps>
+  </ThingDef>
+  <!--菌丝产物-->
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>StellarisToxSporePod</defName>
+    <label>嗜毒菌营养聚合物</label>
+    <description>从嗜毒菌丝采集的一种密集且具有脉动的真菌荚果。它过滤掉了重金属，并将营养物质压缩成高热量包。但是看起来一点儿也不好吃，散发着神秘绿光。</description>
+    <graphicData>
+      <texPath>Item/Resource/PlantResource/StellarisToxSporePod</texPath>
+      <!-- 你需要画一个紫绿色的孢子贴图 -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>20.0</MarketValue>
+      <!-- 价值较高 -->
+      <Mass>0.05</Mass>
+      <Flammability>0.5</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+      <!-- 腐烂得稍微快一点 -->
+      <Nutrition>0.5</Nutrition>
+      <!-- 非常高！普通玉米只有 0.05 -->
+    </statBases>
+    <ingestible>
+      <foodType>VegetableOrFruit</foodType>
+      <preferability>DesperateOnlyForHumanlikes</preferability>
+      <tasteThought>Stellaris_AteToxSpore</tasteThought>
+      <!-- 自定义心情 -->
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>180</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+  <!-- 定义吃了之后的心情，增加风味 -->
+  <ThoughtDef>
+    <defName>Stellaris_AteToxSpore</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>吃了嗜毒菌营养聚合物</label>
+        <description>我吃了这个发着绿光的奇怪玩意...咬下去感觉黏黏糊糊的，让我实在不想吃第二口了。</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

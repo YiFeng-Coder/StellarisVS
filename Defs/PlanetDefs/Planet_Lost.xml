@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <Stellaris.PlanetDef>
+    <defName>Stellaris_LostPlanet</defName>
+    <label>遗落行星</label>
+    <description>一颗曾经存在过辉煌文明、但如今已彻底衰亡的行星。轨道上可见破碎的太空设施残骸、废弃星港骨架与绵延大陆的城市废墟；地表覆盖锈蚀巨构、沉默工业区和被灾变熔融后凝固的玻璃平原。这里没有活着的文明，但废墟之下潜藏着自动防御系统、纳米污染、古代机械与被遗忘的知识。</description>
+    <colorOutLine>
+      <r>0.62</r>
+      <g>0.42</g>
+      <b>0.30</b>
+      <a>1</a>
+    </colorOutLine>
+    <resourceConfigs>
+      <li><thing>Steel</thing><chance>1</chance></li>
+      <li><thing>ComponentIndustrial</thing><chance>0.9</chance></li>
+      <li><thing>Plasteel</thing><chance>0.55</chance></li>
+      <li><thing>StellarisResourceRareMetal</thing><chance>0.65</chance></li>
+      <li><thing>Uranium</thing><chance>0.45</chance></li>
+      <li><thing>Chemfuel</thing><chance>0.35</chance></li>
+      <li><thing>Stellaris_AncientTechFragment</thing><chance>0.55</chance></li>
+    </resourceConfigs>
+    <temperatureRange>(-60,80)</temperatureRange>
+    <habitableChance>0.18</habitableChance>
+    <canBeGeneratedNaturally>true</canBeGeneratedNaturally>
+  </Stellaris.PlanetDef>
+</Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <BiomeDef>
+    <defName>Stellaris_LostPlanetBackGround</defName>
+    <label>遗落行星背景</label>
+    <description>从轨道俯瞰，遗落行星呈现灰、褐与锈红交织的斑驳色调，夜侧偶尔闪烁残余电网与反应堆衰变辉光。</description>
+    <workerClass>BiomeWorker_Desert</workerClass>
+    <animalDensity>0</animalDensity>
+    <plantDensity>0</plantDensity>
+    <texture>Biome/Stellaris_LostPlanet</texture>
+    <implemented>true</implemented>
+    <canAutoChoose>false</canAutoChoose>
+  </BiomeDef>
+</Defs>

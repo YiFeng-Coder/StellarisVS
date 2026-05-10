@@ -14,4 +14,18 @@
     <impassable>true</impassable>
     <isBackgroundBiome>true</isBackgroundBiome>
   </BiomeDef>
+
+  <BiomeDef>
+    <defName>Stellaris_DeadPlanetBackGround</defName>
+    <label>死寂地块</label>
+    <description>无法在当前比例下细分的死寂岩石地块。</description>
+    <workerClass>BiomeWorker_Desert</workerClass>
+    <canBuildBase>false</canBuildBase>
+    <allowRoads>false</allowRoads>
+    <allowRivers>false</allowRivers>
+    <hasVirtualPlants>false</hasVirtualPlants>
+    <texture>Biome/Stellaris_DeadPlanet</texture>
+    <impassable>false</impassable>
+    <isBackgroundBiome>true</isBackgroundBiome>
+  </BiomeDef>
 </Defs>

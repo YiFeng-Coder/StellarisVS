@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef>
+    <defName>Stellaris_FrozenPlanetGenerator</defName>
+    <label>frozen planet generation</label>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>Terrain</li>
+      <li>Stellaris_GenStep_FrozenPlanetTerrain</li>
+      <li>FindPlayerStartSpot</li>
+      <li>Snow</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+</Defs>

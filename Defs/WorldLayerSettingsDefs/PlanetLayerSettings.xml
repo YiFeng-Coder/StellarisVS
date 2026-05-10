@@ -19,7 +19,26 @@
     <label>熔融行星</label>
     <settings>
       <radius>100</radius>
-      <subdivisions>5</subdivisions>
+      <subdivisions>10</subdivisions>
+      <origin>(0,0,0)</origin>
+    </settings>
+  </PlanetLayerSettingsDef>
+  <PlanetLayerSettingsDef>
+    <defName>StellarisToxicPlanetLayerSetting</defName>
+    <label>剧毒行星</label>
+    <settings>
+      <radius>100</radius>
+      <subdivisions>10</subdivisions>
+      <origin>(0,0,0)</origin>
+    </settings>
+  </PlanetLayerSettingsDef>
+
+  <PlanetLayerSettingsDef>
+    <defName>Stellaris_DeadPlanetLayerSetting</defName>
+    <label>死寂行星</label>
+    <settings>
+      <radius>100</radius>
+      <subdivisions>10</subdivisions>
       <origin>(0,0,0)</origin>
     </settings>
   </PlanetLayerSettingsDef>

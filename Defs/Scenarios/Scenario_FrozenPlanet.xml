@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ScenarioDef ParentName="ScenarioBase">
+    <defName>Stellaris_FrozenPlanetTravel</defName>
+    <label>Stellaris_FrozenPlanetTravel</label>
+    <description>冰封行星...</description>
+    <scenario>
+      <summary>星际旅行中...</summary>
+      <surfaceLayer>
+        <def>StellarisPlanetLayerFixed</def>
+        <tag>Surface</tag>
+        <layer>Stellaris_FrozenPlanetSurface</layer>
+        <settingsDef>Stellaris_FrozenPlanetLayerSetting</settingsDef>
+        <hide>true</hide>
+        <connections>
+          <Orbit MayRequire="Ludeon.RimWorld.Odyssey">
+            <zoomMode>ZoomOut</zoomMode>
+          </Orbit>
+        </connections>
+      </surfaceLayer>
+      <parts>
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+          <pawnChoiceCount>1</pawnChoiceCount>
+        </li>
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

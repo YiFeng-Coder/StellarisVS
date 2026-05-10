@@ -284,6 +284,8 @@
       <li Class="Stellaris.CompProperties_ShipThruster">
         <thrustPower>100</thrustPower>
         <fuelCostPerThrustPower>1</fuelCostPerThrustPower>
+        <interplanetaryEfficiency>1.0</interplanetaryEfficiency>
+        <maxInterplanetaryRange>1200</maxInterplanetaryRange>
       </li>
       <li Class="Stellaris.CompProperties_ShipPart">
         <hermetic>false</hermetic>
@@ -861,5 +863,41 @@
       <li>StellarisResearch_SafeSuperBattery</li>
       <!-- 你可以改为自己的研究项目 -->
     </researchPrerequisites>
+  </ThingDef>
+  <!--起飞降落动画控制-->
+  <ThingDef>
+    <defName>Stellaris_ShipTakeoffController</defName>
+    <label>ship takeoff sequence</label>
+    <thingClass>Stellaris.ShipTakeoffController</thingClass>
+    <tickerType>Normal</tickerType>
+    <!-- 必须有Tick -->
+    <useHitPoints>false</useHitPoints>
+    <isSaveable>true</isSaveable>
+    <!-- 允许存档中途加载 -->
+    <graphicData>
+      <texPath>Things/Mote/Transparent</texPath>
+      <!-- 使用透明材质 -->
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(150, 150)</drawSize>
+    </graphicData>
+    <category>Mote</category>
+    <!-- 或者Ethereal -->
+    <drawerType>RealtimeOnly</drawerType>
+  </ThingDef>
+  <ThingDef>
+    <defName>Stellaris_ShipLandingController</defName>
+    <label>ship landing sequence</label>
+    <thingClass>Stellaris.ShipLandingController</thingClass>
+    <!-- 指向新类 -->
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <isSaveable>true</isSaveable>
+    <graphicData>
+      <texPath>Things/Mote/Transparent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(150, 150)</drawSize>
+    </graphicData>
+    <category>Mote</category>
+    <drawerType>RealtimeOnly</drawerType>
   </ThingDef>
 </Defs>
